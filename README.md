@@ -38,7 +38,9 @@ npm start
 
 ## 教材与媒体边界
 
-本仓库不附带个人 PDF、视频、官方练习册或官方听力原件。资料图书馆保留官方网站入口。
+仓库附带经逐项核对许可的文化厅《敬語の指針》官方 PDF（82 页），可在资料图书馆直接阅读。
+出典、原文件校验值及兼容 CC BY 4.0 的网站利用条款见 `public/data/licenses/bunka-keigo-guidelines.md`。
+其余个人 PDF、商业教材、官方练习册、听力原件和所有视频均不随公开仓库发布；资料图书馆保留官方入口。
 如需连接自己的媒体目录，设置 `LIBRARY_ROOT`，并在本机执行
 `python scripts/build-vocabulary-resources.py --local "你的资料目录"`。
 生成的私人索引和原件请保留在自己的部署中，不提交到公开仓库。

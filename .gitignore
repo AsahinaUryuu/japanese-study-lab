@@ -16,7 +16,7 @@ coverage/
 outputs/
 screenshots/
 evidence/
-public/resources/
+public/resources/*
 public/source.pdf
 *.pdf
 *.mp3
@@ -28,3 +28,4 @@ public/source.pdf
 *.db
 *.sqlite*
 # Additional personally imported ebooks belong in local-config/novels.
+!public/resources/bunka-keigo-guidelines.pdf

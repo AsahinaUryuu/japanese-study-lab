@@ -1,6 +1,10 @@
 {
   "application": "japanese",
   "privateStateIncluded": false,
-  "officialMediaBundled": false,
-  "publication": "source-only"
+  "officialMediaBundled": true,
+  "reviewedPdfFiles": [
+    "public/resources/bunka-keigo-guidelines.pdf"
+  ],
+  "videoFilesBundled": false,
+  "publication": "source-with-reviewed-resources"
 }

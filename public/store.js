@@ -15,13 +15,13 @@ export async function createStore(onStatus=()=>{}){
  function acknowledge(nextRevision){revision=nextRevision;pendingWrites=pendingWrites.filter(w=>w.baseRevision>=nextRevision);}
  function prepareWrite(progress,baseRevision){const write={clientId,writeId:crypto.randomUUID(),baseRevision};return {write,body:JSON.stringify({progress:{...progress,_sync:write},baseRevision})};}
  function remember(write){pendingWrites=[...pendingWrites,write].slice(-4);cache();}
- const validSaved=saved=>{if(!saved||!Number.isSafeInteger(saved.revision)||saved.revision<0||!isRecord(saved.progress))throw new Error('本地学习记录格式无效');return saved;};
- async function readSaved(){const response=await fetch('/api/progress',{cache:'no-store'});if(!response.ok)throw new Error('无法读取本地学习记录');return validSaved(await response.json());}
+ const validSaved=saved=>{if(!saved||!Number.isSafeInteger(saved.revision)||saved.revision<0||!isRecord(saved.progress))throw new Error('学习记录格式无效');return saved;};
+ async function readSaved(){const response=await fetch('/api/progress',{cache:'no-store'});if(!response.ok)throw new Error('无法读取学习记录');return validSaved(await response.json());}
  try{
   const saved=await readSaved();revision=saved.revision;data=saved.progress.version?normalizeProgress(saved.progress):newProgress();
   if(cached?.dirty&&cached.progress){const recovery=normalizeProgress(cached.progress);if(sameProgress(data,recovery)){pendingWrites=[];onStatus('已恢复上次保存');}else if(cached.revision===revision){data=recovery;dirty=true;onStatus('已恢复尚未写入文件的草稿');}else if(ownsReceipt(saved)){acknowledge(saved.revision);data=recovery;dirty=true;onStatus('已确认上次保存，并恢复之后编辑的草稿');}else{data=recovery;dirty=true;conflict=true;onStatus('本页有未同步记录，且其他窗口已更新：请导出记录备份后刷新');}}
- }catch(error){try{if(cached){data=normalizeProgress(cached.progress||cached);revision=Number.isSafeInteger(cached.revision)?cached.revision:0;dirty=!!cached.dirty;}}catch{}onStatus('本地服务暂不可用，使用浏览器恢复副本');}
- function cache(){try{const value=JSON.stringify({progress:data,revision,dirty:dirty||pendingWrites.length>0,clientId,pendingWrites,at:Date.now()});localStorage.setItem(recoveryKey,value);localStorage.setItem(CACHE,value);}catch{onStatus('浏览器备份空间不足，仍尝试保存到本地 JSON');}}
+ }catch(error){try{if(cached){data=normalizeProgress(cached.progress||cached);revision=Number.isSafeInteger(cached.revision)?cached.revision:0;dirty=!!cached.dirty;}}catch{}onStatus('学习服务暂不可用，使用浏览器恢复副本');}
+ function cache(){try{const value=JSON.stringify({progress:data,revision,dirty:dirty||pendingWrites.length>0,clientId,pendingWrites,at:Date.now()});localStorage.setItem(recoveryKey,value);localStorage.setItem(CACHE,value);}catch{onStatus('浏览器备份空间不足，仍尝试保存到学习服务');}}
  async function flush(){
   clearTimeout(timer);if(saving)return saving;if(replacing||disposed)return false;if(!dirty)return true;if(conflict)return false;
   dirty=false;const snapshot=JSON.parse(JSON.stringify(data));
@@ -34,7 +34,7 @@ export async function createStore(onStatus=()=>{}){
      conflict=true;throw new Error('另一个窗口更新了记录：请导出本页记录，再刷新同步');
     }
     if(!response.ok)throw new Error(saved.error||'保存失败');if(!Number.isSafeInteger(saved.revision)||saved.revision!==baseRevision+1)throw new Error('保存结果的版本无效，浏览器恢复副本仍保留');
-    acknowledge(saved.revision);onStatus(dirty?'正在保存更新后的草稿…':'已保存到本地');return true;
+    acknowledge(saved.revision);onStatus(dirty?'正在保存更新后的草稿…':'已保存到学习服务');return true;
    }
    throw new Error('上一笔保存仍在完成，草稿已保留，稍后自动重试');
   }catch(error){dirty=true;onStatus(error.message||'保存失败，浏览器恢复副本仍保留');return false;}finally{saving=null;cache();if(dirty&&!conflict&&!replacing&&!disposed)timer=setTimeout(flush,2000);}})();return saving;
@@ -53,8 +53,8 @@ export async function createStore(onStatus=()=>{}){
    data=reload?(saved.progress.version?normalizeProgress(saved.progress):newProgress()):normalized;
    revision=saved.revision;pendingWrites=[];conflict=false;dirty=!reload;version++;cache();
   }finally{replacing=false;if(dirty&&!conflict&&!disposed)timer=setTimeout(flush,500);}
-  if(reload){onStatus('已重新载入本地记录');return;}
-  if(!await flush())throw new Error(conflict?'导入期间记录被另一窗口更新，已保留恢复副本':'导入记录已留在本浏览器，但写入本地文件失败，请稍后重试');
+  if(reload){onStatus('已重新载入学习记录');return;}
+  if(!await flush())throw new Error(conflict?'导入期间记录被另一窗口更新，已保留恢复副本':'导入记录已留在本浏览器，但保存到学习服务失败，请稍后重试');
  }
  function hidden(){if(document.visibilityState==='hidden')void flush();}
  function unloading(){cache();if(dirty&&!conflict&&!saving&&!replacing){const {write,body}=prepareWrite(data,revision);if(new TextEncoder().encode(body).length<55000){remember(write);void fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json'},body,keepalive:true}).catch(()=>{});}}}

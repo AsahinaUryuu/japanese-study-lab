@@ -26,7 +26,7 @@ function onlineShelf(env){
  };
  const available=novels.filter(b=>imported.some(x=>x.linkedId===b.id)),pending=novels.filter(b=>!imported.some(x=>x.linkedId===b.id));
  return heading('自备轻小说','已有电子书也可以在这里读，与你的学习进度共用一套词卡。')+shelfTabs('online')+
- `<div class="reading-intro"><p>想直接开始阅读？已下载的完整小说就在本机书架，不需要自己再找文件。</p><div class="row"><a class="button primary" href="#novels">打开全文小说书架${imported.length?' · '+imported.length+' 部':''} →</a></div></div>`+
+ `<div class="reading-intro"><p>想直接开始阅读？已下载的完整小说就在全文书架，不需要自己再找文件。</p><div class="row"><a class="button primary" href="#novels">打开全文小说书架${imported.length?' · '+imported.length+' 部':''} →</a></div></div>`+
  (available.length?`<div class="cards story-shelf">${available.map(card).join('')}</div>`:'')+
  (pending.length?`<details class="novel-import-disclosure"><summary>可关联的轻小说 · ${pending.length} 部（需自备正文）</summary><p class="hint">下列条目仅供关联自备文件。导入后共用注音、查词、复习和进度保存。</p><div class="cards story-shelf">${pending.map(card).join('')}</div></details>`:'');
 }

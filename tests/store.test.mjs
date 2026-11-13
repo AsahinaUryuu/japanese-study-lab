@@ -76,7 +76,7 @@ test('回执匹配但版本已被继续更新，禁止冒认成自己的一笔�
 });
 test('导入文件保存失败会报告失败并保留浏览器恢复副本',async t=>{
  const f=setup(t),s=await f.create(),next=newProgress();next.notes.imported='导入内容';f.intercept=(url,o)=>o.method==='POST'?response({error:'磁盘暂不可写'},500):null;
- await assert.rejects(s.replace(next),/写入本地文件失败/);assert.equal(s.data.notes.imported,'导入内容');assert.equal(JSON.parse(f.local.getItem('kotoba-study-v1')).dirty,true);
+ await assert.rejects(s.replace(next),/保存到学习服务失败/);assert.equal(s.data.notes.imported,'导入内容');assert.equal(JSON.parse(f.local.getItem('kotoba-study-v1')).dirty,true);
 });
 test('导入读取版本期间发生新编辑时不丢弃用户内容',async t=>{
  const f=setup(t),s=await f.create(),gate=deferred();f.intercept=(url,o)=>!o.method?gate.promise:null;

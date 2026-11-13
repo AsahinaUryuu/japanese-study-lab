@@ -1764,16 +1764,19 @@
     "title": "文化厅《敬語の指針》官方原文",
     "level": "商务",
     "category": "敬语参考",
-    "kind": "external",
-    "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/index.html",
+    "kind": "pdf",
+    "url": "/resources/bunka-keigo-guidelines.pdf",
     "downloadUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf",
     "sourceUrl": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/index.html",
     "license": "文化庁／文部科学省网站使用条款（兼容 CC BY 4.0；第三方内容除外）",
     "licenseUrl": "https://www.mext.go.jp/b_menu/1351168.htm",
-    "description": "官方资料入口。公开源码不附带此资料原件，请按官方网站的说明访问和使用。",
+    "description": "出典：文化庁。平成19年2月2日文化審議会答申原版；本软件未修改 PDF。涵盖敬语体系、选择原则和具体用法。",
     "personalStudyOriginal": false,
     "redistributable": true,
-    "storage": "external"
+    "bytes": 613704,
+    "sha256": "3a567c6d85e990e0f90f0698c1403ba5826c7c6f9e7e50c93ea5d4da9336882d",
+    "pageCount": 82,
+    "storage": "bundled"
   },
   {
     "id": "jlpt-official-library",

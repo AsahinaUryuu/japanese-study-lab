@@ -17,5 +17,7 @@ Test fixtures named as progress records are synthetic regression fixtures, not a
 - Aozora literary texts are public-domain source works under the source site's stated reuse rules; preserve the source URLs, original production credits and conversion notices shipped with each work. Original prose is not claimed as MIT-authored content.
 - The public repository excludes downloaded JLPT/IRODORI and other personal-use-only official PDFs/audio. Their catalog entries open the official source site.
 - The six new public-domain novels are distributed only from the reviewed `seed/novels` package, with accompanying provenance notices. User-imported ebooks under `local-config/novels` are excluded.
+- The unchanged 82-page Agency for Cultural Affairs report `public/resources/bunka-keigo-guidelines.pdf` is included under the MEXT website terms, compatible with CC BY 4.0. Attribution, source, terms, review date and SHA-256 are in `public/data/licenses/bunka-keigo-guidelines.md`. It is not MIT-licensed application content.
+- Locally indexed commercial textbooks, graded readers and NHK PDFs are excluded because a public redistribution license was not established. Free personal downloads and classroom-use permissions are not treated as permission to mirror entire books on GitHub. All videos remain excluded.
 
 Automatic annotation and machine-assisted dictionary definitions can be ambiguous. Source license metadata and limitations remain included with the data.
