@@ -29,7 +29,8 @@ export function compareDictation(expected,actual){
   for(let i=1;i<=a.length;i++){const row=[i];for(let j=1;j<=b.length;j++)row[j]=Math.min(row[j-1]+1,previous[j]+1,previous[j-1]+(a[i-1]===b[j-1]?0:1));previous=row;}
   const distance=previous[b.length];return {similarity:a.length||b.length?Math.max(0,Math.round(100*(1-distance/Math.max(a.length,b.length)))):100,distance,expectedLength:a.length,actualLength:b.length};
 }
-export function newProgress(){return {version:1,lessons:{},words:{},bookmarks:[],threads:{},notes:{},exams:[],activity:{},workDrafts:{},workReviews:[],activeExam:null,reviewSession:null,settings:{dailyWords:20,fontSize:17,showReading:true,showFurigana:true,speechRate:.9},lastLesson:null,readings:{},lastReading:null,novelLast:null,novelPositions:{}};}
+export function newProgress(){return {version:1,lessons:{},words:{},bookmarks:[],threads:{},notes:{},exams:[],activity:{},workDrafts:{},workReviews:[],activeExam:null,reviewSession:null,learningCenter:{retries:{}},settings:{dailyWords:20,fontSize:17,showReading:true,showFurigana:true,speechRate:.9},lastLesson:null,readings:{},lastReading:null,novelLast:null,novelPositions:{}};}
+function quizHistory(value){return (Array.isArray(value)?value:[]).filter(a=>a&&typeof a==='object'&&Array.isArray(a.questions)&&a.answers&&typeof a.answers==='object'&&!Array.isArray(a.answers)).slice(-8).map(a=>({...a,questions:a.questions.filter(q=>q&&typeof q.id==='string'&&typeof q.prompt==='string'&&(['choice','fill'].includes(q.type))&&(q.type!=='choice'||Array.isArray(q.options))).slice(0,100)}));}
 // JSON object key order is not meaningful. A keepalive write may have reached
 // disk before reload while the recovery copy still carries the old revision.
 export function sameProgress(a,b){
@@ -47,7 +48,10 @@ export function normalizeProgress(data){
   p.workReviews=Array.isArray(data.workReviews)?data.workReviews.slice(-30):[];
   if(data.activeExam&&Array.isArray(data.activeExam.questions)&&data.activeExam.answers&&Number.isFinite(data.activeExam.endsAt))p.activeExam=data.activeExam;
   if(data.reviewSession&&Array.isArray(data.reviewSession.ids)&&Number.isInteger(data.reviewSession.index))p.reviewSession=data.reviewSession;
-  for(const [id,l] of Object.entries(p.lessons)){if(!l||typeof l!=='object'||Array.isArray(l)){delete p.lessons[id];continue;}l.answers=l.answers&&typeof l.answers==='object'?l.answers:{};l.drafts=l.drafts&&typeof l.drafts==='object'?l.drafts:{};l.reviews=Array.isArray(l.reviews)?l.reviews.slice(-30):[];}
+  for(const [id,l] of Object.entries(p.lessons)){if(!l||typeof l!=='object'||Array.isArray(l)){delete p.lessons[id];continue;}l.answers=l.answers&&typeof l.answers==='object'?l.answers:{};l.drafts=l.drafts&&typeof l.drafts==='object'?l.drafts:{};l.reviews=Array.isArray(l.reviews)?l.reviews.slice(-30):[];if(l.quizHistory)l.quizHistory=quizHistory(l.quizHistory);}
+  if(data.learningCenter?.retries&&typeof data.learningCenter.retries==='object'&&!Array.isArray(data.learningCenter.retries))p.learningCenter.retries=Object.fromEntries(Object.entries(data.learningCenter.retries).filter(([key,r])=>key.length<1000&&r&&typeof r==='object'&&Number.isFinite(r.at)&&(typeof r.answer==='string'||Number.isInteger(r.answer))).sort((a,b)=>b[1].at-a[1].at).slice(0,1000).map(([key,r])=>[key,{answer:typeof r.answer==='string'?r.answer.slice(0,2000):r.answer,correct:r.correct===true,at:r.at,count:Math.max(1,Number(r.count)||1)}]));
+  for(const lesson of Object.values(p.lessons))if(lesson.listenHistory&&typeof lesson.listenHistory==='object')lesson.listenHistory=Object.fromEntries(Object.entries(lesson.listenHistory).slice(0,100).map(([id,r])=>[id,{quizHistory:quizHistory(r?.quizHistory)}]));
+  for(const word of Object.values(p.words))if(word&&typeof word==='object'&&word.sources)word.sources=(Array.isArray(word.sources)?word.sources:[]).filter(s=>s&&typeof s.id==='string'&&typeof s.title==='string'&&typeof s.href==='string'&&['lesson','story','novel','dictionary'].includes(s.kind)).slice(-8).map(s=>({kind:s.kind,id:s.id.slice(0,400),title:s.title.slice(0,500),href:s.href.slice(0,1000),at:Number(s.at)||0}));
   for(const [id,t] of Object.entries(p.threads)){if(!t||typeof t!=='object'){delete p.threads[id];continue;}t.messages=Array.isArray(t.messages)?t.messages.filter(m=>m&&['user','assistant'].includes(m.role)&&typeof m.content==='string').slice(-20):[];t.draft=typeof t.draft==='string'?t.draft.slice(0,4000):'';}
   p.settings={...p.settings,...(data.settings||{})};p.settings.showFurigana=p.settings.showFurigana!==false;p.settings.dailyWords=Math.max(5,Math.min(100,Number(p.settings.dailyWords)||20));p.settings.fontSize=Math.max(14,Math.min(26,Number(p.settings.fontSize)||17));p.settings.speechRate=Math.max(.5,Math.min(1.4,Number(p.settings.speechRate)||.9));p.lastLesson=typeof data.lastLesson==='string'?data.lastLesson:null;
   p.lastReading=typeof data.lastReading==='string'?data.lastReading:null;
@@ -59,6 +63,7 @@ export function normalizeProgress(data){
   if(data.readings&&typeof data.readings==='object'&&!Array.isArray(data.readings))for(const [id,r] of Object.entries(data.readings).slice(0,20000)){
     if(!r||typeof r!=='object'||Array.isArray(r))continue;
     p.readings[id]={paragraph:Math.max(0,Math.min(10000,Math.floor(Number(r.paragraph)||0))),done:r.done===true,answers:r.answers&&typeof r.answers==='object'&&!Array.isArray(r.answers)?r.answers:{},note:typeof r.note==='string'?r.note.slice(0,10000):''};
+    if(r.quizHistory)p.readings[id].quizHistory=quizHistory(r.quizHistory);
     if(r.result&&Array.isArray(r.result.items)){p.readings[id].result=r.result;p.readings[id].submittedAnswers=r.submittedAnswers&&typeof r.submittedAnswers==='object'?r.submittedAnswers:{};p.readings[id].gradedAt=Number(r.gradedAt)||0;}
     if(Number.isInteger(r.bookmark)&&r.bookmark>=0)p.readings[id].bookmark=Math.min(10000,r.bookmark);
     if(r.completedAt)p.readings[id].completedAt=Number(r.completedAt)||null;

@@ -87,3 +87,16 @@ test('载入服务端版本解除冲突，并清除恢复副本脏标记',async 
  const f=setup(t),s=await f.create();s.data.notes.x='本页';s.save();f.saved={progress:{...newProgress(),notes:{x:'已备份后选择远端'}},revision:2};await s.flush();
  await s.reloadSaved();assert.equal(s.conflict,false);assert.equal(s.revision,2);assert.equal(s.data.notes.x,'已备份后选择远端');assert.equal(JSON.parse(f.local.getItem('kotoba-study-v1')).dirty,false);
 });
+test('还原点准备不能把旧写入成功当成最新草稿已全部同步',async t=>{
+ const f=setup(t),s=await f.create(),gate=deferred();let sent;
+ f.intercept=(url,o)=>{if(o.method==='POST'){sent=JSON.parse(o.body);return gate.promise;}};
+ s.data.notes.x='旧草稿';s.save();const sending=s.flush();s.data.notes.x='最新草稿';s.save();
+ const preparing=s.flush();gate.resolve(response({revision:1}));assert.equal(await preparing,true);await sending;
+ assert.deepEqual(s.getState(),{ready:true,dirty:true,conflict:false,saving:false,replacing:false});
+ assert.equal(s.getState().ready&&!s.getState().dirty&&!s.getState().conflict,false);
+ f.intercept=null;f.saved={progress:sent.progress,revision:1};await s.flush();assert.equal(s.getState().dirty,false);assert.equal(f.saved.progress.notes.x,'最新草稿');
+});
+test('离线启动无草稿也不能宣称还原点准备已同步',async t=>{
+ const f=setup(t);f.intercept=()=>{throw new TypeError('offline');};const s=await f.create();assert.equal(s.getState().ready,false);
+ assert.equal(await s.flush(),true);assert.equal(s.getState().ready,false);
+});

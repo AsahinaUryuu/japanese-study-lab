@@ -1,5 +1,5 @@
 import {readerCardHTML,addReaderReview} from './reader-core.js';
-export function createReaderPanel({getRecords,onSave,speak,toast}){
+export function createReaderPanel({getRecords,onSave,onAdded,speak,toast}){
  const panel=document.createElement('section');panel.className='reader-word-card';panel.id='reader-word-card';panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','false');panel.setAttribute('aria-labelledby','reader-word-title');panel.hidden=true;document.body.append(panel);
  let current=null,anchor=null;
  function close(restore=false){const previous=anchor;if(anchor?.isConnected)anchor.setAttribute('aria-expanded','false');panel.hidden=true;panel.replaceChildren();current=null;anchor=null;if(restore&&previous?.isConnected)previous.focus({preventScroll:true});}
@@ -21,7 +21,7 @@ export function createReaderPanel({getRecords,onSave,speak,toast}){
   if(action==='close'){close(true);return;}
   if(action==='speak'){speak(current.reading||current.word);return;}
   if(action==='add'){
-   const added=addReaderReview(getRecords(),current.id);if(added)onSave();
+   const added=addReaderReview(getRecords(),current.id);if(added){onAdded?.(current);onSave();}
    const button=panel.querySelector('[data-reader="add"]');button.disabled=true;button.textContent='✓ 已加入复习';panel.querySelector('.reader-status').textContent=added?'已加入复习，可继续阅读。':'已在复习计划中，原有复习进度保留。';position();toast(added?'已将「'+current.word+'」加入复习':'该词已在复习计划中');
   }
  });

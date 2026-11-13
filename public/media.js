@@ -35,6 +35,7 @@ export async function startRecording(key,onState,onReady){
 }
 export function stopRecording(){recordingAttempt++;recordingPending=false;if(recorder?.state==='recording')recorder.stop();}
 export function isRecording(){return recorder?.state==='recording';}
+export function mediaInputActive(){return recordingPending||recorder?.state==='recording'||!!recognizer;}
 export function transcribe(onResult,onState){
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!Recognition){onState('此浏览器不支持语音转写，可手动填写表达内容');return;}

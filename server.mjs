@@ -7,6 +7,7 @@ import {GradeError} from './lib/config.mjs';
 import {createLocalConfigStore} from './lib/local-config.mjs';
 import {createRemoteAccess,requireSameOrigin,privateConfig,hydrateModelRequest} from './lib/remote-access.mjs';
 import {createProgressStore,MAX_PROGRESS_BYTES} from './lib/progress.mjs';
+import {handleProgressHistory} from './lib/progress-http.mjs';
 import {listModels} from './lib/models.mjs';
 import {coachReply} from './lib/coach.mjs';
 import {createNovelStore} from './lib/novel-store.mjs';
@@ -80,7 +81,8 @@ export function createApp({publicDir=path.join(directory,'public'),libraryRoot=p
       if(!access.accept(req,res))return;
       const requested=decodeURIComponent((req.url||'/').split('?')[0]);
       if(requested.includes('\0')||requested.includes('\\')||requested.split('/').some(part=>part==='..'||part.startsWith('.')))throw new GradeError('不可访问此路径。',403);
-      if(requested==='/api/health'&&req.method==='GET')return json(res,200,{ok:true,service:'japanese-academy',version:'1.5.0'});
+      if(requested==='/api/health'&&req.method==='GET')return json(res,200,{ok:true,service:'japanese-academy',version:'1.6.0'});
+      if(await handleProgressHistory(req,res,{requested,store:progressStore,readBody,json}))return;
       if(requested==='/api/catalog'&&req.method==='GET')return json(res,200,await catalog());
       if(requested==='/api/library'&&req.method==='GET')return json(res,200,{resources:await library()});
       if(requested==='/api/novels'){

@@ -1,4 +1,5 @@
 import {e,heading,button,empty,questionHTML} from '../ui.js';
+import {saveQuizSnapshot} from '../learning-center-core.js';
 import {hasReaderParagraph,readerParagraphHTML} from '../reader-core.js';
 import {annotatedText,furiganaButton} from '../reader-text.js';
 import {chapterChars,findStory,readingRecord,readingQuestions,gradeReading,readingContext,validatedReadingResult} from '../stories-core.js';
@@ -68,6 +69,7 @@ export function renderStories(env){
  if(route==='stories'){const book=env.data.stories.find(b=>b.id===id);env.main.innerHTML=book?contents(book,env):empty('这部故事暂未载入，请返回课外阅读书架。');return;}
  const result=findStory(env.data.stories,id);
  env.main.innerHTML=result?readChapter(result.book,result.chapter,result.index,env):empty('没有找到这一章，请返回课外阅读书架。');
+ const questionId=env.state.params.get('question');if(questionId){const input=[...env.main.querySelectorAll('[data-question]')].find(node=>node.dataset.question===questionId),target=input?.closest('.question');target?.classList.add('center-target');requestAnimationFrame(()=>{if(target?.isConnected)target.scrollIntoView({block:'center'});});}
 }
 export function storyEvents(env,event,target){
  if(!env.state.route.startsWith('story/'))return false;
@@ -88,7 +90,9 @@ export function storyEvents(env,event,target){
  }
  if(action==='story-resume'){env.main.querySelector('#story-paragraph-'+Math.min(chapter.paragraphs.length-1,record.paragraph||0))?.scrollIntoView({block:'start',behavior:'smooth'});return true;}
  if(action==='story-check'){
+  const previous=structuredClone({result:record.result,submittedAnswers:record.submittedAnswers,gradedAt:record.gradedAt,quizHistory:record.quizHistory});
   if(!gradeReading(chapter,record)){env.toast('请先回答本章全部理解题，再统一检查');return true;}
+  saveQuizSnapshot(previous,readingQuestions(chapter),record.submittedAnswers,record.gradedAt);record.quizHistory=previous.quizHistory;
   env.store.activity();env.store.save();env.main.querySelector('#story-feedback').innerHTML=feedback(chapter,record);env.state.viewData.context={reading:readingContext(book,chapter,record)};env.refreshTutor();return true;
  }
  if(action==='story-done'){record.done=!record.done;record.completedAt=record.done?Date.now():null;env.store.activity();env.store.save();target.textContent=record.done?'✓ 已读完本章':'标记本章已读完';target.setAttribute('aria-pressed',String(record.done));env.toast(record.done?'本章阅读进度已保存':'本章已设为继续阅读');return true;}

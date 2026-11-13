@@ -21,8 +21,8 @@
   },
   {
     "path": "README.md",
-    "sha256": "94baaffc1aeaa493180cb9ba6035dff5222aedabbfa2a0de25898a478a5a244c",
-    "bytes": 3153
+    "sha256": "eeb74eb05bd9352d84ce1b31d6201ef78fd59f406f46f9fa9eefc13d387f44d9",
+    "bytes": 3996
   },
   {
     "path": "lib/coach.mjs",
@@ -60,9 +60,14 @@
     "bytes": 3594
   },
   {
+    "path": "lib/progress-http.mjs",
+    "sha256": "8cef6a2156befb16a7c3fa9f81ff01ed77b77a53781e9f229a7fc1e2230018dc",
+    "bytes": 1505
+  },
+  {
     "path": "lib/progress.mjs",
-    "sha256": "0445be469faa40b92e4403e86248d6073b7722f777cc17f208fab00a93beb423",
-    "bytes": 3072
+    "sha256": "a09b9fdd609f15938e9252669214e6a4e1fa0de3a004d4f627da530aeb5d3aee",
+    "bytes": 9937
   },
   {
     "path": "lib/proxy.mjs",
@@ -86,13 +91,23 @@
   },
   {
     "path": "package.json",
-    "sha256": "0ef4b723d4b9a5796f1b04bd3356baee6ab19d8cd75757225f4bc73a2b3bc0a3",
+    "sha256": "bf93762dd47f30fcd5fde537993f54fa2b0a7d5db8d9932f0257608a7f913291",
     "bytes": 313
   },
   {
     "path": "public/app.js",
-    "sha256": "c3d2822aa38debe51add9372a925656820c2868b608b92065e07b3f96a49a63a",
-    "bytes": 21208
+    "sha256": "485436765a2a4e60dfbcb5acbca97a2596f383c782f6398fbead3474685253ff",
+    "bytes": 22371
+  },
+  {
+    "path": "public/backup-manager.css",
+    "sha256": "60fecf3991c96984d25a15d29064c028305b7b656dd0e41efb7d82c5165c3285",
+    "bytes": 2829
+  },
+  {
+    "path": "public/backup-manager.js",
+    "sha256": "d0669569be1d10a9723179716ecd87ca966d0a9d917c3f9fddbec4e0e9f32170",
+    "bytes": 9305
   },
   {
     "path": "public/curriculum-core.js",
@@ -301,13 +316,23 @@
   },
   {
     "path": "public/index.html",
-    "sha256": "913674ebbc230fe4cec447bda8b666401717db756ccc89917f83a104c7a8568e",
-    "bytes": 5541
+    "sha256": "90f6fde2db1644b0e366dfc4ee9e45a13affa418f3b3823f17be1b6333855278",
+    "bytes": 5642
+  },
+  {
+    "path": "public/learning-center-core.js",
+    "sha256": "58b23111110b681602c267a8a9a8f3019543739252ba8e23bae5cac758b15833",
+    "bytes": 9658
+  },
+  {
+    "path": "public/learning-center.css",
+    "sha256": "8d3ed6f37fc1a199783f31ecd038508d4937fe27b2f52051794597885172fae0",
+    "bytes": 1370
   },
   {
     "path": "public/learning-core.js",
-    "sha256": "d04ef0ba1b46f37da0964c003830215ae448e0828068217854732d880bb4ed02",
-    "bytes": 9232
+    "sha256": "24ef24efc203100db08944fa565ea1853351d039abc93b7223b97a5e00717bf8",
+    "bytes": 11057
   },
   {
     "path": "public/local-config.js",
@@ -316,8 +341,8 @@
   },
   {
     "path": "public/media.js",
-    "sha256": "b9889a2d05d3ccb3cda76c9a0b73ac9bb85bbc0696383038d24d2d22d1a44d83",
-    "bytes": 5231
+    "sha256": "3e6caa70bcb003ff7c6924e2565062fe4acdf79e56e0950bbe788e8a1a654f52",
+    "bytes": 5385
   },
   {
     "path": "public/novel-annotation-core.js",
@@ -346,8 +371,8 @@
   },
   {
     "path": "public/reader-panel.js",
-    "sha256": "1cbe5341573493ded96dc7cfedb17b172781d1bc78bd49c0b61512bc41cd6c68",
-    "bytes": 3727
+    "sha256": "c2cc503f58cd768e8b8ccab99b1d8e42457a4c389d4c649a72ee9e9229a41be9",
+    "bytes": 3756
   },
   {
     "path": "public/reader-text.js",
@@ -371,8 +396,8 @@
   },
   {
     "path": "public/store.js",
-    "sha256": "f0c065d455b695ee71548f2ddd577671387dc35cff5c3ddeea96ff9dac46a27d",
-    "bytes": 7460
+    "sha256": "2291d7b8865b03304dc0fdf4af036ce06f1c3b6d7321b1986f711bdde32c09c9",
+    "bytes": 7569
   },
   {
     "path": "public/stories-core.js",
@@ -561,18 +586,23 @@
   },
   {
     "path": "public/views/curriculum.js",
-    "sha256": "b3fbcb3ac760891c87879071a1acf74c34607121cea56bc6ca79214154b3da09",
-    "bytes": 10032
+    "sha256": "827bbf7437bd2f8ac84f7bfb817baf6f66e48aaaba732674f5dda05622253f31",
+    "bytes": 10119
+  },
+  {
+    "path": "public/views/learning-center.js",
+    "sha256": "d798bc62e810d804e4c0f772419d7c341591885e806280f6212601b959616796",
+    "bytes": 13235
   },
   {
     "path": "public/views/lessons.js",
-    "sha256": "19339672091374407570a7ba43a6d73956a36240b5c23f1b1de1580709bd309b",
-    "bytes": 22009
+    "sha256": "9e3dc53d5af13229ea05266532c9893ae830263067b7e2ebcb381a562e65c4b3",
+    "bytes": 22896
   },
   {
     "path": "public/views/library.js",
-    "sha256": "a5f26680fc5037c6769a8c45df7903935356b3713f2cd118491f86b3a00e7e21",
-    "bytes": 12615
+    "sha256": "077ecff9192ed663424196eb4c5702e1a223cbf276e731aae565c5cc4ae308af",
+    "bytes": 12601
   },
   {
     "path": "public/views/novels.js",
@@ -581,13 +611,13 @@
   },
   {
     "path": "public/views/practice.js",
-    "sha256": "eff6646df231bbbfde472abc434fee1ed18014d5c7434b84b8684d8174255caf",
-    "bytes": 36649
+    "sha256": "2f0cad840a638f986af00e43b7057ee1e8cdbc9f31d356796e31b86cccb3ba3c",
+    "bytes": 34269
   },
   {
     "path": "public/views/stories.js",
-    "sha256": "81abb4843e42809589d36d9ffc493e1932b7a83de244c2e5485518f0ad56246a",
-    "bytes": 16899
+    "sha256": "17077c6d2fff2747e1fcc3b047e0ec16706c30c161dda13001529949d7305029",
+    "bytes": 17599
   },
   {
     "path": "public/views/textbook.js",
@@ -866,8 +896,8 @@
   },
   {
     "path": "server.mjs",
-    "sha256": "d21e76b58e74a015d8bf87c50b22ca8c459acc48427e125681fe969bc428e160",
-    "bytes": 13161
+    "sha256": "ca46b8e080b1530fff6896de23c6511d54ffd1b7e77b15cc1dde5a9f4aee74aa",
+    "bytes": 13326
   },
   {
     "path": "start-learning.ps1",
@@ -883,6 +913,11 @@
     "path": "tests/ai.test.mjs",
     "sha256": "4203d9a920bbb0d4d74ef6eb8b88d1bd89dec0a6f60dc2b96617921d4a2af156",
     "bytes": 4173
+  },
+  {
+    "path": "tests/backup-manager.test.mjs",
+    "sha256": "44f4b50e7e7fec53a42f5bddcf2cfe0eb52bf85b21d61f35c0a18a938e87b6f8",
+    "bytes": 3823
   },
   {
     "path": "tests/business.test.mjs",
@@ -905,14 +940,19 @@
     "bytes": 5092
   },
   {
+    "path": "tests/learning-center.test.mjs",
+    "sha256": "a0c55f4fd04c7ae27c7f70401721f1970ddbdd1e3fe9e1372b4eddb330ac2a46",
+    "bytes": 9788
+  },
+  {
     "path": "tests/learning-core.test.mjs",
     "sha256": "5d492e60c39d5f67e21762b3d8191a9552e51e26575772336a1295ff9f5fdb38",
     "bytes": 2770
   },
   {
     "path": "tests/media.test.mjs",
-    "sha256": "26662d4351677f5fc7150d6dbb49be33d7e57fc8b8754dab180d736bbc59337e",
-    "bytes": 3219
+    "sha256": "ee4e78825737ae44d9e9a1db47682f6fa07a2fb43f0315101d83b09d542dc6ce",
+    "bytes": 3953
   },
   {
     "path": "tests/novel-annotation.test.mjs",
@@ -933,6 +973,16 @@
     "path": "tests/novel-store.test.mjs",
     "sha256": "f2071283f96bdb3e3497d33c9a6cdf91c6a515fb70bc7eddf069542c9d7c6d9d",
     "bytes": 4363
+  },
+  {
+    "path": "tests/progress-history.test.mjs",
+    "sha256": "1763e72624c2328dc3cf0114f039bd2b5942d59ce3cfaecdf9d9315eccb2d8bc",
+    "bytes": 9943
+  },
+  {
+    "path": "tests/progress-http.test.mjs",
+    "sha256": "ee8d43f0e00c445b45106c724eb52d502b8779223e2e43116972ac6253855da9",
+    "bytes": 4020
   },
   {
     "path": "tests/reader-data.test.mjs",
@@ -981,8 +1031,8 @@
   },
   {
     "path": "tests/store.test.mjs",
-    "sha256": "158554d66e5dd51f49b89f728bf3b33a313878687d159522b54318e3995cd508",
-    "bytes": 9508
+    "sha256": "4a742aa532659cfca06ec776fca1ad036ce05c6306820fb8b5bc48556056e2b9",
+    "bytes": 10638
   },
   {
     "path": "tests/stories.test.mjs",

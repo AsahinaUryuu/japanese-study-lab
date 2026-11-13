@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {startRecording,stopRecording,isRecording,transcribe,cleanupMedia} from '../public/media.js';
+import {startRecording,stopRecording,isRecording,transcribe,cleanupMedia,mediaInputActive} from '../public/media.js';
 const deferred=()=>{let resolve;const promise=new Promise(r=>resolve=r);return {promise,resolve};};
 function setup(t){
  const keys=['window','navigator','MediaRecorder'],before=new Map(keys.map(k=>[k,Object.getOwnPropertyDescriptor(globalThis,k)])),instances=[],recognitions=[];let stopped=0,permission=async()=>stream;
@@ -29,4 +29,10 @@ test('切换课程后忽略旧语音识别结果，重启识别也不混入上�
  const f=setup(t),old=[],fresh=[];transcribe(x=>old.push(x),()=>{});const first=f.recognitions[0];cleanupMedia();
  first.onresult({resultIndex:0,results:[Object.assign([{transcript:'古い結果'}],{isFinal:true})]});assert.deepEqual(old,[]);assert.equal(first.aborted,true);
  transcribe(x=>fresh.push(x),()=>{});const second=f.recognitions[1];second.onresult({resultIndex:0,results:[Object.assign([{transcript:'新しい結果'}],{isFinal:true})]});assert.deepEqual(fresh,['新しい結果']);
+});
+test('还原操作能识别等待授权、录音与转写状态，清理后旧结果失效',async t=>{
+ const f=setup(t),gate=deferred();assert.equal(mediaInputActive(),false);f.permission=()=>gate.promise;
+ const recording=startRecording('a',()=>{},()=>{});assert.equal(mediaInputActive(),true);cleanupMedia();gate.resolve(f.stream);await recording;assert.equal(mediaInputActive(),false);
+ const writes=[];transcribe(text=>writes.push(text),()=>{});assert.equal(mediaInputActive(),true);const old=f.recognitions[0];cleanupMedia();assert.equal(mediaInputActive(),false);
+ old.onresult({resultIndex:0,results:[Object.assign([{transcript:'恢复前的迟到结果'}],{isFinal:true})]});assert.deepEqual(writes,[]);
 });
