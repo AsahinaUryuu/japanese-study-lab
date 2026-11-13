@@ -1,0 +1,30 @@
+# Private state and credentials: never commit these directories or files.
+local-config/
+local-library/
+.backups/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+node_modules/
+__pycache__/
+*.pyc
+*.log
+coverage/
+outputs/
+screenshots/
+evidence/
+public/resources/
+public/source.pdf
+*.pdf
+*.mp3
+*.mp4
+*.wav
+*.m4a
+*.webm
+*.zip
+*.db
+*.sqlite*
+# Additional personally imported ebooks belong in local-config/novels.

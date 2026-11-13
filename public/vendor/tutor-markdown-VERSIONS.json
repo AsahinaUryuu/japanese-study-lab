@@ -1,0 +1,40 @@
+{
+  "packages": {
+    "dompurify": {
+      "version": "3.4.17",
+      "license": "(MPL-2.0 OR Apache-2.0)"
+    },
+    "entities": {
+      "version": "8.1.0",
+      "license": "BSD-2-Clause"
+    },
+    "highlight.js": {
+      "version": "11.12.0",
+      "license": "BSD-3-Clause"
+    },
+    "linkify-it": {
+      "version": "6.1.0",
+      "license": "MIT"
+    },
+    "markdown-it": {
+      "version": "15.0.3",
+      "license": "MIT"
+    },
+    "mdurl": {
+      "version": "2.1.0",
+      "license": "MIT"
+    },
+    "punycode.js": {
+      "version": "2.3.1",
+      "license": "MIT"
+    },
+    "uc.micro": {
+      "version": "3.0.0",
+      "license": "MIT"
+    }
+  },
+  "build": {
+    "esbuild": "0.28.2",
+    "command": "npm ci --ignore-scripts && node build.mjs"
+  }
+}

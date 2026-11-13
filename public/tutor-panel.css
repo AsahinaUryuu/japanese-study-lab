@@ -1,0 +1,188 @@
+/* A reserved viewport column keeps the tutor beside, never over, the lesson. */
+:root{--tutor-width:340px;--tutor-dock-height:clamp(240px,44dvh,390px)}
+body.tutor-open .workspace{margin-right:var(--tutor-width);min-width:0;overflow-x:clip}
+body.tutor-collapsed .workspace{margin-right:58px}
+body.tutor-open .lesson-layout{display:block}
+body.tutor-open .lesson-outline{display:none}
+body.tutor-open .page-home,body.tutor-open .lesson-page{padding-left:28px;padding-right:28px}
+body.tutor-open .topbar{padding-left:28px;padding-right:28px;gap:10px}
+body.tutor-open .top-title{min-width:0;font-size:11px}
+body.tutor-open .top-actions{gap:8px;flex-shrink:0}
+body.tutor-open .local-badge{display:none}
+body.tutor-open .chapter-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.tutor-open .hero-visual{display:none}
+body.tutor-open .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body.tutor-open .stats>div:nth-child(2){border-right:0}
+body.tutor-open .stage-bar{grid-template-columns:repeat(4,minmax(0,1fr))}
+body.tutor-open .stage-bar button{font-size:11px;white-space:normal}
+.tutor-panel{position:fixed;z-index:25;inset:0 0 0 auto;width:var(--tutor-width);height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden;background:#fafcf8;border-left:1px solid #dbe5dc;color:#284b3b;box-shadow:-3px 0 18px #243c3005}
+.tutor-resize{position:absolute;z-index:3;left:0;top:0;bottom:0;width:8px;cursor:col-resize;touch-action:none;user-select:none}
+.tutor-resize::before{content:"";position:absolute;top:0;bottom:0;left:0;width:3px;background:#91b780;opacity:0;transition:opacity .12s}
+.tutor-resize:hover::before,.tutor-resize:focus-visible::before,body.tutor-resizing .tutor-resize::before{opacity:1}
+.tutor-resize:focus-visible{outline:2px solid #7fbda1;outline-offset:-2px}
+body.tutor-resizing,body.tutor-resizing *{cursor:col-resize!important;user-select:none!important}
+body.tutor-resizing iframe{pointer-events:none!important}
+body.tutor-open.tutor-wide-layout .sidebar{transform:translateX(-100%);width:246px;box-shadow:15px 0 50px #224c3925}
+body.tutor-open.tutor-wide-layout.menu-open .sidebar{transform:none}
+body.tutor-open.tutor-wide-layout .workspace{margin-left:0}
+body.tutor-open.tutor-wide-layout .mobile-menu{display:block}
+body.tutor-open.tutor-wide-layout .sidebar-close{display:block;position:absolute;right:12px;top:12px}
+.tutor-panel[hidden],.tutor-toggle[hidden],.tutor-panel [hidden]{display:none!important}
+.tutor-heading{padding:19px 18px 15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e4ece1;flex-shrink:0}
+.tutor-eyebrow{font-size:10px;color:#8a9b86;letter-spacing:1px}
+.tutor-heading h2{font-size:18px;line-height:1.5;margin:2px 0 0}
+.tutor-icon{background:#edf3e9;color:#567451;border:1px solid #e0e8da;border-radius:7px;width:30px;height:30px;font-size:24px;line-height:1;display:grid;place-items:center;cursor:pointer}
+.tutor-context{padding:14px 18px 12px;border-bottom:1px solid #e2eade;flex-shrink:0;max-height:32%;overflow-y:auto;scrollbar-width:thin}
+.tutor-context-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.tutor-context-tag{background:#e7f0e3;border-radius:5px;color:#55724a;padding:3px 7px;font-size:10px;max-width:65%;overflow-wrap:anywhere}
+.tutor-link{border:0;background:transparent;color:#7b8e70;font-size:10px;padding:3px;cursor:pointer}
+.tutor-link:hover{text-decoration:underline}
+.tutor-context h3{font-size:13px;line-height:1.7;margin:0 0 5px;overflow-wrap:anywhere}
+#tutor-context-label{font-size:11px;color:#829075;margin:0;line-height:1.7;overflow-wrap:anywhere}
+#tutor-context-details{margin-top:8px;font-size:10px;color:#7b8c70}
+#tutor-context-details summary{cursor:pointer}
+#tutor-context-description{margin:7px 0 0;font-size:10px;line-height:1.8;white-space:pre-wrap}
+#tutor-context-picker-wrap{display:block;margin-top:8px;font-size:10px;color:#6b815e}
+#tutor-context-picker{display:block;width:100%;font-size:11px;border:1px solid #dce6d5;border-radius:6px;background:white;padding:6px;margin-top:4px;color:#416344}
+.tutor-messages{flex:1;min-height:65px;overflow-y:auto;overscroll-behavior:contain;padding:17px 15px;scrollbar-width:thin;scrollbar-color:#cbd9c4 transparent}
+.tutor-answer-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 15px;border-bottom:1px solid #e5ecdf;flex-shrink:0;color:#86957b;font-size:10px}
+.tutor-reader-tag{border:1px solid #d9e5cf;border-radius:5px;background:#edf4e7;color:#4c713d;padding:3px 8px;font-size:10px;line-height:1.6}
+.tutor-reader-tag:hover{background:#e0edd7;border-color:#aac698}
+.tutor-empty{padding:20px 10px;text-align:center;color:#7c8e70}
+.tutor-empty b{font-size:13px;font-weight:600}
+.tutor-empty p{font-size:11px;line-height:1.9;margin:8px 0 0}
+.tutor-message{margin-bottom:16px;min-width:0}
+.tutor-message-author{font-size:10px;color:#7f9273;margin:0 4px 5px}
+.tutor-message-content{border:1px solid #e1e9d9;border-radius:9px;background:#fff;padding:11px 12px;font-size:12px;line-height:1.85;overflow-wrap:anywhere;min-width:0}
+.tutor-message-content p{margin:0 0 9px;white-space:pre-wrap;line-height:1.85}
+.tutor-message-content p:last-child{margin-bottom:0}
+.from-user .tutor-message-content{background:#eaf2e4;border-color:#dce7d3}
+.from-user .tutor-message-author{text-align:right}
+.tutor-code{margin:9px -3px;border-radius:6px;overflow:hidden;background:#21392e;color:#dfecd8}
+.tutor-code-label{font-size:10px;padding:5px 9px;background:#2d4938;color:#b4c8a9}
+.tutor-code pre{font:11px/1.8 Consolas,"Microsoft YaHei",monospace;overflow:auto;white-space:pre;margin:0;padding:10px;max-height:360px}
+.tutor-thinking{font-size:11px;color:#7c936a;margin:10px 0}
+.tutor-error{margin:0 15px 9px;padding:8px 10px;border-radius:6px;color:#a05240;background:#fff0e9;font-size:11px;line-height:1.7;max-height:85px;overflow:auto;flex-shrink:0}
+.tutor-composer{flex-shrink:0;min-width:0}
+.tutor-panel>.tutor-composer{flex:0 1 auto;min-height:0;max-height:55%;overflow:auto;overscroll-behavior:contain}
+.tutor-draft-tools{display:flex;align-items:center;flex-wrap:wrap;gap:5px 9px;margin-top:7px;font-size:10px;color:#6d8067}
+.tutor-draft-tools>span{margin-right:auto}.tutor-draft-tools .near-limit{color:#a65a2a}
+.tutor-draft-tools button,.tutor-message-actions button{font:inherit;border:0;background:transparent;color:#426644;padding:2px 3px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.tutor-draft-tools button:disabled,.tutor-message-actions button:disabled{opacity:.45;cursor:default}
+.tutor-message-author{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tutor-message-actions{display:inline-flex;gap:6px;font-size:10px}.tutor-answer-tools{flex-wrap:wrap}.tutor-answer-tools>span{margin-right:auto}
+.tutor-composer button:focus-visible,.tutor-message-actions button:focus-visible{outline:2px solid #1d6b50;outline-offset:2px}
+.tutor-form{border-top:1px solid #dfe9d7;padding:12px 15px 11px;background:#f7faf2;flex-shrink:0}
+.tutor-input-label{display:block;font-size:10px;color:#799066;margin-bottom:6px}
+#tutor-input{display:block;width:100%;min-height:70px;max-height:160px;resize:vertical;border:1px solid #d4e1c9;border-radius:7px;padding:9px 10px;background:white;color:#345438;font-size:12px;line-height:1.7;box-sizing:border-box}
+#tutor-input::placeholder{color:#a0ae94}
+.tutor-form-actions{display:flex;align-items:center;gap:8px;margin-top:8px}
+#tutor-request-state{margin-right:auto;font-size:9px;color:#94a085;white-space:pre-line;min-width:0}
+.tutor-form-actions .button{padding:7px 10px;font-size:11px;white-space:nowrap}
+.tutor-stop{background:white;color:#6b815b;border:1px solid #d6e2cb;border-radius:6px;font-size:11px;padding:6px 8px}
+.tutor-toggle{position:fixed;right:0;top:102px;z-index:25;width:48px;min-height:72px;border:1px solid #d0dfc5;border-right:0;border-radius:9px 0 0 9px;background:#e9f2e2;color:#476e37;padding:8px;font-size:12px;box-shadow:-3px 3px 12px #2846290b;writing-mode:vertical-rl;letter-spacing:3px;cursor:pointer}
+@media(max-width:1100px) and (min-width:701px){
+ body.tutor-open .sidebar{transform:translateX(-100%);width:246px;box-shadow:15px 0 50px #224c3925}
+ body.tutor-open.menu-open .sidebar{transform:none}
+ body.tutor-open .workspace{margin-left:0}
+ body.tutor-open .mobile-menu{display:block}
+ body.tutor-open .sidebar-close{display:block;position:absolute;right:12px;top:12px}
+}
+
+@media(max-width:700px){
+ .tutor-panel>.tutor-composer{max-height:58%}
+ .tutor-resize{display:none!important}
+ body.tutor-open,body.tutor-collapsed{height:100vh;height:100dvh;overflow:hidden}
+ body.tutor-open .workspace,body.tutor-collapsed .workspace{margin-left:0;margin-right:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain}
+ body.tutor-open .workspace{height:calc(100vh - var(--tutor-dock-height));height:calc(100dvh - var(--tutor-dock-height))}
+ body.tutor-collapsed .workspace{height:calc(100vh - 45px);height:calc(100dvh - 45px)}
+ body.tutor-open .page-home,body.tutor-open .lesson-page{padding-left:17px;padding-right:17px}
+ body.tutor-open .topbar{padding-left:15px;padding-right:15px}
+ .tutor-panel{inset:auto 0 0;width:100%;height:var(--tutor-dock-height);border-left:0;border-top:1px solid #d5e3cc;box-shadow:0 -3px 15px #243c3008}
+ .tutor-heading{padding:7px 13px}
+ .tutor-eyebrow{display:none}
+ .tutor-heading h2{font-size:14px;margin:0}
+ .tutor-icon{width:25px;height:25px;transform:rotate(90deg)}
+ .tutor-context{padding:7px 13px;max-height:26%;}
+ .tutor-context-top{float:right;margin:0 0 0 8px}
+ .tutor-context-top .tutor-link{display:none}
+ .tutor-context h3{font-size:11px;margin:0}
+ #tutor-context-label{font-size:10px}
+ #tutor-context-details{margin-top:3px}
+ .tutor-messages{padding:10px 13px;min-height:35px}
+ .tutor-empty{padding:4px 8px}.tutor-empty p{margin:3px 0 0;font-size:10px}
+ .tutor-form{padding:7px 13px}
+ .tutor-input-label{display:none}
+ #tutor-input{min-height:42px;height:42px;max-height:72px;resize:none;padding:6px 8px;font-size:12px}
+ .tutor-form-actions{margin-top:5px}
+ .tutor-form-actions .button{padding:4px 10px;font-size:10px}
+ .tutor-error{margin:0 13px 5px;padding:5px 7px;font-size:10px;max-height:45px}
+ .tutor-toggle{inset:auto 0 0;width:100%;height:45px;min-height:45px;writing-mode:horizontal-tb;border:0;border-top:1px solid #d1e0c6;border-radius:0;letter-spacing:1px;font-size:12px}
+}
+
+/* Keep the conversation, rather than the controls, as the primary surface. */
+#tutor-panel{display:grid;grid-template-rows:auto auto auto minmax(0,1fr) auto}
+#tutor-panel .tutor-heading{padding:6px 12px;min-height:34px;box-sizing:border-box}
+#tutor-panel .tutor-eyebrow{display:none}
+#tutor-panel .tutor-heading h2{font-size:14px;line-height:1.4;margin:0}
+#tutor-panel .tutor-icon{width:25px;height:25px;font-size:21px}
+#tutor-panel .tutor-context{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 8px;position:relative;overflow:visible;max-height:none;padding:5px 12px}
+#tutor-panel .tutor-context-top{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-start;gap:2px;margin:0;float:none}
+#tutor-panel .tutor-context-tag{padding:1px 5px;max-width:110px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:9px}
+#tutor-panel .tutor-link{padding:0;font-size:10px;display:block}
+#tutor-panel #tutor-lesson{grid-column:1;grid-row:1;margin:0;min-width:0;font-size:12px;line-height:1.45;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#tutor-panel #tutor-context-label{grid-column:1;grid-row:2;font-size:10px;line-height:1.4;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#tutor-panel #tutor-context-details{grid-column:1 / -1;grid-row:3;margin:0;font-size:10px;line-height:1.4}
+#tutor-panel #tutor-context-details summary{width:max-content;max-width:100%}
+#tutor-panel #tutor-context-details[open] #tutor-context-description{position:absolute;z-index:6;top:100%;left:8px;right:8px;max-height:min(220px,35dvh);overflow:auto;margin:0;padding:12px;border:1px solid #cddcc6;border-radius:8px;background:#fff;box-shadow:0 8px 24px #244c3322;font-size:12px;line-height:1.7}
+#tutor-panel #tutor-context-picker-wrap{grid-column:1 / -1;margin:0;font-size:10px;line-height:1.4}
+#tutor-panel #tutor-context-picker{margin:2px 0 0;padding:3px 5px;font-size:10px}
+#tutor-panel .tutor-answer-tools{padding:3px 12px;gap:5px;min-height:28px;box-sizing:border-box;flex-wrap:nowrap}
+#tutor-panel .tutor-reader-tag{padding:2px 6px;font-size:10px;line-height:1.4;white-space:nowrap}
+#tutor-panel .tutor-messages{min-height:0;padding:10px 12px}
+#tutor-panel>.tutor-composer{position:relative;max-height:min(142px,31%);overflow:visible;min-height:0}
+#tutor-panel .tutor-form{padding:7px 10px;border-top:1px solid #dce6d4}
+#tutor-panel .tutor-error{position:absolute;z-index:5;bottom:100%;left:7px;right:7px;margin:0 0 4px;max-height:min(85px,17dvh);padding:7px 9px;box-shadow:0 4px 12px #6b2e1b12}
+#tutor-composer .tutor-input-label{display:block;position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);margin:0;padding:0;white-space:nowrap}
+#tutor-composer #tutor-input{height:42px;min-height:42px;max-height:min(84px,17dvh);padding:7px 9px;font-size:12px;line-height:1.5;resize:none}
+#tutor-composer .tutor-form-actions{gap:6px;margin-top:5px;min-width:0;flex-wrap:nowrap;min-height:26px}
+#tutor-composer #tutor-request-state{font-size:10px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
+#tutor-composer .tutor-form-actions .button,#tutor-composer #tutor-stop{padding:4px 8px;font-size:11px;line-height:1.5;flex:none}
+#tutor-composer .tutor-draft-tools{gap:4px 8px;margin-top:4px;font-size:10px;line-height:1.4}
+#tutor-composer .tutor-draft-menu{grid-column:1;grid-row:2;position:relative;margin:0;min-width:0;font-size:10px;color:#4f6c4b}
+#tutor-composer .tutor-draft-menu>summary{cursor:pointer;list-style:none;border:1px solid #ccdcc3;border-radius:5px;background:#f7faf3;padding:4px 6px;line-height:1.5;white-space:nowrap}
+#tutor-composer .tutor-draft-menu>summary::-webkit-details-marker{display:none}
+#tutor-composer .tutor-form-actions #tutor-draft-status{max-width:110px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:9px;color:#6d8067}
+#tutor-composer #tutor-form{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 7px;position:relative;align-items:center}
+#tutor-composer #tutor-input{grid-column:1 / -1;grid-row:1}
+#tutor-composer .tutor-form-actions{grid-column:2;grid-row:2;margin:0}
+#tutor-composer .tutor-draft-menu-content{position:absolute;bottom:calc(100% + 7px);left:0;z-index:8;width:160px;max-width:calc(100vw - 36px);max-height:min(180px,35dvh);overflow:auto;background:#fff;border:1px solid #cbdcc2;border-radius:7px;box-shadow:0 -4px 16px #23482e1c;padding:5px;box-sizing:border-box;white-space:normal}
+#tutor-composer .tutor-draft-menu-content .tutor-draft-tools{display:grid;gap:2px;margin:0}
+#tutor-composer .tutor-draft-menu-content button{text-align:left;padding:6px 8px;border-radius:4px;font-size:11px;line-height:1.5;text-decoration:none}
+#tutor-composer .tutor-draft-menu-content button:hover:not(:disabled){background:#edf4e7}
+#tutor-composer #tutor-request-state{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;margin:0;padding:0}
+#tutor-composer:is(.is-pending,.is-unconfigured) #tutor-request-state{position:static;width:auto;height:auto;clip-path:none;flex:1;white-space:nowrap}
+#tutor-composer .tutor-form-actions #tutor-draft-status{margin-right:auto}
+#tutor-composer:is(.is-pending,.is-unconfigured) #tutor-draft-status{display:none}
+@media(max-height:520px){
+ #tutor-panel .tutor-heading{min-height:30px;padding:4px 10px}
+ #tutor-panel .tutor-context{padding:4px 10px;gap:2px 6px}
+ #tutor-panel .tutor-answer-tools{min-height:25px;padding:2px 10px}
+ #tutor-panel>.tutor-composer{max-height:120px}
+ #tutor-panel .tutor-form{padding:5px 8px}
+ #tutor-composer #tutor-input{min-height:36px;height:36px;max-height:64px;padding:6px 8px}
+}
+@media(max-width:700px){
+ #tutor-panel{grid-template-rows:30px auto 25px minmax(0,1fr) auto}
+ #tutor-panel .tutor-heading{min-height:30px;padding:3px 10px}
+ #tutor-panel .tutor-context{padding:3px 10px;gap:1px 6px}
+ #tutor-panel #tutor-context-details{display:none}
+ #tutor-panel #tutor-context-label{display:none}
+ #tutor-panel .tutor-context-top{grid-row:1;flex-direction:row;align-items:center}
+ #tutor-panel .tutor-context-top .tutor-link{display:block}
+ #tutor-panel>.tutor-composer{max-height:96px}
+ #tutor-panel .tutor-form{padding:5px 8px}
+ #tutor-panel .tutor-messages{padding:6px 10px}
+ #tutor-composer #tutor-input{height:36px;min-height:36px;max-height:60px;padding:5px 8px}
+ #tutor-composer .tutor-form-actions{margin-top:4px;gap:5px}
+}

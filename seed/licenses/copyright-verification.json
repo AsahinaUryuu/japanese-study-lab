@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-11-13T17:26:19.347221+00:00",
+  "officialCatalogUrl": "https://www.aozora.gr.jp/index_pages/list_person_all_extended_utf8.zip",
+  "catalogEntry": "list_person_all_extended_utf8.csv",
+  "catalogZipSha256": "a615fa6ddb6ef3e0ad598337f5d08f1570c3d2aa51cc5d43a62998ca904905be",
+  "officialPolicyUrl": "https://www.aozora.gr.jp/guide/kijyunn.html",
+  "policySha256": "1cc5417bf036b96a8fdb7201cd9ab9c262f849e27926867e4d26cc6072c81da6",
+  "verificationNote": "The official catalog CSV, rather than the HTML book card, contains explicit copyright flags. Both work and author flags are nashi for all six works. Aozora policy permits download, redistribution, and format/ruby conversion for expired-copyright works. Bibliographic metadata is CC BY 4.0.",
+  "works": [
+    {
+      "作品ID": "057228",
+      "作品名": "怪人二十面相",
+      "作品著作権フラグ": "なし",
+      "人物著作権フラグ": "なし",
+      "姓": "江戸川",
+      "名": "乱歩",
+      "図書カードURL": "https://www.aozora.gr.jp/cards/001779/card57228.html",
+      "XHTML/HTMLファイルURL": "https://www.aozora.gr.jp/cards/001779/files/57228_58735.html"
+    },
+    {
+      "作品ID": "056669",
+      "作品名": "少年探偵団",
+      "作品著作権フラグ": "なし",
+      "人物著作権フラグ": "なし",
+      "姓": "江戸川",
+      "名": "乱歩",
+      "図書カードURL": "https://www.aozora.gr.jp/cards/001779/card56669.html",
+      "XHTML/HTMLファイルURL": "https://www.aozora.gr.jp/cards/001779/files/56669_58756.html"
+    },
+    {
+      "作品ID": "051005",
+      "作品名": "赤いろうそくと人魚",
+      "作品著作権フラグ": "なし",
+      "人物著作権フラグ": "なし",
+      "姓": "小川",
+      "名": "未明",
+      "図書カードURL": "https://www.aozora.gr.jp/cards/001475/card51005.html",
+      "XHTML/HTMLファイルURL": "https://www.aozora.gr.jp/cards/001475/files/51005_46224.html"
+    },
+    {
+      "作品ID": "000462",
+      "作品名": "風の又三郎",
+      "作品著作権フラグ": "なし",
+      "人物著作権フラグ": "なし",
+      "姓": "宮沢",
+      "名": "賢治",
+      "図書カードURL": "https://www.aozora.gr.jp/cards/000081/card462.html",
+      "XHTML/HTMLファイルURL": "https://www.aozora.gr.jp/cards/000081/files/462_15405.html"
+    },
+    {
+      "作品ID": "001924",
+      "作品名": "グスコーブドリの伝記",
+      "作品著作権フラグ": "なし",
+      "人物著作権フラグ": "なし",
+      "姓": "宮沢",
+      "名": "賢治",
+      "図書カードURL": "https://www.aozora.gr.jp/cards/000081/card1924.html",
+      "XHTML/HTMLファイルURL": "https://www.aozora.gr.jp/cards/000081/files/1924_14254.html"
+    },
+    {
+      "作品ID": "000470",
+      "作品名": "セロ弾きのゴーシュ",
+      "作品著作権フラグ": "なし",
+      "人物著作権フラグ": "なし",
+      "姓": "宮沢",
+      "名": "賢治",
+      "図書カードURL": "https://www.aozora.gr.jp/cards/000081/card470.html",
+      "XHTML/HTMLファイルURL": "https://www.aozora.gr.jp/cards/000081/files/470_15407.html"
+    }
+  ]
+}

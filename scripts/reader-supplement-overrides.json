@@ -1,0 +1,217 @@
+[
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "巨",
+    "reading": "おお",
+    "after": "き",
+    "reason": "原著s-ginga-01-01第12段等已以源ruby标巨=おお，同书巨き的重复旧字用法；保留原字。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "燈",
+    "reading": "とう",
+    "before": "電",
+    "reason": "電燈、豆電燈中的旧字燈读とう；若原处明确ruby如あかり，则原版ruby优先，不覆盖。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "燈",
+    "reading": "とう",
+    "before": "街",
+    "reason": "街燈的旧字写法读がいとう，此规则仅补燈部分。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "燈",
+    "reading": "とう",
+    "before": "ネオン",
+    "reason": "ネオン燈读ネオンとう，保持原著旧字，不替换为灯。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "喰",
+    "reading": "た",
+    "after": "べ",
+    "reason": "原著s-ginga-08-01第29段等源ruby明确喰=た；同书喰べる/喰べた沿用该读法。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "蝎",
+    "reading": "さそり",
+    "reason": "原著s-ginga-04-01第12段与s-ginga-09-06第33段均有蝎=さそり源ruby，后文亦直接写さそり。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "遁",
+    "reading": "に",
+    "after": "げ",
+    "reason": "原著s-ginga-04-02第2段、s-ginga-09-07第1段源ruby明确遁=に，补同段第二处遁げ。"
+  },
+  {
+    "recordPrefix": "story-s-ginga-",
+    "surface": "斯",
+    "reading": "こ",
+    "after": "う",
+    "reason": "原著多处源ruby明确斯=こ，斯う即こう；不改成现代字形。"
+  },
+  {
+    "recordId": "story-s-ginga-09-01",
+    "paragraph": 10,
+    "surface": "々",
+    "reading": "どき",
+    "before": "時",
+    "reason": "该处原版ruby只覆盖時=とき，保留这一原注，补其后々=どき，使時々整体读ときどき。"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "構はない",
+    "reading": "かまわない",
+    "reason": "旧假名构成的构わない，整词补现代读音。",
+    "lemma": "構う",
+    "lemmaReading": "かまう",
+    "meaning": "在意、介意；这里表示不管是什么都可以"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "二疋",
+    "reading": "にひき",
+    "reason": "疋为匹的旧表记，二匹读にひき。",
+    "meaning": "两只；疋是匹的旧表记"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "喰",
+    "reading": "た",
+    "reason": "喰べる在本句为食べる的异体写法。",
+    "after": "べ"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "思つた",
+    "reading": "おもった",
+    "reason": "旧假名大写つ对应现代促音，思った。",
+    "lemma": "思う",
+    "lemmaReading": "おもう",
+    "meaning": "想、认为"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "添へて",
+    "reading": "そえて",
+    "reason": "旧假名添へる对应现代添える。",
+    "lemma": "添える",
+    "lemmaReading": "そえる",
+    "meaning": "附上、放在旁边"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "払ふ",
+    "reading": "はらう",
+    "reason": "旧假名払ふ对应现代払う。",
+    "lemma": "払う",
+    "lemmaReading": "はらう",
+    "meaning": "支付"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "斯",
+    "reading": "こ",
+    "reason": "斯う即こう；有原版注音的位置保持源注音。",
+    "after": "う"
+  },
+  {
+    "recordPrefix": "story-s-chumon-",
+    "surface": "吸ひ",
+    "reading": "すい",
+    "reason": "旧假名吸ひ对应现代吸い。",
+    "lemma": "吸う",
+    "lemmaReading": "すう",
+    "meaning": "吸入、吸进"
+  },
+  {
+    "recordPrefix": "story-s-kumo-",
+    "surface": "犍陀多",
+    "reading": "かんだた",
+    "reason": "本篇首次源ruby为かんだた。",
+    "meaning": "犍陀多，《蜘蛛之丝》中的人物"
+  },
+  {
+    "recordPrefix": "story-s-kumo-",
+    "surface": "泣声",
+    "reading": "なきごえ",
+    "reason": "泣声为泣き声的送假名省略形式。",
+    "meaning": "哭声"
+  },
+  {
+    "recordPrefix": "story-s-toshishun-",
+    "surface": "睨",
+    "reading": "にら",
+    "reason": "同篇源ruby睨=にら。",
+    "after": "合"
+  },
+  {
+    "recordPrefix": "story-s-toshishun-",
+    "surface": "戟",
+    "reading": "ほこ",
+    "reason": "同篇首次源ruby戟=ほこ。",
+    "meaning": "戟；古代长柄兵器"
+  },
+  {
+    "recordPrefix": "story-s-toshishun-",
+    "surface": "閻魔",
+    "reading": "えんま",
+    "reason": "同篇首次源ruby閻魔=えんま。",
+    "meaning": "阎魔；传说中审判亡者的王"
+  },
+  {
+    "recordPrefix": "story-s-yume-",
+    "surface": "鑿",
+    "reading": "のみ",
+    "reason": "第六夜源ruby鑿=のみ。",
+    "meaning": "凿子"
+  },
+  {
+    "recordPrefix": "story-s-yume-",
+    "surface": "応",
+    "reading": "おう",
+    "reason": "厭でも応でも，表示不论愿不愿意。",
+    "before": "厭でも",
+    "after": "でも"
+  },
+  {
+    "recordPrefix": "story-s-yume-",
+    "surface": "螫",
+    "reading": "さ",
+    "reason": "源ruby螫=さ，螫される为被蜂等蜇。",
+    "after": "され"
+  },
+  {
+    "recordPrefix": "story-s-yume-",
+    "surface": "鋏",
+    "reading": "はさみ",
+    "reason": "第八夜源ruby鋏=はさみ。",
+    "meaning": "剪刀"
+  },
+  {
+    "recordPrefix": "story-s-yume-",
+    "surface": "往",
+    "reading": "い",
+    "reason": "往ったり来たり，即来回走动。",
+    "after": "ったり来たり"
+  },
+  {
+    "recordId": "story-s-kumo-01-01",
+    "paragraph": 0,
+    "surface": "玉",
+    "reading": "たま",
+    "after": "のよう",
+    "reason": "独立名词玉在玉のように中不发生连浊。"
+  },
+  {
+    "recordPrefix": "story-s-kumo-",
+    "surface": "御歩き",
+    "reading": "おあるき",
+    "reason": "敬语お歩きになる。",
+    "meaning": "走路、散步；这里是歩く的尊敬表达"
+  }
+]

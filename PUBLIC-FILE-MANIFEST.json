@@ -1,0 +1,1017 @@
+[
+  {
+    "path": ".gitignore",
+    "sha256": "b853d601dcbbd636db3b4d39aef5da30fbb321b3c84049cc0cecf5b459126813",
+    "bytes": 403
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "ea6a0acd9f32479f047649e3b7517a618c24ca179316316ef1c7c1f6f579c546",
+    "bytes": 1079
+  },
+  {
+    "path": "NOTICE.md",
+    "sha256": "170e93ce36bcf3c5cd753ddbb08e26810bc8c70941811ffe72b223e176159b71",
+    "bytes": 1997
+  },
+  {
+    "path": "PUBLIC-RELEASE.json",
+    "sha256": "5f770fdcbc3a04ee456b42df1c5417a3c98c19c6cbb99af6f93ab7d0d5b9f28e",
+    "bytes": 130
+  },
+  {
+    "path": "README.md",
+    "sha256": "adcfb8073083a9db8569241952a0d3c32f20cadfb12527c6d444adb0a9ec2576",
+    "bytes": 2877
+  },
+  {
+    "path": "lib/coach.mjs",
+    "sha256": "a584ff9e1b609b033244f3404a40cb0fb0b40cedbe266131405765a221d49d06",
+    "bytes": 7117
+  },
+  {
+    "path": "lib/config.mjs",
+    "sha256": "ed19a1b2630dffa7613876789a72155b8ef2c65d9acc40609e6b17cfd766dc12",
+    "bytes": 2673
+  },
+  {
+    "path": "lib/local-config.mjs",
+    "sha256": "fc723f38b8512ef96862c483fcf63dd7565e26a62e090b5f2a3da1de3c229c71",
+    "bytes": 4319
+  },
+  {
+    "path": "lib/model-response.mjs",
+    "sha256": "90064917c19da3feff8f92a415466972dc38a9ee409a67428f8ac290dd733826",
+    "bytes": 3664
+  },
+  {
+    "path": "lib/models.mjs",
+    "sha256": "71bdcdc3aee7fec0dc77d1cd1736b3d54100cedac04bc1e871469a3b55555bf8",
+    "bytes": 5064
+  },
+  {
+    "path": "lib/novel-import.mjs",
+    "sha256": "8f20f92463b159b2376cd1a70b4353dfa3dfc6e59cf79ffe57e778e8ffeba112",
+    "bytes": 17026
+  },
+  {
+    "path": "lib/novel-store.mjs",
+    "sha256": "5c17c1594d25335670b637c7a9d6214568579f99f6477f585e84356cf14b4f26",
+    "bytes": 3594
+  },
+  {
+    "path": "lib/progress.mjs",
+    "sha256": "0445be469faa40b92e4403e86248d6073b7722f777cc17f208fab00a93beb423",
+    "bytes": 3072
+  },
+  {
+    "path": "lib/proxy.mjs",
+    "sha256": "b3363032adad7f05275282cd68081db18f888785ad79526a06c0af97e71529f7",
+    "bytes": 4043
+  },
+  {
+    "path": "lib/remote-access.mjs",
+    "sha256": "3ba9b0955be326bacab80ef277b6ae09848972c0aec6c5dfde825c2085fea55a",
+    "bytes": 4314
+  },
+  {
+    "path": "lib/response.mjs",
+    "sha256": "3f3e8aec28f78e24d6545632b37f8dd28c38c34720544e9bb9ecfba1913adb0b",
+    "bytes": 781
+  },
+  {
+    "path": "lib/seed-novels.mjs",
+    "sha256": "8f008d459e8104853382ed449c6ad37330ae3249cc69fc15efbcff1b89157a97",
+    "bytes": 708
+  },
+  {
+    "path": "package.json",
+    "sha256": "0ef4b723d4b9a5796f1b04bd3356baee6ab19d8cd75757225f4bc73a2b3bc0a3",
+    "bytes": 313
+  },
+  {
+    "path": "public/app.js",
+    "sha256": "76d02f26d87f31e672ec400da0153d0db8adc2e369724ebc25f858745a71563d",
+    "bytes": 20988
+  },
+  {
+    "path": "public/curriculum-core.js",
+    "sha256": "c2121b748988f44f4ad2e44f83d7e99ca7d9a07eea5b0f4aaf0d2163b78c1928",
+    "bytes": 4178
+  },
+  {
+    "path": "public/data/business.json",
+    "sha256": "5d5a54d592cc9a660584bc52741d998968f6e5a3df199f89e5114b6a244d0c7d",
+    "bytes": 380467
+  },
+  {
+    "path": "public/data/foundation.json",
+    "sha256": "4f3209c5fa515b60238fc83c79ce955693ba9817273109b47a7764147fcc53f7",
+    "bytes": 100887
+  },
+  {
+    "path": "public/data/grammar-n1.json",
+    "sha256": "418adb05040fd459b88f6415ea6b76a29dfc472ba939e3a9f7862f8c8126dab8",
+    "bytes": 487793
+  },
+  {
+    "path": "public/data/grammar-n2.json",
+    "sha256": "af47b2699fca15c350fa3ecc71a5775d3aa320e833cce070e3b4dedc238096b4",
+    "bytes": 464007
+  },
+  {
+    "path": "public/data/grammar-n3.json",
+    "sha256": "a37cc914287db05cdba8680af118d35b52e1d5516ff6b85a0ab07142efa117b4",
+    "bytes": 458060
+  },
+  {
+    "path": "public/data/grammar-n4.json",
+    "sha256": "9b576c72b45a90b3615ea073e4c158588ad6b9d13b88268982152498f14b36b5",
+    "bytes": 488171
+  },
+  {
+    "path": "public/data/grammar-n5.json",
+    "sha256": "d66f3391c208cc4c1cad2a0ae06dd276601da5e077dbaf0418b0ce3d11a28076",
+    "bytes": 437630
+  },
+  {
+    "path": "public/data/it.json",
+    "sha256": "941b42f7c3d5e7b40893f7d26a8d1b29297450d769bd78a4168d0e7a21fa3681",
+    "bytes": 197145
+  },
+  {
+    "path": "public/data/kanji.json",
+    "sha256": "e2667901dc5eb7035f6f22df454b84defa1aecc4258e59218c838d2ef62322fa",
+    "bytes": 778400
+  },
+  {
+    "path": "public/data/licenses/aozora-chumon-NOTICE.md",
+    "sha256": "e94307b10bd571b600bef3cb9238fdbe1d02666e0c62ff21527721850b7185ad",
+    "bytes": 1504
+  },
+  {
+    "path": "public/data/licenses/aozora-donguri-NOTICE.md",
+    "sha256": "9a5608f774e773989f21601954a7f93bb9c84b6de8d00ff6fabf9d425900a745",
+    "bytes": 1484
+  },
+  {
+    "path": "public/data/licenses/aozora-ginga-NOTICE.md",
+    "sha256": "02099b599870eb7ec19452440cca686154aa5382ccda6222778a50266e0a66d1",
+    "bytes": 1670
+  },
+  {
+    "path": "public/data/licenses/aozora-kumo-NOTICE.md",
+    "sha256": "c48578648a5c2bcde42df9513dbc2b2154eb08a4cf101bb868a981afc74873de",
+    "bytes": 1496
+  },
+  {
+    "path": "public/data/licenses/aozora-toshishun-NOTICE.md",
+    "sha256": "84d4c0446b5232bb417a15aaa1e37f01e89765e3d36c7f8422c842af92715b6a",
+    "bytes": 1416
+  },
+  {
+    "path": "public/data/licenses/aozora-yume-NOTICE.md",
+    "sha256": "e3b15e832bdf929a7fbccb0dfaee310f3342c0f66dfaea6052da8938c2e6e633",
+    "bytes": 1622
+  },
+  {
+    "path": "public/data/licenses/edrdg-license.html",
+    "sha256": "52f60ea9ca68170a2f0663d7dba381ebf1bd57c17a3347dfe21153865c156692",
+    "bytes": 13587
+  },
+  {
+    "path": "public/data/licenses/kuromoji-LICENSE-2.0.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "path": "public/data/licenses/kuromoji-ipadic-NOTICE.md",
+    "sha256": "fab84e2471dada5afa7ea4226b629f3fda414f9b50b62b4f832f8b57fe9addd7",
+    "bytes": 4263
+  },
+  {
+    "path": "public/data/licenses/tomoshi-LICENSE.md",
+    "sha256": "b81d977bf8345c24d69147bc00af5ff1cf05f0ddd5672abbbdebf7e25aa4a54f",
+    "bytes": 1584
+  },
+  {
+    "path": "public/data/licenses/tomoshi-NOTICE.md",
+    "sha256": "84f51d87d07c7737137fc5fd04ad09f3e0c0601e1aceb76a755aafc5a449a727",
+    "bytes": 1785
+  },
+  {
+    "path": "public/data/licenses/waller-license.txt",
+    "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+    "bytes": 20131
+  },
+  {
+    "path": "public/data/licenses/waller-readme.md",
+    "sha256": "4efd40eecf18c01a61ca54d4c1731daa0756a384b0f4ade551b43914a087869a",
+    "bytes": 1596
+  },
+  {
+    "path": "public/data/listening.json",
+    "sha256": "c7b0c6c901e25db917eac8675fe809a025c8d3b278783fbc53c5a8fd76b66565",
+    "bytes": 204850
+  },
+  {
+    "path": "public/data/novel-links.json",
+    "sha256": "8a393ab2d1d9498bb5e12da7d7b1d63e06543d9d68116694f48c507a73caee68",
+    "bytes": 1809
+  },
+  {
+    "path": "public/data/online-resources.json",
+    "sha256": "5fefb9370488b7f247fce3bfb3da6058cd2d3056c11cc5ffb963ceb014d38247",
+    "bytes": 83900
+  },
+  {
+    "path": "public/data/reader-meta.json",
+    "sha256": "2115d978ac82e33ffd73720e75b9533eb883bd5627c9ab7fc7868d9898507779",
+    "bytes": 2970
+  },
+  {
+    "path": "public/data/reader-supplement-meta.json",
+    "sha256": "88ad11a840e9b051a3fa18f598b0ff687af4544e828770df5b4bb3c9716aa2e8",
+    "bytes": 3258
+  },
+  {
+    "path": "public/data/reader-supplement-uncovered.json",
+    "sha256": "a692ea0a7369a9653747ed9476b41e22936a3138d724498eb85f11648926b23d",
+    "bytes": 1409261
+  },
+  {
+    "path": "public/data/reader-supplement.json",
+    "sha256": "9b26ee09ad0fbf6d1be6ebad874aa3a5d238afe9b3b00a35e8e1de2bfca6d8b0",
+    "bytes": 8520916
+  },
+  {
+    "path": "public/data/reader-uncovered.json",
+    "sha256": "88c20d10720f3985dc6838342a5d06bd31375f73687dd4c807fe040f9e929641",
+    "bytes": 20378
+  },
+  {
+    "path": "public/data/reader.json",
+    "sha256": "112dd9ec6a1a94ddbc36a8480cc1b54a2277a0f8ef9be730bb32df73e12b6abf",
+    "bytes": 2421152
+  },
+  {
+    "path": "public/data/reading.json",
+    "sha256": "d8eec329f5d6272f17ed235b6e48d1a8a04e407851708d502917d440f68d4f04",
+    "bytes": 226434
+  },
+  {
+    "path": "public/data/resources.json",
+    "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "bytes": 3
+  },
+  {
+    "path": "public/data/stories-advanced.json",
+    "sha256": "e7fd169e7dc9fba3892977a2dac2736895e2f469da6d724a40ff936b32e0e09e",
+    "bytes": 120109
+  },
+  {
+    "path": "public/data/stories-classics.json",
+    "sha256": "c41c4e486b63b6a3bfc023c9c829d3f8fe23f60118f34161e54a25b15696813d",
+    "bytes": 391068
+  },
+  {
+    "path": "public/data/stories-intro.json",
+    "sha256": "20818d3713b84111595b0c5658795b8353d77ec495a4f0e861e91dbae47ccde4",
+    "bytes": 83899
+  },
+  {
+    "path": "public/data/vocabulary-meta.json",
+    "sha256": "52f1554d190d40d7cbd01fd990ec449a8b1dbb6849b49ef49b7f5d72218cc219",
+    "bytes": 3741
+  },
+  {
+    "path": "public/data/vocabulary.json",
+    "sha256": "803c8b8c38fd8b605c7bb208c2c86a4337ad15c43b6fab3206583a575a22d96f",
+    "bytes": 6954788
+  },
+  {
+    "path": "public/icon.svg",
+    "sha256": "b238b70c9305eda6c134af3067230d087a2c0f275833cddf6580ab359f60b102",
+    "bytes": 221
+  },
+  {
+    "path": "public/index.html",
+    "sha256": "94366485b22505436d937290bed17fdfda9a4dc01e5bdd8b18bb29eca3afc036",
+    "bytes": 5383
+  },
+  {
+    "path": "public/learning-core.js",
+    "sha256": "d04ef0ba1b46f37da0964c003830215ae448e0828068217854732d880bb4ed02",
+    "bytes": 9232
+  },
+  {
+    "path": "public/local-config.js",
+    "sha256": "8447c9ac5e6f12aa9d216aa001660faf92450f06b3b5cb9937b122c40127d037",
+    "bytes": 1227
+  },
+  {
+    "path": "public/media.js",
+    "sha256": "b9889a2d05d3ccb3cda76c9a0b73ac9bb85bbc0696383038d24d2d22d1a44d83",
+    "bytes": 5231
+  },
+  {
+    "path": "public/novel-annotation-core.js",
+    "sha256": "2dad47593f403d1abcc1384368051a2a0f5baaddbe3f3d55a9915782dea13c05",
+    "bytes": 6276
+  },
+  {
+    "path": "public/novel-annotator-worker.js",
+    "sha256": "c1c24af36bfb5ecf76bcef44e9bdf2231d58d3659179472015f418df312bacc4",
+    "bytes": 2669
+  },
+  {
+    "path": "public/novel-annotator.js",
+    "sha256": "07a57a0c2f11e62d47f529ef580708dcc07e1107821340b9bbf5ba9efa5ace3a",
+    "bytes": 2856
+  },
+  {
+    "path": "public/novel-progress.js",
+    "sha256": "40b05ce31ea40ad980f8a8710d72793892af46a4ab86125561ef3dfe908bbb06",
+    "bytes": 1087
+  },
+  {
+    "path": "public/reader-core.js",
+    "sha256": "afa6d9aff06da235eb034fccfd84e6862ca89f5aeba8bd5c8a19675bb920ec57",
+    "bytes": 3933
+  },
+  {
+    "path": "public/reader-panel.js",
+    "sha256": "1cbe5341573493ded96dc7cfedb17b172781d1bc78bd49c0b61512bc41cd6c68",
+    "bytes": 3727
+  },
+  {
+    "path": "public/reader-text.js",
+    "sha256": "83bf1a0506b8f45e419af17c0805c8121f095dfae38fbcf370ada1268bc191a9",
+    "bytes": 1128
+  },
+  {
+    "path": "public/review-context.js",
+    "sha256": "c17992a9a042463ef8f63026899fd33bb5b9039999ae8e3a19b879759e4477b6",
+    "bytes": 1169
+  },
+  {
+    "path": "public/section-assignment.js",
+    "sha256": "972240431966ec415bb2a45e943a71766fe9013725b619677552cad4c2726754",
+    "bytes": 3387
+  },
+  {
+    "path": "public/store.js",
+    "sha256": "ac5cc64c66f167f73b5721461c37b76868a3604faaf22a49a6eb51e98e50434a",
+    "bytes": 7397
+  },
+  {
+    "path": "public/stories-core.js",
+    "sha256": "5c0e45f81dc10250f38b8464a69bb57255b1735d298a7d26440e35a1ca58cb81",
+    "bytes": 2108
+  },
+  {
+    "path": "public/style.css",
+    "sha256": "813d5651bb13fd1b46cfe0382e34338b28d3fef586ff88fdca3e41cbc86d5868",
+    "bytes": 36665
+  },
+  {
+    "path": "public/tablet-ui.js",
+    "sha256": "1fb9fae1477834a879367651c1ef9280c810897f2ed18f4ae6183079ba2b70e8",
+    "bytes": 7832
+  },
+  {
+    "path": "public/tablet.css",
+    "sha256": "4df583e45694215a79988250c5ed548590c03218039f600c0a18ee92bd85c519",
+    "bytes": 12159
+  },
+  {
+    "path": "public/tutor-context.js",
+    "sha256": "8f6bcdc373f59eae7990e107624725381591f667858905d84a79c1acc81daa7b",
+    "bytes": 427
+  },
+  {
+    "path": "public/tutor-input-tools.js",
+    "sha256": "011e82a38fe33ce470b90ad63aa22824ea418684c1cb367e8f5d57b42d2c6f5e",
+    "bytes": 2007
+  },
+  {
+    "path": "public/tutor-markdown.css",
+    "sha256": "77d2fa7e480223444e2bece53a39755a40665fd95c69c1cdeb8164308af44153",
+    "bytes": 4965
+  },
+  {
+    "path": "public/tutor-markdown.js",
+    "sha256": "d22aa6e5a5fcfae0567f35404cb84f34fb02c4a7c0b0bdcd71917e95e7493059",
+    "bytes": 7823
+  },
+  {
+    "path": "public/tutor-panel.css",
+    "sha256": "e209b862fa98641b6a671a497f6211c4610b665ced6cc584c07fdd9e04706d25",
+    "bytes": 17067
+  },
+  {
+    "path": "public/tutor-panel.js",
+    "sha256": "5a3509c7aa978f760a247fd8cefdccaba8fccb35847ef434f91cc4a781829026",
+    "bytes": 16444
+  },
+  {
+    "path": "public/tutor-reader-tools.js",
+    "sha256": "7c2ff5eb8ddf595f212df79040c52b5e51df97db5035e9cd53224a162835c9d8",
+    "bytes": 13369
+  },
+  {
+    "path": "public/tutor-reader.css",
+    "sha256": "5a4779a52089cffde1ee1d59a59ab6c993a3027bb935beb0d2803f09f87876cf",
+    "bytes": 18829
+  },
+  {
+    "path": "public/tutor-reader.js",
+    "sha256": "f2828877d2a2363fdc168d983578a007bbf662c05a2609c576f7c66f2cd7c3cb",
+    "bytes": 9653
+  },
+  {
+    "path": "public/tutor-resize.js",
+    "sha256": "2c0b4b76d1af4664f9c78c9c74cb8bdbeaab56d50a6e34825e4903441e22ef59",
+    "bytes": 6548
+  },
+  {
+    "path": "public/tutor-shortcuts.js",
+    "sha256": "18bace27a4cbb0db57d853b4d5b8a1d7e71e7147e488e2891b546480593c682c",
+    "bytes": 1542
+  },
+  {
+    "path": "public/ui.js",
+    "sha256": "be94a669400d8d7adabb6924ad6595b172d061ac1e24fb4cdf83f9eba7a8d467",
+    "bytes": 2492
+  },
+  {
+    "path": "public/vendor/kuromoji/LICENSE-2.0.txt",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "path": "public/vendor/kuromoji/NOTICE.md",
+    "sha256": "fab84e2471dada5afa7ea4226b629f3fda414f9b50b62b4f832f8b57fe9addd7",
+    "bytes": 4263
+  },
+  {
+    "path": "public/vendor/kuromoji/async-LICENSE.txt",
+    "sha256": "d9fed24f132985934fca621c4dc1dfb53e03377a24d0568d424383d7eaa9c0ac",
+    "bytes": 1063
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/base.dat.gz",
+    "sha256": "0803327762e1c93ca731e4319ab8343340f2806bb84941207782cde9d2d5a8eb",
+    "bytes": 3956825
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/cc.dat.gz",
+    "sha256": "02b7631be0d4de3a1a75cd9f9cc51536e4f94c9e6b389b813e06ba0f6e7de765",
+    "bytes": 1692067
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/check.dat.gz",
+    "sha256": "193ae0035fff6fe812b58d9ee730e7a7d7ee601d918481ce51075c58114f6cc9",
+    "bytes": 3111633
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/tid.dat.gz",
+    "sha256": "d43d831cb6fb0f0a411739cd287a6d5e998e121a8daca614df14a81a0dcac586",
+    "bytes": 1605820
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/tid_map.dat.gz",
+    "sha256": "33efd5ffd87a70f669add093fa39dee44341d58f940844ef107c8fd98bb795b2",
+    "bytes": 1485576
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/tid_pos.dat.gz",
+    "sha256": "60dbfc99a6ab993f30c5dab648bec6ad7f9aaefa5c14e1843837d95e509f8895",
+    "bytes": 5916009
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/unk.dat.gz",
+    "sha256": "f7f991cdeb9bfd3e9c0e4577cc50ee0815a11c508cccd444a9d3ab3c81521100",
+    "bytes": 10512
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/unk_char.dat.gz",
+    "sha256": "9a8e86fd9aff32d323fbb59f5a7006f05927a11f8173c90712cc56293aeb3225",
+    "bytes": 306
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/unk_compat.dat.gz",
+    "sha256": "50f60aa29bc2e86c2903ab8c825bb6fa604d2b294d96941c1d3924259791899d",
+    "bytes": 338
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/unk_invoke.dat.gz",
+    "sha256": "6b210889548457c3006913afd12c8b525562255f2709e404604be9614a25e94c",
+    "bytes": 1140
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/unk_map.dat.gz",
+    "sha256": "6df12460e5477230bb6fd9641def918b699fc0a8868016b6c9f794488630509b",
+    "bytes": 1190
+  },
+  {
+    "path": "public/vendor/kuromoji/dict/unk_pos.dat.gz",
+    "sha256": "5b183a29f281acc7e0542beca47b83f7985047c0a2d27e78a66f32276be5ad11",
+    "bytes": 10540
+  },
+  {
+    "path": "public/vendor/kuromoji/doublearray-LICENSE.txt",
+    "sha256": "3f16fbaaaf98d1ba9ad570a1b79799d4932198324b382aa4cad1270fd09f02e3",
+    "bytes": 1079
+  },
+  {
+    "path": "public/vendor/kuromoji/kuromoji.js",
+    "sha256": "ab0ac10f1c4a9b5e246e63e57b04ba14d3a6148cd7e8d62cb97a960d4f85a3e6",
+    "bytes": 307967
+  },
+  {
+    "path": "public/vendor/kuromoji/zlibjs-LICENSE.txt",
+    "sha256": "131afe3f7bdce1698beb292fb8de1a968de01bce876122a60ef5db230471c866",
+    "bytes": 1222
+  },
+  {
+    "path": "public/vendor/tutor-markdown-LICENSES.txt",
+    "sha256": "feb5a9dec0c9279266dc7c77830c6fb07c2bf9f208035eb92352e8935670cd51",
+    "bytes": 37947
+  },
+  {
+    "path": "public/vendor/tutor-markdown-VERSIONS.json",
+    "sha256": "a0dab8cfc209fdeb6a00c2b0bd7a2773ea5b8e862f9fb558a3f1459c6c238b65",
+    "bytes": 769
+  },
+  {
+    "path": "public/vendor/tutor-markdown.js",
+    "sha256": "b59d9591e0d3c6492a3c9b9f470670de51797318362dd8bea6bcf2272781294a",
+    "bytes": 196491
+  },
+  {
+    "path": "public/views/curriculum.js",
+    "sha256": "b3fbcb3ac760891c87879071a1acf74c34607121cea56bc6ca79214154b3da09",
+    "bytes": 10032
+  },
+  {
+    "path": "public/views/lessons.js",
+    "sha256": "19339672091374407570a7ba43a6d73956a36240b5c23f1b1de1580709bd309b",
+    "bytes": 22009
+  },
+  {
+    "path": "public/views/library.js",
+    "sha256": "d3de30ee99dcb9eb6bcb4208635d8caa3315a8a074ca2c3f2dec816d0eddfc5d",
+    "bytes": 12495
+  },
+  {
+    "path": "public/views/novels.js",
+    "sha256": "6227e02e13b5672f00cc0658036ba4a188bde6ef0e541e62c1f28f66af466de9",
+    "bytes": 23591
+  },
+  {
+    "path": "public/views/practice.js",
+    "sha256": "eff6646df231bbbfde472abc434fee1ed18014d5c7434b84b8684d8174255caf",
+    "bytes": 36649
+  },
+  {
+    "path": "public/views/stories.js",
+    "sha256": "0ae1ba10023048e8443129f5aae7f00f37aa85df4b81a101b15d7064b1355ef9",
+    "bytes": 16899
+  },
+  {
+    "path": "public/views/textbook.js",
+    "sha256": "161d895045490cf9447b47242449ca133ea32eda8247cf63bbdfb2fcc72e47d1",
+    "bytes": 4066
+  },
+  {
+    "path": "scripts/READER-BUILD.md",
+    "sha256": "162fbf100b285c01f34234f1980a94f4989e6be82676389a3f7fce79eaa2a3d6",
+    "bytes": 5650
+  },
+  {
+    "path": "scripts/build-business.py",
+    "sha256": "f18413fe268700715922eb3426674dfbe03562f043e0e85850c391129f65707a",
+    "bytes": 96264
+  },
+  {
+    "path": "scripts/build-grammar-answer-variants.json",
+    "sha256": "c36c0af43b0fb339c85b3576d5a6dc8fad9bd4fd705329292f396dbab089d617",
+    "bytes": 3082
+  },
+  {
+    "path": "scripts/build-grammar-enrichment.json",
+    "sha256": "534cb09bd7183c7e56868cac7e2d7762866b93879ac65c6ab1e19b78465edf3a",
+    "bytes": 28172
+  },
+  {
+    "path": "scripts/build-grammar-n1-spoken.json",
+    "sha256": "53bc39035fa72d4f28c71dfd6f884850f3cc5f37c205ded2a6d0c802be889af0",
+    "bytes": 12776
+  },
+  {
+    "path": "scripts/build-grammar-n1.tsv",
+    "sha256": "936ee722d1ce67e0d1162888a9e284a82471695799e424e4f8a615f290937fc5",
+    "bytes": 28773
+  },
+  {
+    "path": "scripts/build-grammar-n2.tsv",
+    "sha256": "6ce67bf64f74674f3b12ae4dc0003a1d86024e3f411527eac350ad025b0d7907",
+    "bytes": 27872
+  },
+  {
+    "path": "scripts/build-grammar-n3.tsv",
+    "sha256": "99a579d3c6346324ef215afcb2744f3ac55f434933a58b4fa5c760f86582666c",
+    "bytes": 27072
+  },
+  {
+    "path": "scripts/build-grammar-n4.tsv",
+    "sha256": "74f29165d58789cb02ac0c6486aea50ad98fff047eb1f1873bf077f3ddd36954",
+    "bytes": 29211
+  },
+  {
+    "path": "scripts/build-grammar-n5.tsv",
+    "sha256": "4d124db9d5140aa1f68c7f3575ee85ed13a5cc660d8d4e765783a4d13846baa7",
+    "bytes": 26728
+  },
+  {
+    "path": "scripts/build-grammar-notes.md",
+    "sha256": "8cf79a2c0e8c62904ae03f290f80c84e859c9d8731e9d01817c43f5313ac3f88",
+    "bytes": 4506
+  },
+  {
+    "path": "scripts/build-grammar-speaking.json",
+    "sha256": "7e9cc5b70347a1ee0bfc4ab51b845f314bfd2b94d58783d22c09f9e132357167",
+    "bytes": 6703
+  },
+  {
+    "path": "scripts/build-grammar.py",
+    "sha256": "2bf0f867d697421b8599666cfd469e3c89429d7ebeb44d71c00a45ab606e97c9",
+    "bytes": 8829
+  },
+  {
+    "path": "scripts/build-input-courses.py",
+    "sha256": "3b5acb97c9accdcaec4f2059f1b553c61c5f700cc0b64f0397bfbce63b888155",
+    "bytes": 204935
+  },
+  {
+    "path": "scripts/build-it-courses.py",
+    "sha256": "f1845ec046c0571765c755bf2437b8a2c5a5ce1e70ca8546e52ff6f0b2aea3be",
+    "bytes": 49752
+  },
+  {
+    "path": "scripts/build-reader-supplement-tokenize.mjs",
+    "sha256": "57e221995cd7f2b1b87ffb2ae44df5b89f648d5e9e4a5aea03ce4f41d582a165",
+    "bytes": 18989
+  },
+  {
+    "path": "scripts/build-reader-supplement.py",
+    "sha256": "4723e3dd3fa34ccc931ae2a258b76fc3b31a5ce01edbbacd56e69d81b690a9d3",
+    "bytes": 5975
+  },
+  {
+    "path": "scripts/build-reader-tokenize.mjs",
+    "sha256": "e118ce6d3d6a0cbcec9e7766051bf467a0d59d872e2e64208ed28823e35cd181",
+    "bytes": 9903
+  },
+  {
+    "path": "scripts/build-reader.py",
+    "sha256": "6ff71a25b39505b36becfff624d6a8de65fad0cee6a0a0a7535370bb8ecb8136",
+    "bytes": 15864
+  },
+  {
+    "path": "scripts/build-textbook-n3.tsv",
+    "sha256": "af07f5e8937050edf1578ab5c251c662013f49a0e68cdc631fc4e954c07c432a",
+    "bytes": 62846
+  },
+  {
+    "path": "scripts/build-textbook-n4.tsv",
+    "sha256": "896cb525638cde24506f4f83c02eb13bd86f8604c63f69987dd6bc53d78b77cb",
+    "bytes": 52634
+  },
+  {
+    "path": "scripts/build-textbook-n5.tsv",
+    "sha256": "b81a6d52cd47278715297bea49236180e24383e5c666e0b2b48e2c080d969468",
+    "bytes": 38367
+  },
+  {
+    "path": "scripts/build-textbooks.py",
+    "sha256": "2c457c6a831f1feca4da1b2df3d58c6c480efca2cf87dfa9621d31643da031d4",
+    "bytes": 3683
+  },
+  {
+    "path": "scripts/build-vocabulary-resources.py",
+    "sha256": "863abe85c4339f96e1b4d14d89b3d2af5f65ad85ee900404cd5b98e0d6a0461a",
+    "bytes": 3991
+  },
+  {
+    "path": "scripts/build-vocabulary.py",
+    "sha256": "f73e808d959114569b8f050f27252ab1f992af3eddebefb4e372db02c1acaaed",
+    "bytes": 12606
+  },
+  {
+    "path": "scripts/download-resources.py",
+    "sha256": "ac3f402d168e16835ea5a0bf0528198720f875208c3615c6949677bf753dd24c",
+    "bytes": 9073
+  },
+  {
+    "path": "scripts/enrich-advanced-textbooks.py",
+    "sha256": "c4fc72a0766002c17ca949fd4da150c9a60f8596fdd0befc38ee454297ef2d97",
+    "bytes": 141973
+  },
+  {
+    "path": "scripts/enrich-core-textbooks.py",
+    "sha256": "aef9a92dc7dc80aaaee4b53aab3a36fb1e45141b2cf91ec10544ed418da40420",
+    "bytes": 71389
+  },
+  {
+    "path": "scripts/import-aozora-more.py",
+    "sha256": "c31e6e73c7f629c61e1cd2259e542fa0a46442601d9d52657aaf8a179d230deb",
+    "bytes": 7373
+  },
+  {
+    "path": "scripts/import-aozora.py",
+    "sha256": "2169d6892993db6c0b74c3658a99ca0201c78981f2a559dd4c1073689dfbb7af",
+    "bytes": 7159
+  },
+  {
+    "path": "scripts/reader-build-core.mjs",
+    "sha256": "f7c1c36e9b5990ba8d328eb1a4f863ac5af79bb957efde87c1dc6242f8732ea6",
+    "bytes": 1031
+  },
+  {
+    "path": "scripts/reader-overrides.json",
+    "sha256": "5cd34e064876a94104992514ad18156fb92f4503a4a25a2343e4ffbc098127d7",
+    "bytes": 108510
+  },
+  {
+    "path": "scripts/reader-supplement-overrides.json",
+    "sha256": "aaa896f5ca27a23c7d921299f0ed1887e929b1d0a561679c73ecbe35c4350be3",
+    "bytes": 6457
+  },
+  {
+    "path": "scripts/supplement-counts.mjs",
+    "sha256": "d1c9f931a9a67a9fa3ea9169625ab8dcc1d22487867d9f84f8ebdb61d782500f",
+    "bytes": 3020
+  },
+  {
+    "path": "scripts/supplement-language-core.mjs",
+    "sha256": "2ef3243598f7ed6749458257d7c3b64c5bc209e2f8b11af05d07279365338060",
+    "bytes": 4510
+  },
+  {
+    "path": "seed/licenses/copyright-verification.json",
+    "sha256": "d570234c74dfdea08f723f7bf234aa3f76d21a2dec43608ff9999b8a7d8408b3",
+    "bytes": 3264
+  },
+  {
+    "path": "seed/licenses/グスコーブドリの伝記-来源说明.txt",
+    "sha256": "8192f44bdad9eea9e7e76ffd16f9a922e17e65830479c8bb8ef08c95ad8fb88a",
+    "bytes": 1626
+  },
+  {
+    "path": "seed/licenses/セロ弾きのゴーシュ-来源说明.txt",
+    "sha256": "d20105463d3f26a5c3a9e1cea090790636e840eaa6c6cfe13906a6bb85e75cc9",
+    "bytes": 1657
+  },
+  {
+    "path": "seed/licenses/少年探偵団-来源说明.txt",
+    "sha256": "5f8ec8082a6f918088d66b01aaa6587a5782601f533a57668d7396e0f2c10d66",
+    "bytes": 1647
+  },
+  {
+    "path": "seed/licenses/怪人二十面相-来源说明.txt",
+    "sha256": "8b301c7bcfc89fabfdbddceb77dcb6d5c3a9314e52343b595663bc6bd4dcb43e",
+    "bytes": 1723
+  },
+  {
+    "path": "seed/licenses/赤いろうそくと人魚-来源说明.txt",
+    "sha256": "3cdfcd9f50409e48d0a7f837321b6fb855d523a76333db1733a9d97437ef31f3",
+    "bytes": 1793
+  },
+  {
+    "path": "seed/licenses/風の又三郎-来源说明.txt",
+    "sha256": "dc5f6bb3bee2706343c2767fa2e335e0172c5b131ba937285efc2f99fd585639",
+    "bytes": 1527
+  },
+  {
+    "path": "seed/novels/novel-617e26f13f2ae06656a7e771.json",
+    "sha256": "c9ad1b11d8c8e741a883620cbbf2db3b569e0ac3d1491f75f43d68ba02f1c594",
+    "bytes": 120399
+  },
+  {
+    "path": "seed/novels/novel-617e26f13f2ae06656a7e771.meta.json",
+    "sha256": "6ba068fcf0bc4f3b415a583d37bcd4acd22a0f97e6a00d0bc4222f4255ae7949",
+    "bytes": 1453
+  },
+  {
+    "path": "seed/novels/novel-9811b71973b4ffc056f70048.json",
+    "sha256": "8650e19a15c0505d470c90f11686b826be06d02ba29532b09ce54dac1583e009",
+    "bytes": 79934
+  },
+  {
+    "path": "seed/novels/novel-9811b71973b4ffc056f70048.meta.json",
+    "sha256": "bc01b304391c1c5cf6c40b7073f2fbad222befad52c737a7c3f4a226b457c2ca",
+    "bytes": 1237
+  },
+  {
+    "path": "seed/novels/novel-b4cb9bfe75ccfd93c37c285e.json",
+    "sha256": "c5f956356cb022bae4c3f9b4312efc933d8faf6b218ee6befdcd2c5a5f91ffbc",
+    "bytes": 360517
+  },
+  {
+    "path": "seed/novels/novel-b4cb9bfe75ccfd93c37c285e.meta.json",
+    "sha256": "eeedb52ca1474b5a666b449fd6f5c8cafc67c972b4f5e6318b6d0497d59eeef4",
+    "bytes": 3737
+  },
+  {
+    "path": "seed/novels/novel-da6f80f106ed21a140d5a20f.json",
+    "sha256": "0b73b0676469b057bdc8df57888c8e358a4bfff34ae666130cb13529661606ce",
+    "bytes": 402038
+  },
+  {
+    "path": "seed/novels/novel-da6f80f106ed21a140d5a20f.meta.json",
+    "sha256": "08740b51345dfbb6cf39797e1fe86867f28c36097ea0b49f2543316ed9a0e80c",
+    "bytes": 4458
+  },
+  {
+    "path": "seed/novels/novel-e2567bb77b28c7c034d6767d.json",
+    "sha256": "ca10fc7708d0282eaf3e03fe4854a22daf1fdfb1e2c02396ed465eb70ea96e3e",
+    "bytes": 92105
+  },
+  {
+    "path": "seed/novels/novel-e2567bb77b28c7c034d6767d.meta.json",
+    "sha256": "c09fff6eb3e948355ae377b30766a5583cd16e69cd721855e04cccfc1f192b60",
+    "bytes": 1795
+  },
+  {
+    "path": "seed/novels/novel-ee16ff48b97c2bfcf5a8f395.json",
+    "sha256": "33393fe671b1d319667abc1322fb6949c752bc254368e5e9c296f6f859c1c914",
+    "bytes": 49814
+  },
+  {
+    "path": "seed/novels/novel-ee16ff48b97c2bfcf5a8f395.meta.json",
+    "sha256": "d318fa52efa2dc723c399023601425ee452b4d35fe4ff1ef997c29c15334c156",
+    "bytes": 1153
+  },
+  {
+    "path": "server.mjs",
+    "sha256": "d21e76b58e74a015d8bf87c50b22ca8c459acc48427e125681fe969bc428e160",
+    "bytes": 13161
+  },
+  {
+    "path": "start-learning.ps1",
+    "sha256": "1b4da05e3b8f16742698e6b5db5ee6f04181d1a2d588b4d07c71a8fec63edcc4",
+    "bytes": 10536
+  },
+  {
+    "path": "tests/advanced-textbooks.test.mjs",
+    "sha256": "5938c75bccb7804a523f765ac91e534da0b8fe1c0a240cf53ad406c33fe5a4d3",
+    "bytes": 9180
+  },
+  {
+    "path": "tests/ai.test.mjs",
+    "sha256": "4203d9a920bbb0d4d74ef6eb8b88d1bd89dec0a6f60dc2b96617921d4a2af156",
+    "bytes": 4173
+  },
+  {
+    "path": "tests/business.test.mjs",
+    "sha256": "9c32eba1ca66649d30dc85594f4b16db67ad9247aeb73e9aa07e55efa1f09fca",
+    "bytes": 3323
+  },
+  {
+    "path": "tests/curriculum.test.mjs",
+    "sha256": "164d936c9e31ba07ad77c27ee3e4acca31868e751e93c76182a11fdc777ccd85",
+    "bytes": 11195
+  },
+  {
+    "path": "tests/fixtures/v1-lesson-ids.json",
+    "sha256": "f8e5f95acf77e4630a4d93239124b0f45b0c0a306ebf8a2a7d989473dba04dc4",
+    "bytes": 5798
+  },
+  {
+    "path": "tests/input-courses.test.mjs",
+    "sha256": "36f1ea9f69b19410efb5bf80e4ce62a47852f6e8fc3469e2a14984f6150a23b0",
+    "bytes": 5092
+  },
+  {
+    "path": "tests/learning-core.test.mjs",
+    "sha256": "5d492e60c39d5f67e21762b3d8191a9552e51e26575772336a1295ff9f5fdb38",
+    "bytes": 2770
+  },
+  {
+    "path": "tests/media.test.mjs",
+    "sha256": "26662d4351677f5fc7150d6dbb49be33d7e57fc8b8754dab180d736bbc59337e",
+    "bytes": 3219
+  },
+  {
+    "path": "tests/novel-annotation.test.mjs",
+    "sha256": "8b1930efbe143ce45bc4c3e0ec8d9fa0b4fad9e894e900ee58a920db1e35536d",
+    "bytes": 7804
+  },
+  {
+    "path": "tests/novel-import.test.mjs",
+    "sha256": "5341cb33676f4f62215bc1e89d3d8845ae59b5eb36e4046858ef82e4d46c1783",
+    "bytes": 10090
+  },
+  {
+    "path": "tests/novel-progress.test.mjs",
+    "sha256": "b18e4990f74dbe9f55b40935a4a5a2dfacd04b1e10db1d29f64f230345ac103a",
+    "bytes": 3782
+  },
+  {
+    "path": "tests/novel-store.test.mjs",
+    "sha256": "f2071283f96bdb3e3497d33c9a6cdf91c6a515fb70bc7eddf069542c9d7c6d9d",
+    "bytes": 4363
+  },
+  {
+    "path": "tests/reader-data.test.mjs",
+    "sha256": "6eaefc2f4b4ebe1389b61985d146c444f0138f1a206354bdcb3b8c8651feb10c",
+    "bytes": 7395
+  },
+  {
+    "path": "tests/reader-render.test.mjs",
+    "sha256": "593b01fe2489accc49cf6dcb28d79e94fbf3f4cae718a939fd3dea4076c8962a",
+    "bytes": 3409
+  },
+  {
+    "path": "tests/reader-state.test.mjs",
+    "sha256": "246e42f3bc49966d518803de8c2f8e55adda1ffab5b9a8b5b2eed0a90e1f96f4",
+    "bytes": 13272
+  },
+  {
+    "path": "tests/reader-supplement.test.mjs",
+    "sha256": "61f7e20f7b9f458b5f3bf03e8cf333514de7dd964d0cbbe228e8a39932331ff5",
+    "bytes": 4471
+  },
+  {
+    "path": "tests/remote-access.test.mjs",
+    "sha256": "0ecbcd724fa290782ebfccf094ee4a2334979615796a01bf5b9e1be36d9e8da8",
+    "bytes": 8143
+  },
+  {
+    "path": "tests/resources.test.mjs",
+    "sha256": "5a09478546abdfa07c3aaf1ed3ecf74eaba68537fce74e860634bf70ae5a80a3",
+    "bytes": 775
+  },
+  {
+    "path": "tests/section-assignment.test.mjs",
+    "sha256": "a5905c4cbdb60dbda717baf90b9399c97339fec2c93ed9743474334327f034de",
+    "bytes": 7804
+  },
+  {
+    "path": "tests/server-launcher.test.mjs",
+    "sha256": "179fc368e2c0aaafa4b5706632791f4037205b90ed47d4ce1794bbd4d4927c62",
+    "bytes": 3963
+  },
+  {
+    "path": "tests/server.test.mjs",
+    "sha256": "326cc16c725a0974d90cc727b46f381477b275b40d8ba12aa6bb0341db6cdb58",
+    "bytes": 8760
+  },
+  {
+    "path": "tests/store.test.mjs",
+    "sha256": "89bf90320a9784fcf8e2260d139c642383c6d4db95d5e9a84ef14d1df8415e7f",
+    "bytes": 9416
+  },
+  {
+    "path": "tests/stories.test.mjs",
+    "sha256": "f575814d9799fa8a4c2488b0e32b76464356ee86c2ee61de3114cbda64f4465a",
+    "bytes": 5036
+  },
+  {
+    "path": "tests/story-content.test.mjs",
+    "sha256": "de6252b58a8b32e8f0478f2c3a68d268492ce2b553a9005d207da2b35f025fac",
+    "bytes": 4259
+  },
+  {
+    "path": "tests/tablet-ui.test.mjs",
+    "sha256": "b8fd6c2399af4581b78ea3f74fe4e9d3cc6652a4253520302fb34ccc88cc8534",
+    "bytes": 1242
+  },
+  {
+    "path": "tests/textbook-core.test.mjs",
+    "sha256": "90df78ca5488cd66ee94881e666c045ba06f14b98c7481f7cdc09bd7a831303f",
+    "bytes": 4922
+  },
+  {
+    "path": "tests/textbook-integration.test.mjs",
+    "sha256": "40754e4957a4bf0acc5a7c9ebf2f230fcb65d52743155e8e3a63b1ff8131ce0e",
+    "bytes": 3953
+  },
+  {
+    "path": "tests/textbook-jlpt-early.test.mjs",
+    "sha256": "f86aadef150aa5770b0200cb6af37896be1f247fbc54f9feb79eaedd10fefb48",
+    "bytes": 10818
+  },
+  {
+    "path": "tests/vocabulary.test.mjs",
+    "sha256": "c196b07e87356905055f38422a4840183fb276779984a5cce9f4a4273891cd12",
+    "bytes": 4121
+  },
+  {
+    "path": "启动学习.bat",
+    "sha256": "af23b2397f40ea529ea7fbeedf89277eaa69b1d43b2eeacad27f68e5583fb44d",
+    "bytes": 320
+  }
+]

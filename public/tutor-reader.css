@@ -1,0 +1,174 @@
+/* Specific selectors isolate this dialog and its shared composer from settings. */
+dialog#tutor-reader-dialog.tutor-reader{position:fixed;inset:0;margin:auto;padding:0;width:min(1100px,94vw);max-width:min(1100px,94vw);height:90vh;height:90dvh;max-height:90vh;max-height:90dvh;min-width:0;border:1px solid #d1dfd5;border-radius:18px;background:#f7faf6;color:#243b34;overflow:hidden;box-shadow:0 24px 110px #15342b44;overscroll-behavior:contain}
+dialog#tutor-reader-dialog.tutor-reader:not([open]){display:none}
+dialog#tutor-reader-dialog.tutor-reader[open]{display:flex;flex-direction:column}
+dialog#tutor-reader-dialog::backdrop{background:#152d2475;backdrop-filter:blur(3px)}
+#tutor-reader-dialog .tutor-reader-heading{display:flex;flex:none;max-height:25%;box-sizing:border-box;overflow:auto;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px 30px 17px;border-bottom:1px solid #dfe7de;background:#fff}
+#tutor-reader-dialog .tutor-reader-heading>div{min-width:0}
+#tutor-reader-dialog .tutor-reader-eyebrow{font-size:11px;color:#6d8775;letter-spacing:1px}
+#tutor-reader-dialog #tutor-reader-title{font-size:24px;line-height:1.4;margin:3px 0 6px;letter-spacing:0}
+#tutor-reader-dialog #tutor-reader-context{font-size:13px;line-height:1.6;color:#6f8274;overflow-wrap:anywhere;margin:0;max-height:4.8em;overflow:auto}
+#tutor-reader-dialog #tutor-reader-close{display:grid;place-items:center;flex:none;width:38px;height:38px;padding:0;border:1px solid #dce5db;border-radius:9px;background:#f8faf6;font:28px/1 system-ui,sans-serif;color:#536d5b;cursor:pointer}
+#tutor-reader-dialog #tutor-reader-close:hover{background:#eaf2e8}
+#tutor-reader-dialog .tutor-reader-body{flex:1;min-height:min(120px,20dvh);box-sizing:border-box;overflow:auto;overscroll-behavior:contain;padding:26px 36px;scrollbar-gutter:stable;scrollbar-width:thin;overflow-wrap:anywhere}
+#tutor-reader-dialog .tutor-reader-message{padding:22px 26px;margin:0 0 20px;border:1px solid #dfe7dd;border-radius:13px;background:#fff;min-width:0}
+#tutor-reader-dialog .tutor-reader-message.from-user{background:#edf4e9;border-color:#dce7d4}
+#tutor-reader-dialog .tutor-reader-author{font-size:12px;font-weight:700;color:#55745a;margin-bottom:13px;letter-spacing:.4px}
+#tutor-reader-dialog .tutor-message-content{font-size:16px;line-height:1.9;color:#2e4438;min-width:0;overflow-wrap:anywhere}
+#tutor-reader-dialog .tutor-reader-message>.tutor-message-content{border:0;padding:0;border-radius:0;background:transparent}
+#tutor-reader-dialog .tutor-markdown .tutor-code pre{font-size:14px;max-height:none}
+#tutor-reader-dialog .tutor-code-label,#tutor-reader-dialog .tutor-copy{font-size:12px}
+#tutor-reader-dialog .tutor-reader-user-text{white-space:pre-wrap}
+#tutor-reader-dialog .tutor-reader-empty,#tutor-reader-dialog .tutor-reader-working{font-size:15px;line-height:1.9;color:#778a73;padding:24px;margin:0;border:1px dashed #d7e2d0;border-radius:12px;background:#f1f6ed}
+#tutor-reader-dialog .tutor-reader-working{font-size:13px;padding:13px 18px}
+#tutor-reader-dialog [hidden]{display:none!important}
+#tutor-reader-dialog .tutor-reader-footer{flex:0 1 auto;min-height:0;max-height:42%;box-sizing:border-box;overflow:auto;overscroll-behavior:contain;padding:15px 30px;border-top:1px solid #dfe7de;background:#f7faf2}
+#tutor-reader-dialog #tutor-composer{display:block;width:100%;min-width:0;box-sizing:border-box}
+#tutor-reader-dialog #tutor-form{display:block;margin:0;padding:0;border:0;background:transparent;min-width:0}
+#tutor-reader-dialog #tutor-form .tutor-input-label{display:block;margin:0 0 6px;padding:0;font-size:12px;font-weight:400;line-height:1.6;color:#708363}
+#tutor-reader-dialog #tutor-input{display:block;box-sizing:border-box;width:100%;height:clamp(48px,12dvh,90px);min-height:clamp(42px,10dvh,72px);max-height:min(160px,20dvh);margin:0;padding:10px 12px;border:1px solid #d4e1c9;border-radius:8px;background:#fff;color:#345438;font-family:inherit;font-size:14px;line-height:1.7;resize:vertical}
+#tutor-reader-dialog #tutor-input:focus{outline:2px solid #a4c394;outline-offset:1px}
+#tutor-reader-dialog #tutor-form .tutor-form-actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:9px 0 0}
+#tutor-reader-dialog #tutor-request-state{flex:1;min-width:120px;font-size:11px;line-height:1.6;margin-right:auto;color:#839377}
+#tutor-reader-dialog #tutor-form .tutor-form-actions .button,#tutor-reader-dialog #tutor-stop{font-size:12px;line-height:1.6;padding:7px 13px;white-space:nowrap}
+#tutor-reader-dialog #tutor-error{margin:0 0 9px;padding:8px 11px;max-height:70px;overflow:auto;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+@media(max-width:700px){
+ dialog#tutor-reader-dialog.tutor-reader{width:96vw;max-width:96vw;height:94vh;height:94dvh;max-height:94vh;max-height:94dvh;border-radius:12px}
+ #tutor-reader-dialog .tutor-reader-heading{padding:14px 16px;gap:12px}
+ #tutor-reader-dialog #tutor-reader-title{font-size:21px}
+ #tutor-reader-dialog #tutor-reader-context{font-size:12px;max-height:3.2em}
+ #tutor-reader-dialog .tutor-reader-body{padding:16px 12px}
+ #tutor-reader-dialog .tutor-reader-message{padding:16px;margin-bottom:14px;border-radius:9px}
+ #tutor-reader-dialog .tutor-message-content{font-size:15px;line-height:1.85}
+ #tutor-reader-dialog .tutor-markdown .tutor-code pre{font-size:12px}
+ #tutor-reader-dialog .tutor-reader-footer{padding:10px 14px;max-height:45%}
+ #tutor-reader-dialog #tutor-form .tutor-input-label{font-size:11px;margin-bottom:4px}
+ #tutor-reader-dialog #tutor-input{font-size:13px;padding:7px 9px;height:clamp(48px,12dvh,78px);min-height:42px;resize:none}
+ #tutor-reader-dialog #tutor-form .tutor-form-actions{margin-top:6px;gap:6px}
+ #tutor-reader-dialog #tutor-form .tutor-form-actions .button,#tutor-reader-dialog #tutor-stop{font-size:11px;padding:5px 10px}
+ #tutor-reader-dialog #tutor-request-state{font-size:10px}
+ #tutor-reader-dialog #tutor-error{font-size:11px;padding:6px 9px;max-height:50px;margin-bottom:6px}
+}
+
+/* Reading settings belong to the dialog body, never the composer or lesson. */
+#tutor-reader-dialog .tutor-reader-tools{flex:0 1 auto;min-height:40px;max-height:31dvh;overflow:auto;padding:8px 30px;border-bottom:1px solid #dfe7de;background:#fff;box-sizing:border-box}
+#tutor-reader-dialog .tutor-reader-tool-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+#tutor-reader-dialog .tutor-reader-tools button,#tutor-reader-dialog .tutor-reader-tools summary,#tutor-reader-dialog .reader-copy-answer{border:1px solid #d7e3d2;border-radius:6px;background:#f7faf3;color:#42633e;font:inherit;font-size:12px;line-height:1.5;padding:5px 9px;cursor:pointer;white-space:nowrap}
+#tutor-reader-dialog .tutor-reader-tools button{font-size:12px;line-height:1.5}
+#tutor-reader-dialog .tutor-reader-tools button:hover,#tutor-reader-dialog .reader-copy-answer:hover{background:#eaf3e4;border-color:#adc49d}
+#tutor-reader-dialog .tutor-reader-tools button:disabled{opacity:.45;cursor:default}
+#tutor-reader-dialog .tutor-reader-tools button:focus-visible,#tutor-reader-dialog .tutor-reader-tools summary:focus-visible,#tutor-reader-dialog .reader-copy-answer:focus-visible{outline:2px solid #5d8e49;outline-offset:2px}
+#tutor-reader-dialog #reader-settings{margin:0;min-width:0}
+#tutor-reader-dialog #reader-settings[open]{flex-basis:100%;order:1}
+#tutor-reader-dialog #reader-settings summary{display:list-item;list-style-position:inside;width:max-content;font-size:12px}
+#tutor-reader-dialog #reader-font-summary{font-size:10px;color:#7d9272;margin-left:6px}
+#tutor-reader-dialog .reader-settings-grid{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;padding:12px 4px 3px}
+#tutor-reader-dialog .reader-settings-grid fieldset{margin:0;padding:0;border:0;min-width:200px}
+#tutor-reader-dialog .reader-settings-grid legend,#tutor-reader-dialog .reader-settings-grid label{font-size:11px;line-height:1.6;color:#66815b;margin:0}
+#tutor-reader-dialog .reader-settings-grid select{display:block;width:auto;min-width:90px;margin:4px 0 0;padding:4px 6px;border:1px solid #d1dec8;background:white;color:#3b5939;border-radius:5px;font-size:12px}
+#tutor-reader-dialog .reader-font-buttons{display:flex;align-items:center;gap:6px;margin-top:4px}
+#tutor-reader-dialog #reader-font-value{min-width:39px;text-align:center;font-size:12px;color:#3f603c}
+#tutor-reader-dialog #reader-font-range{display:block;width:100%;padding:0;margin:8px 0 0;accent-color:#33775c;height:16px}
+#tutor-reader-dialog .reader-check{display:flex;align-items:center;gap:6px;padding-top:10px;cursor:pointer}
+#tutor-reader-dialog .reader-check input{width:auto;margin:0;accent-color:#33775c}
+#tutor-reader-dialog .reader-settings-note{flex-basis:100%;margin:0;font-size:10px;line-height:1.5;color:#829377}
+#tutor-reader-dialog .reader-search-bar{display:flex;align-items:center;gap:6px;margin-top:8px;min-width:0}
+#tutor-reader-dialog #reader-search{flex:1;min-width:90px;width:100%;padding:6px 9px;margin:0;border:1px solid #d0dfc7;border-radius:6px;background:white;color:#3b5939;font-size:12px;line-height:1.5}
+#tutor-reader-dialog #reader-search-count{font-size:11px;line-height:1.4;color:#738568;white-space:nowrap}
+#tutor-reader-dialog #reader-latest.has-unread{background:#1c624b;color:#fff;border-color:#1c624b}
+#tutor-reader-dialog #tutor-reader-history{width:100%;max-width:85ch;margin-inline:auto;font-size:var(--reader-font,16px)}
+#tutor-reader-dialog[data-reading-width="wide"] #tutor-reader-history{max-width:none}
+#tutor-reader-dialog .tutor-message-content{font-size:var(--reader-font,16px);line-height:var(--reader-line,1.9)}
+#tutor-reader-dialog .tutor-message-content p,#tutor-reader-dialog .tutor-message-content li{line-height:inherit}
+#tutor-reader-dialog .tutor-markdown .tutor-code pre{font-size:var(--reader-code-font,14px);line-height:var(--reader-line,1.9)}
+#tutor-reader-dialog.reader-code-wrap .tutor-code pre,#tutor-reader-dialog.reader-code-wrap .tutor-code pre code{white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal}
+#tutor-reader-dialog .reader-message-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
+#tutor-reader-dialog .reader-message-heading .tutor-reader-author{margin:0}
+#tutor-reader-dialog .reader-copy-answer{font-size:11px;line-height:1.5;flex:none;padding:4px 8px}
+#tutor-reader-dialog mark.reader-search-mark{background:#ffec8f;color:#39320d;border-radius:2px;padding:0}
+#tutor-reader-dialog mark.reader-search-mark.current{background:#ffb651;color:#291b09;outline:1px solid #d78a24}
+#tutor-reader-dialog[data-reading-theme="paper"] .tutor-reader-body{background:#f3ecdc}
+#tutor-reader-dialog[data-reading-theme="paper"] .tutor-reader-message{background:#fffaf0;border-color:#e2d8bf}
+#tutor-reader-dialog[data-reading-theme="paper"] .tutor-reader-message.from-user{background:#efe8d7}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-reader-body{background:#1b2522;color:#e0e9e1}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-reader-message{background:#26332d;border-color:#43544a}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-reader-message.from-user{background:#2b3c30;border-color:#4b604c}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-message-content,#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown :is(h1,h2,h3,h4,h5,h6,strong){color:#e0e9e1}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-reader-author{color:#adcca2}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown a{color:#a6dac9}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown blockquote{color:#c5d5bc;background:#334332;border-color:#86aa72}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown :not(pre)>code{background:#354836;color:#d8ebc7;border-color:#526a47}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown table,#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown tr:nth-child(even) td{background:#293b2e;color:#e0e9e1}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown th{background:#354c38;color:#deebd1}
+#tutor-reader-dialog[data-reading-theme="dark"] .tutor-markdown :is(th,td){border-color:#506048}
+@media(max-width:700px){
+ #tutor-reader-dialog .tutor-reader-tools{padding:6px 14px;max-height:27dvh;min-height:35px}
+ #tutor-reader-dialog .tutor-reader-tools button,#tutor-reader-dialog #reader-settings summary{font-size:11px;padding:4px 7px}
+ #tutor-reader-dialog .reader-settings-grid{gap:9px 13px}
+ #tutor-reader-dialog .reader-settings-grid fieldset{flex-basis:100%;min-width:0}
+ #tutor-reader-dialog .reader-search-bar{flex-wrap:wrap}
+ #tutor-reader-dialog #reader-search{flex-basis:100%}
+ #tutor-reader-dialog #reader-search-count{margin-right:auto}
+}
+
+/* Compact chrome: reserve the viewport for answers, including under zoom. */
+dialog#tutor-reader-dialog.tutor-reader{width:min(1180px,calc(100vw - 24px));max-width:calc(100vw - 24px);height:calc(100dvh - 24px);max-height:calc(100dvh - 24px);border-radius:12px}
+#tutor-reader-dialog .tutor-reader-heading{padding:7px 14px;min-height:44px;max-height:44px;overflow:visible;align-items:center;gap:12px}
+#tutor-reader-dialog .tutor-reader-heading>div{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
+#tutor-reader-dialog .tutor-reader-eyebrow{display:none}
+#tutor-reader-dialog #tutor-reader-title{font-size:16px;line-height:1.5;margin:0;white-space:nowrap;flex:none}
+#tutor-reader-dialog #tutor-reader-context{font-size:11px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;max-height:none;min-width:0;flex:1}
+#tutor-reader-dialog #tutor-reader-close{width:28px;height:28px;font-size:22px;border-radius:6px}
+#tutor-reader-dialog .tutor-reader-tools{position:relative;flex:none;min-height:34px;max-height:none;padding:4px 14px;overflow:visible}
+#tutor-reader-dialog .tutor-reader-tool-row{gap:5px;flex-wrap:nowrap;min-width:0}
+#tutor-reader-dialog .tutor-reader-tools button,#tutor-reader-dialog #reader-settings summary{padding:3px 7px;font-size:11px;line-height:1.5}
+#tutor-reader-dialog #reader-settings[open]{flex-basis:auto;order:0}
+#tutor-reader-dialog .reader-settings-grid{position:absolute;z-index:7;left:12px;right:12px;top:calc(100% + 3px);max-height:min(280px,40dvh);overflow:auto;box-sizing:border-box;padding:12px 14px;background:#fff;border:1px solid #cbdcc4;border-radius:8px;box-shadow:0 8px 24px #294d3326;gap:10px 16px}
+#tutor-reader-dialog .reader-settings-grid fieldset{min-width:180px}
+#tutor-reader-dialog .reader-settings-grid select{margin-top:3px;font-size:12px;padding:4px 6px}
+#tutor-reader-dialog .reader-search-bar{margin-top:5px;gap:5px;flex-wrap:nowrap}
+#tutor-reader-dialog #reader-search{font-size:12px;padding:4px 7px;flex-basis:auto;min-width:50px}
+#tutor-reader-dialog #reader-search-count{font-size:10px}
+#tutor-reader-dialog .tutor-reader-body{min-height:0;padding:12px 16px;flex:1 1 0}
+#tutor-reader-dialog .tutor-reader-message{padding:14px 18px;margin-bottom:12px;border-radius:9px}
+#tutor-reader-dialog .reader-message-heading{margin-bottom:8px}
+#tutor-reader-dialog .tutor-reader-author{font-size:11px;margin-bottom:8px}
+#tutor-reader-dialog .reader-copy-answer{font-size:10px;padding:3px 7px}
+#tutor-reader-dialog .tutor-reader-footer{flex:0 0 auto;min-height:0;max-height:30%;padding:7px 14px;overflow:visible}
+#tutor-reader-dialog #tutor-composer{position:relative}
+#tutor-reader-dialog #tutor-form{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 8px;align-items:center}
+#tutor-reader-dialog #tutor-form .tutor-input-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0;margin:0;white-space:nowrap}
+#tutor-reader-dialog #tutor-input{height:42px;min-height:42px;max-height:min(90px,18dvh);font-size:13px;line-height:1.5;padding:7px 10px;resize:none;grid-column:1 / -1;grid-row:1}
+#tutor-reader-dialog #tutor-form .tutor-form-actions{margin:0;gap:7px;min-height:28px;flex-wrap:nowrap;grid-column:2;grid-row:2}
+#tutor-reader-dialog #tutor-form .tutor-form-actions .button,#tutor-reader-dialog #tutor-stop{font-size:11px;line-height:1.5;padding:4px 10px}
+#tutor-reader-dialog #tutor-request-state{font-size:10px;line-height:1.4;min-width:0;white-space:nowrap}
+#tutor-reader-dialog #tutor-error{position:absolute;z-index:5;bottom:100%;left:0;right:0;margin:0 0 7px;max-height:min(85px,18dvh);padding:7px 10px;border:1px solid #edd3c7;box-shadow:0 -4px 15px #51321b10;font-size:11px}
+@media(max-height:520px){
+ dialog#tutor-reader-dialog.tutor-reader{height:calc(100dvh - 12px);max-height:calc(100dvh - 12px);width:calc(100vw - 12px);max-width:calc(100vw - 12px);border-radius:8px}
+ #tutor-reader-dialog .tutor-reader-heading{height:38px;min-height:38px;max-height:38px;padding:4px 10px}
+ #tutor-reader-dialog .tutor-reader-tools{padding:3px 10px;min-height:31px}
+ #tutor-reader-dialog .tutor-reader-footer{padding:5px 10px}
+ #tutor-reader-dialog #tutor-input{height:36px;min-height:36px;max-height:64px;padding:6px 8px;font-size:12px}
+ #tutor-reader-dialog .tutor-reader-body{padding:9px 12px}
+}
+@media(max-width:700px){
+ #tutor-reader-dialog .tutor-reader-heading{gap:7px;padding-inline:10px}
+ #tutor-reader-dialog .tutor-reader-heading>div{gap:8px}
+ #tutor-reader-dialog #tutor-reader-title{font-size:14px}
+ #tutor-reader-dialog #tutor-reader-context{font-size:10px;max-height:none}
+ #tutor-reader-dialog .tutor-reader-tools{padding:3px 9px;min-height:31px}
+ #tutor-reader-dialog .tutor-reader-tool-row{gap:4px;flex-wrap:wrap}
+ #tutor-reader-dialog .tutor-reader-tools button,#tutor-reader-dialog #reader-settings summary{font-size:10px;padding:3px 5px}
+ #tutor-reader-dialog #reader-font-summary{font-size:9px;margin-left:3px}
+ #tutor-reader-dialog .reader-settings-grid{left:8px;right:8px;padding:10px;gap:9px 12px}
+ #tutor-reader-dialog .reader-settings-grid fieldset{flex-basis:auto;min-width:170px}
+ #tutor-reader-dialog .reader-search-bar{flex-wrap:nowrap}
+ #tutor-reader-dialog #reader-search{flex-basis:auto;min-width:45px}
+ #tutor-reader-dialog #reader-search-count{font-size:9px;white-space:normal;max-width:70px;margin-right:0}
+ #tutor-reader-dialog .tutor-reader-body{padding:10px}
+ #tutor-reader-dialog .tutor-reader-message{padding:11px 12px;margin-bottom:10px}
+ #tutor-reader-dialog .tutor-reader-footer{padding:6px 9px;max-height:30%}
+ #tutor-reader-dialog #tutor-input{height:38px;min-height:38px;max-height:72px;font-size:12px;padding:6px 8px}
+ #tutor-reader-dialog #tutor-form .tutor-form-actions{gap:5px;min-height:25px}
+ #tutor-reader-dialog #tutor-form .tutor-form-actions .button,#tutor-reader-dialog #tutor-stop{padding:4px 7px;font-size:10px}
+}
