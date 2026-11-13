@@ -386,13 +386,13 @@
   },
   {
     "path": "public/tablet-ui.js",
-    "sha256": "1fb9fae1477834a879367651c1ef9280c810897f2ed18f4ae6183079ba2b70e8",
+    "sha256": "6e4da572c9fa54c613ffba8e2f287e3cf9e37f23cdbccdfcaaacc3194a63745d",
     "bytes": 7832
   },
   {
     "path": "public/tablet.css",
-    "sha256": "4df583e45694215a79988250c5ed548590c03218039f600c0a18ee92bd85c519",
-    "bytes": 12159
+    "sha256": "20528c22d822f52e5f037e0dc297142d4084f858d173ec052b38410867e2d29b",
+    "bytes": 12544
   },
   {
     "path": "public/tutor-context.js",
@@ -996,8 +996,8 @@
   },
   {
     "path": "tests/tablet-ui.test.mjs",
-    "sha256": "b8fd6c2399af4581b78ea3f74fe4e9d3cc6652a4253520302fb34ccc88cc8534",
-    "bytes": 1242
+    "sha256": "d8e35b34f926a21b1e892192af30a0e255115afc4b4114cf035708c35bd4c2cc",
+    "bytes": 1455
   },
   {
     "path": "tests/textbook-core.test.mjs",

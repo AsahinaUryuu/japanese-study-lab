@@ -3,14 +3,17 @@ import assert from 'node:assert/strict';
 import {viewportMetrics,firstUnanswered} from '../public/tablet-ui.js';
 
 test('M4 portrait, landscape, older iPad and Split View all get usable navigation',()=>{
- for(const [width,height] of [[834,1210],[1210,834],[834,1194],[1194,834],[500,834],[375,834]]){
+ for(const [width,height] of [[834,1210],[1210,834],[1210.28,834],[1279,834],[834,1194],[1194,834],[500,834],[375,834]]){
   const m=viewportMetrics(width,height);
-  assert.equal(m.drawer,true);assert.equal(m.compact,width<=700);assert.equal(m.height,height);assert.equal(m.keyboard,false);
+  assert.equal(m.drawer,true);assert.equal(m.compact,width<=900);assert.equal(m.height,height);assert.equal(m.keyboard,false);
  }
+ assert.equal(viewportMetrics(1280,834).drawer,false);
  assert.equal(viewportMetrics(1440,900).drawer,false);
+ assert.equal(viewportMetrics(900,834).compact,true);
+ assert.equal(viewportMetrics(901,834).compact,false);
 });
 test('software keyboard uses actual visible height and offset without negative geometry',()=>{
- assert.deepEqual(viewportMetrics(834,1210,750,32),{drawer:true,compact:false,height:750,top:32,keyboard:true});
+ assert.deepEqual(viewportMetrics(834,1210,750,32),{drawer:true,compact:true,height:750,top:32,keyboard:true});
  assert.equal(viewportMetrics(834,1210,1170).keyboard,false);
  assert.equal(viewportMetrics(500,834,1200,-10).height,834);
  assert.equal(viewportMetrics(500,834,1200,-10).top,0);

@@ -1,6 +1,6 @@
 export function viewportMetrics(width,height,visualHeight=height,offsetTop=0){
  const w=Math.max(0,Number(width)||0),h=Math.max(0,Number(height)||0),visible=Math.max(0,Math.min(h,Number(visualHeight)||h));
- return {drawer:w<=1210,compact:w<=700,height:visible,top:Math.max(0,Number(offsetTop)||0),keyboard:h-visible>140};
+ return {drawer:w<=1279,compact:w<=900,height:visible,top:Math.max(0,Number(offsetTop)||0),keyboard:h-visible>140};
 }
 export function firstUnanswered(questions){return questions.findIndex(q=>!q.answered);}
 
@@ -13,9 +13,9 @@ export function installTabletUI({getStore=()=>null,toast=()=>{}}={}){
  const progress=doc.createElement('div');progress.className='page-reading-progress';progress.setAttribute('aria-hidden','true');progress.innerHTML='<i></i>';workspace.prepend(progress);
  let menuOpen=false,focusReading=false,lastTitle='',frame=0;
  try{focusReading=localStorage.getItem('kotoba-focus-reading')==='true';}catch{}
- function setFocus(value){focusReading=!!value;body.classList.toggle('focus-reading',focusReading);sidebar.inert=(win.innerWidth<=1210||focusReading)&&!menuOpen;actions.querySelector('[data-focus-reading]').setAttribute('aria-pressed',String(focusReading));actions.querySelector('[data-focus-reading]').textContent=focusReading?'退出专注':'专注阅读';try{localStorage.setItem('kotoba-focus-reading',String(focusReading));}catch{}}
+ function setFocus(value){focusReading=!!value;body.classList.toggle('focus-reading',focusReading);sidebar.inert=(win.innerWidth<=1279||focusReading)&&!menuOpen;actions.querySelector('[data-focus-reading]').setAttribute('aria-pressed',String(focusReading));actions.querySelector('[data-focus-reading]').textContent=focusReading?'退出专注':'专注阅读';try{localStorage.setItem('kotoba-focus-reading',String(focusReading));}catch{}}
  setFocus(focusReading);
- function setMenu(value,restore=false){menuOpen=!!value;body.classList.toggle('menu-open',menuOpen);backdrop.hidden=!menuOpen;sidebar.inert=!menuOpen&&(win.innerWidth<=1210||focusReading);workspace.inert=menuOpen;doc.querySelector('#tutor-panel')?.toggleAttribute('inert',menuOpen);menu.setAttribute('aria-expanded',String(menuOpen));if(menuOpen){sidebar.querySelector('.sidebar-close')?.focus();}else if(restore)menu.focus({preventScroll:true});}
+ function setMenu(value,restore=false){menuOpen=!!value;body.classList.toggle('menu-open',menuOpen);backdrop.hidden=!menuOpen;sidebar.inert=!menuOpen&&(win.innerWidth<=1279||focusReading);workspace.inert=menuOpen;doc.querySelector('#tutor-panel')?.toggleAttribute('inert',menuOpen);menu.setAttribute('aria-expanded',String(menuOpen));if(menuOpen){sidebar.querySelector('.sidebar-close')?.focus();}else if(restore)menu.focus({preventScroll:true});}
  menu.onclick=()=>setMenu(!menuOpen);sidebar.querySelector('.sidebar-close').onclick=()=>setMenu(false,true);backdrop.onclick=()=>setMenu(false,true);
  sidebar.addEventListener('click',event=>{if(event.target.closest('a[href^="#"]'))setMenu(false);});
  doc.addEventListener('keydown',event=>{
