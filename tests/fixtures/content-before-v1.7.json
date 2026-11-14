@@ -1,0 +1,284 @@
+{
+  "g-n2-010": {
+    "file": "grammar-n2",
+    "sha256": "eb51ba4a2e2345351f81cb0f68995d4c4a6fe2aef3175fe906219da2362bf061",
+    "questionIds": [
+      "g-n2-010-q1",
+      "g-n2-010-q2",
+      "g-n2-010-q3",
+      "g-n2-010-q4"
+    ],
+    "translationIds": [
+      "g-n2-010-tr1",
+      "g-n2-010-tr2"
+    ]
+  },
+  "g-n2-011": {
+    "file": "grammar-n2",
+    "sha256": "0e7ee4efb03cbf9faa5bdb6d28cd622810c3278a7c70a3f170a6c5f0e5b08152",
+    "questionIds": [
+      "g-n2-011-q1",
+      "g-n2-011-q2",
+      "g-n2-011-q3",
+      "g-n2-011-q4"
+    ],
+    "translationIds": [
+      "g-n2-011-tr1",
+      "g-n2-011-tr2"
+    ]
+  },
+  "g-n2-040": {
+    "file": "grammar-n2",
+    "sha256": "28556ed073e62cc0ef484a41616591e81e6a70866ea65626457b8becb8c8f2a8",
+    "questionIds": [
+      "g-n2-040-q1",
+      "g-n2-040-q2",
+      "g-n2-040-q3",
+      "g-n2-040-q4",
+      "g-n2-040-q5"
+    ],
+    "translationIds": [
+      "g-n2-040-tr1",
+      "g-n2-040-tr2"
+    ]
+  },
+  "g-n1-028": {
+    "file": "grammar-n1",
+    "sha256": "b4a7cc042fff9916e5d56f4cdc6e9d63b650d0d4a4ee78f50b0479e8171e698b",
+    "questionIds": [
+      "g-n1-028-q1",
+      "g-n1-028-q2",
+      "g-n1-028-q3",
+      "g-n1-028-q4",
+      "g-n1-028-q5"
+    ],
+    "translationIds": [
+      "g-n1-028-tr1",
+      "g-n1-028-tr2"
+    ]
+  },
+  "g-n1-029": {
+    "file": "grammar-n1",
+    "sha256": "5eef5744f27075295311a077305fecd1a7c0a323836f97914135e804af23c1a0",
+    "questionIds": [
+      "g-n1-029-q1",
+      "g-n1-029-q2",
+      "g-n1-029-q3",
+      "g-n1-029-q4"
+    ],
+    "translationIds": [
+      "g-n1-029-tr1",
+      "g-n1-029-tr2"
+    ]
+  },
+  "g-n1-034": {
+    "file": "grammar-n1",
+    "sha256": "df0cb3bcc588ac82d43de59757a1e8a903db1131fee5f7dfee8aa2d247a690ee",
+    "questionIds": [
+      "g-n1-034-q1",
+      "g-n1-034-q2",
+      "g-n1-034-q3",
+      "g-n1-034-q4",
+      "g-n1-034-q5"
+    ],
+    "translationIds": [
+      "g-n1-034-tr1",
+      "g-n1-034-tr2"
+    ]
+  },
+  "reading-n2-hybrid": {
+    "file": "reading",
+    "sha256": "214b7264b0988a9d3c9a24f92d38944af4db86d51c80b1618dcd3f8be910839a",
+    "questionIds": [
+      "reading-n2-hybrid-q1",
+      "reading-n2-hybrid-q2",
+      "reading-n2-hybrid-q3",
+      "reading-n2-hybrid-q4"
+    ],
+    "translationIds": [
+      "reading-n2-hybrid-t1",
+      "reading-n2-hybrid-t2"
+    ]
+  },
+  "reading-n1-archives": {
+    "file": "reading",
+    "sha256": "5bd63677a198b6f24545a7573916c68fd8065c95bba6b6672ba12d2757d0a12a",
+    "questionIds": [
+      "reading-n1-archives-q1",
+      "reading-n1-archives-q2",
+      "reading-n1-archives-q3",
+      "reading-n1-archives-q4",
+      "reading-n1-archives-q5"
+    ],
+    "translationIds": [
+      "reading-n1-archives-t1",
+      "reading-n1-archives-t2"
+    ]
+  },
+  "b-uchi-soto": {
+    "file": "business",
+    "sha256": "51bd5b350f35f3f462c1628e5d661ef0fcac5af642cd39703fbbd6a12a5cc1d6",
+    "questionIds": [
+      "b-uchi-soto-q1",
+      "b-uchi-soto-q2",
+      "b-uchi-soto-q3"
+    ],
+    "translationIds": [
+      "b-uchi-soto-t1",
+      "b-uchi-soto-t2"
+    ]
+  },
+  "b-itadaku-kudasaru": {
+    "file": "business",
+    "sha256": "590760359fa9b1913c51dec315616e1b77f36db09e3c2f24408d9512dda48f5f",
+    "questionIds": [
+      "b-itadaku-kudasaru-q1",
+      "b-itadaku-kudasaru-q2",
+      "b-itadaku-kudasaru-q3"
+    ],
+    "translationIds": [
+      "b-itadaku-kudasaru-t1",
+      "b-itadaku-kudasaru-t2"
+    ]
+  },
+  "b-mail-structure": {
+    "file": "business",
+    "sha256": "2e82cf9b9d13a4d53eeceb8d0b620c86c2ed570bbe22e9fa03051015ea51fe24",
+    "questionIds": [
+      "b-mail-structure-q1",
+      "b-mail-structure-q2",
+      "b-mail-structure-q3"
+    ],
+    "translationIds": [
+      "b-mail-structure-t1",
+      "b-mail-structure-t2"
+    ]
+  },
+  "b-meeting-interrupt": {
+    "file": "business",
+    "sha256": "03608d475f88d8cc3cfa5cbbfd9b93fb1c0d1fe1d0b773eb6ccaa96e5e1fa413",
+    "questionIds": [
+      "b-meeting-interrupt-q1",
+      "b-meeting-interrupt-q2",
+      "b-meeting-interrupt-q3"
+    ],
+    "translationIds": [
+      "b-meeting-interrupt-t1",
+      "b-meeting-interrupt-t2"
+    ]
+  },
+  "it-scope": {
+    "file": "it",
+    "sha256": "adb610c01f5d64ed066c4f1e258cdd77e5fca086dc2935835146c4d19f6a7987",
+    "questionIds": [
+      "it-scope-q1",
+      "it-scope-q2",
+      "it-scope-q3",
+      "it-scope-q4"
+    ],
+    "translationIds": [
+      "it-scope-t1",
+      "it-scope-t2"
+    ]
+  },
+  "it-estimation": {
+    "file": "it",
+    "sha256": "116c05be60bda18758e4d655943b49e41463e0e0997a684b0bdc8481f64682fc",
+    "questionIds": [
+      "it-estimation-q1",
+      "it-estimation-q2",
+      "it-estimation-q3",
+      "it-estimation-q4"
+    ],
+    "translationIds": [
+      "it-estimation-t1",
+      "it-estimation-t2"
+    ]
+  },
+  "it-reproduction": {
+    "file": "it",
+    "sha256": "534c2a591ca7c2d36cca84397206b4a6922fecebb1779c22fdb6cb6d62a73bbf",
+    "questionIds": [
+      "it-reproduction-q1",
+      "it-reproduction-q2",
+      "it-reproduction-q3",
+      "it-reproduction-q4"
+    ],
+    "translationIds": [
+      "it-reproduction-t1",
+      "it-reproduction-t2"
+    ]
+  },
+  "it-incident-timeline": {
+    "file": "it",
+    "sha256": "0a716ea298a852e35652b9f3138f0f6577027790e213aef2fd446c0c16338128",
+    "questionIds": [
+      "it-incident-timeline-q1",
+      "it-incident-timeline-q2",
+      "it-incident-timeline-q3",
+      "it-incident-timeline-q4"
+    ],
+    "translationIds": [
+      "it-incident-timeline-t1",
+      "it-incident-timeline-t2"
+    ]
+  },
+  "g-n5-002": {
+    "file": "grammar-n5",
+    "sha256": "5a73f7225e98fa7e5576e6e8efb6672ab785f7f08dfa2b4ccdcd907148ff8aa7",
+    "questionIds": [
+      "g-n5-002-q1",
+      "g-n5-002-q2",
+      "g-n5-002-q3",
+      "g-n5-002-q4",
+      "g-n5-002-q5"
+    ],
+    "translationIds": [
+      "g-n5-002-tr1",
+      "g-n5-002-tr2"
+    ]
+  },
+  "g-n4-027": {
+    "file": "grammar-n4",
+    "sha256": "9e123fbafb72212a9ad30185cf6b2ecd7f2845eac50a93b831d8e0a7f26dfae0",
+    "questionIds": [
+      "g-n4-027-q1",
+      "g-n4-027-q2",
+      "g-n4-027-q3",
+      "g-n4-027-q4"
+    ],
+    "translationIds": [
+      "g-n4-027-tr1",
+      "g-n4-027-tr2"
+    ]
+  },
+  "g-n4-044": {
+    "file": "grammar-n4",
+    "sha256": "34ebf709077400386bbfcacbaaeb376c705df4b2fda451a5570c9977fcbc86e8",
+    "questionIds": [
+      "g-n4-044-q1",
+      "g-n4-044-q2",
+      "g-n4-044-q3",
+      "g-n4-044-q4",
+      "g-n4-044-q5"
+    ],
+    "translationIds": [
+      "g-n4-044-tr1",
+      "g-n4-044-tr2"
+    ]
+  },
+  "g-n3-029": {
+    "file": "grammar-n3",
+    "sha256": "6102f61c7c447d70f8ea6159c5a8e25c331afc4a54df273b5969618df1a8fcbd",
+    "questionIds": [
+      "g-n3-029-q1",
+      "g-n3-029-q2",
+      "g-n3-029-q3",
+      "g-n3-029-q4"
+    ],
+    "translationIds": [
+      "g-n3-029-tr1",
+      "g-n3-029-tr2"
+    ]
+  }
+}

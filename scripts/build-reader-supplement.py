@@ -4,7 +4,7 @@ Reuses the established dictionary resolver with its output redirected to an
 external build directory. Only reader-supplement*.json are published.
 """
 from pathlib import Path
-import datetime,hashlib,importlib.util,json,re,sys
+import argparse,datetime,hashlib,importlib.util,json,re,sys
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'public'/'data'
@@ -14,6 +14,12 @@ HAN=re.compile(r'[\u3400-\u4dbf\u4e00-\u9fff々〆ヶ]')
 def dump(path,value):path.write_text(json.dumps(value,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 
 def main():
+    global BUILD,SOURCE
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--build-dir',type=Path,default=BUILD)
+    parser.add_argument('--dictionary',type=Path,default=ROOT/'../japanese-research/vocabulary-sources/tomoshi-dict-open.db')
+    args=parser.parse_args()
+    BUILD=args.build_dir.resolve();SOURCE=BUILD/'reader-supplement-tokens.json'
     raw=json.loads(SOURCE.read_text(encoding='utf-8'))
     base_before=hashlib.sha256((DATA/'reader.json').read_bytes()).hexdigest()
     if base_before!=raw['supplement']['baseReaderSha256']:raise ValueError('Base reader changed; retokenize supplement')
@@ -23,7 +29,7 @@ def main():
     module.DATA=target
     original_args=sys.argv
     try:
-        sys.argv=['build-reader.py','--source',str(SOURCE),'--dictionary',str(ROOT/'../japanese-research/vocabulary-sources/tomoshi-dict-open.db')]
+        sys.argv=['build-reader.py','--source',str(SOURCE),'--dictionary',str(args.dictionary)]
         module.main()
     finally:sys.argv=original_args
     resolved=json.loads((target/'reader.json').read_text(encoding='utf-8'))

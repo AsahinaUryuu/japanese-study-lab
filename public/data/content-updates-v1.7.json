@@ -1,0 +1,410 @@
+{
+  "version": "1.7.0",
+  "authorship": "原创日语场景、中文讲解、练习及参考译文；未复制第三方教材课文。",
+  "levelPolicy": "沿用既有课程等级作为学习顺序；JLPT官方能力描述不等于官方固定词汇/语法清单，商务口语并非JLPT直接测量项目。",
+  "reviewedOn": "2026-11-14",
+  "counts": {
+    "lessons": 20,
+    "sections": 60,
+    "passages": 20,
+    "objectiveQuestions": 60,
+    "translations": 40,
+    "translationRubricPoints": 120
+  },
+  "sources": [
+    {
+      "url": "https://www.jlpt.jp/e/about/levelsummary.html",
+      "scope": "N2/N1阅读中对结构、内容、意图的理解能力；不作为单个语法等级的官方证明。"
+    },
+    {
+      "url": "https://www.jfstandard.jpf.go.jp/summary/ja/render.do",
+      "scope": "以任务完成能力设计场景、学习目标与评价，不声称覆盖所有商务岗位。"
+    },
+    {
+      "url": "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf",
+      "scope": "第2章敬语类别及第3章いただく/くださる、ウチ/ソト关系；例句由本软件原创。"
+    },
+    {
+      "url": "https://www.kyozai.jpf.go.jp/kyozai/material/BMA00058/ja/render.do",
+      "scope": "ものの的让步与不符合预期的用法；旧分级标签不当作现行官方清单。"
+    }
+  ],
+  "lessons": [
+    {
+      "lessonId": "g-n2-010",
+      "file": "grammar-n2.json",
+      "title": "導入しただけでは変わらない",
+      "newQuestionIds": [
+        "g-n2-010-v17-q1",
+        "g-n2-010-v17-q2",
+        "g-n2-010-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n2-010-v17-t1",
+        "g-n2-010-v17-t2"
+      ],
+      "japaneseCharacters": 200,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.kyozai.jpf.go.jp/kyozai/material/BMA00058/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n2-011",
+      "file": "grammar-n2.json",
+      "title": "経験の範囲を確かめる",
+      "newQuestionIds": [
+        "g-n2-011-v17-q1",
+        "g-n2-011-v17-q2",
+        "g-n2-011-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n2-011-v17-t1",
+        "g-n2-011-v17-t2"
+      ],
+      "japaneseCharacters": 206,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.kyozai.jpf.go.jp/kyozai/material/BMA00058/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n2-040",
+      "file": "grammar-n2.json",
+      "title": "危険の予測と対応できない事情",
+      "newQuestionIds": [
+        "g-n2-040-v17-q1",
+        "g-n2-040-v17-q2",
+        "g-n2-040-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n2-040-v17-t1",
+        "g-n2-040-v17-t2"
+      ],
+      "japaneseCharacters": 197,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n1-028",
+      "file": "grammar-n1.json",
+      "title": "訂正は気分の問題ではない",
+      "newQuestionIds": [
+        "g-n1-028-v17-q1",
+        "g-n1-028-v17-q2",
+        "g-n1-028-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n1-028-v17-t1",
+        "g-n1-028-v17-t2"
+      ],
+      "japaneseCharacters": 199,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n1-029",
+      "file": "grammar-n1.json",
+      "title": "条件付きの可能性を約束に変えない",
+      "newQuestionIds": [
+        "g-n1-029-v17-q1",
+        "g-n1-029-v17-q2",
+        "g-n1-029-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n1-029-v17-t1",
+        "g-n1-029-v17-t2"
+      ],
+      "japaneseCharacters": 219,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n1-034",
+      "file": "grammar-n1.json",
+      "title": "理想と最低限を分ける",
+      "newQuestionIds": [
+        "g-n1-034-v17-q1",
+        "g-n1-034-v17-q2",
+        "g-n1-034-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n1-034-v17-t1",
+        "g-n1-034-v17-t2"
+      ],
+      "japaneseCharacters": 217,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "reading-n2-hybrid",
+      "file": "reading.json",
+      "title": "比べる前にそろえるもの",
+      "newQuestionIds": [
+        "reading-n2-hybrid-v17-q1",
+        "reading-n2-hybrid-v17-q2",
+        "reading-n2-hybrid-v17-q3"
+      ],
+      "newTranslationIds": [
+        "reading-n2-hybrid-v17-t1",
+        "reading-n2-hybrid-v17-t2"
+      ],
+      "japaneseCharacters": 208,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "reading-n1-archives",
+      "file": "reading.json",
+      "title": "記録されなかった人の声",
+      "newQuestionIds": [
+        "reading-n1-archives-v17-q1",
+        "reading-n1-archives-v17-q2",
+        "reading-n1-archives-v17-q3"
+      ],
+      "newTranslationIds": [
+        "reading-n1-archives-v17-t1",
+        "reading-n1-archives-v17-t2"
+      ],
+      "japaneseCharacters": 237,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "b-uchi-soto",
+      "file": "business.json",
+      "title": "同じ部長、変わる説明の相手",
+      "newQuestionIds": [
+        "b-uchi-soto-v17-q1",
+        "b-uchi-soto-v17-q2",
+        "b-uchi-soto-v17-q3"
+      ],
+      "newTranslationIds": [
+        "b-uchi-soto-v17-t1",
+        "b-uchi-soto-v17-t2"
+      ],
+      "japaneseCharacters": 217,
+      "sources": [
+        "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "b-itadaku-kudasaru",
+      "file": "business.json",
+      "title": "だれが確認したのか",
+      "newQuestionIds": [
+        "b-itadaku-kudasaru-v17-q1",
+        "b-itadaku-kudasaru-v17-q2",
+        "b-itadaku-kudasaru-v17-q3"
+      ],
+      "newTranslationIds": [
+        "b-itadaku-kudasaru-v17-t1",
+        "b-itadaku-kudasaru-v17-t2"
+      ],
+      "japaneseCharacters": 237,
+      "sources": [
+        "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "b-mail-structure",
+      "file": "business.json",
+      "title": "返信で何を決めてほしいか",
+      "newQuestionIds": [
+        "b-mail-structure-v17-q1",
+        "b-mail-structure-v17-q2",
+        "b-mail-structure-v17-q3"
+      ],
+      "newTranslationIds": [
+        "b-mail-structure-v17-t1",
+        "b-mail-structure-v17-t2"
+      ],
+      "japaneseCharacters": 220,
+      "sources": [
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do",
+        "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf"
+      ]
+    },
+    {
+      "lessonId": "b-meeting-interrupt",
+      "file": "business.json",
+      "title": "理解を示してから、ずれを確かめる",
+      "newQuestionIds": [
+        "b-meeting-interrupt-v17-q1",
+        "b-meeting-interrupt-v17-q2",
+        "b-meeting-interrupt-v17-q3"
+      ],
+      "newTranslationIds": [
+        "b-meeting-interrupt-v17-t1",
+        "b-meeting-interrupt-v17-t2"
+      ],
+      "japaneseCharacters": 237,
+      "sources": [
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do",
+        "https://www.bunka.go.jp/seisaku/bunkashingikai/kokugo/hokoku/pdf/keigo_tosin.pdf"
+      ]
+    },
+    {
+      "lessonId": "it-scope",
+      "file": "it.json",
+      "title": "対象外を決めるときの会話",
+      "newQuestionIds": [
+        "it-scope-v17-q1",
+        "it-scope-v17-q2",
+        "it-scope-v17-q3"
+      ],
+      "newTranslationIds": [
+        "it-scope-v17-t1",
+        "it-scope-v17-t2"
+      ],
+      "japaneseCharacters": 237,
+      "sources": [
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "it-estimation",
+      "file": "it.json",
+      "title": "三人日の仕事が三日で終わるとは限らない",
+      "newQuestionIds": [
+        "it-estimation-v17-q1",
+        "it-estimation-v17-q2",
+        "it-estimation-v17-q3"
+      ],
+      "newTranslationIds": [
+        "it-estimation-v17-t1",
+        "it-estimation-v17-t2"
+      ],
+      "japaneseCharacters": 230,
+      "sources": [
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "it-reproduction",
+      "file": "it.json",
+      "title": "再現条件を狭める報告",
+      "newQuestionIds": [
+        "it-reproduction-v17-q1",
+        "it-reproduction-v17-q2",
+        "it-reproduction-v17-q3"
+      ],
+      "newTranslationIds": [
+        "it-reproduction-v17-t1",
+        "it-reproduction-v17-t2"
+      ],
+      "japaneseCharacters": 244,
+      "sources": [
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "it-incident-timeline",
+      "file": "it.json",
+      "title": "復旧したことと原因が分かったこと",
+      "newQuestionIds": [
+        "it-incident-timeline-v17-q1",
+        "it-incident-timeline-v17-q2",
+        "it-incident-timeline-v17-q3"
+      ],
+      "newTranslationIds": [
+        "it-incident-timeline-v17-t1",
+        "it-incident-timeline-v17-t2"
+      ],
+      "japaneseCharacters": 226,
+      "sources": [
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n5-002",
+      "file": "grammar-n5.json",
+      "title": "だれのかばんですか",
+      "newQuestionIds": [
+        "g-n5-002-v17-q1",
+        "g-n5-002-v17-q2",
+        "g-n5-002-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n5-002-v17-t1",
+        "g-n5-002-v17-t2"
+      ],
+      "japaneseCharacters": 186,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n4-027",
+      "file": "grammar-n4.json",
+      "title": "開いている窓と開けている人",
+      "newQuestionIds": [
+        "g-n4-027-v17-q1",
+        "g-n4-027-v17-q2",
+        "g-n4-027-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n4-027-v17-t1",
+        "g-n4-027-v17-t2"
+      ],
+      "japaneseCharacters": 206,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n4-044",
+      "file": "grammar-n4.json",
+      "title": "行く前の助言、着いた後の行動",
+      "newQuestionIds": [
+        "g-n4-044-v17-q1",
+        "g-n4-044-v17-q2",
+        "g-n4-044-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n4-044-v17-t1",
+        "g-n4-044-v17-t2"
+      ],
+      "japaneseCharacters": 218,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    },
+    {
+      "lessonId": "g-n3-029",
+      "file": "grammar-n3.json",
+      "title": "自分の習慣と共有のルール",
+      "newQuestionIds": [
+        "g-n3-029-v17-q1",
+        "g-n3-029-v17-q2",
+        "g-n3-029-v17-q3"
+      ],
+      "newTranslationIds": [
+        "g-n3-029-v17-t1",
+        "g-n3-029-v17-t2"
+      ],
+      "japaneseCharacters": 222,
+      "sources": [
+        "https://www.jlpt.jp/e/about/levelsummary.html",
+        "https://www.jfstandard.jpf.go.jp/summary/ja/render.do"
+      ]
+    }
+  ]
+}

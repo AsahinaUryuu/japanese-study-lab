@@ -15,7 +15,8 @@ import { countCandidates } from './supplement-counts.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dataDir = path.join(root, 'public/data');
-const buildDir = path.resolve(root, '../japanese-research/reader-build');
+const buildArg = process.argv.indexOf('--build-dir');
+const buildDir = path.resolve(buildArg >= 0 ? process.argv[buildArg + 1] : path.join(root, '../japanese-research/reader-build'));
 const require = createRequire(path.join(buildDir, 'package.json'));
 const kuromoji = require('kuromoji');
 const tokenizer = await new Promise((resolve, reject) =>

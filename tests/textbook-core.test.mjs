@@ -38,9 +38,9 @@ test('JLPT顺序与独立商务/IT章节模块完整且一致',()=>{
 });
 test('24节IT课含完整教学、96道有效练习、双向翻译和角色任务',()=>{
  const ids=new Set();for(const l of data.it){assert.equal(l.track,'it');assert.ok(l.level==='N3'||l.level==='N2'||l.level==='N1');assert.ok(l.sections.length>=3,l.id);
-  l.sections.forEach(s=>{assert.ok(s.heading);assert.ok(s.body.join('').length>55,l.id);});assert.equal(l.quiz.length,4);
+  l.sections.forEach(s=>{assert.ok(s.heading);assert.ok(s.body.join('').length>55,l.id);});assert.equal(l.quiz.filter(q=>q.introducedIn!=='1.7.0').length,4);
   for(const q of l.quiz){assert.ok(!ids.has(q.id));ids.add(q.id);assert.ok(q.explanation.length>15);if(q.type==='choice'){assert.equal(new Set(q.options).size,q.options.length);assert.ok(Number.isInteger(q.answer)&&q.options[q.answer]);}else{assert.equal(q.type,'fill');assert.ok(q.accepted.includes(q.answer));}}
-  assert.deepEqual(l.translation.map(t=>t.direction).sort(),['ja-zh','zh-ja']);l.translation.forEach(t=>assert.ok(t.prompt&&t.reference&&t.notes.length));
+  assert.deepEqual(l.translation.filter(t=>t.introducedIn!=='1.7.0').map(t=>t.direction).sort(),['ja-zh','zh-ja']);l.translation.forEach(t=>assert.ok(t.prompt&&t.reference&&t.notes.length));
   assert.equal(l.speaking.length,1);assert.ok(l.speaking[0].task.length>30);assert.ok(l.speaking[0].checks.length>=3);assert.equal(l.speaking[0].modelAnswer,l.textbook.paragraphs[0].ja);assert.ok(l.summary.professional&&l.summary.plain);
  }
 });

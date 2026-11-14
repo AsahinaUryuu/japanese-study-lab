@@ -1,4 +1,4 @@
-import {gradeQuestions,readingForm} from './learning-core.js';
+import {gradeQuestions,readingForm,objectiveAttempt,snapshotQuestions} from './learning-core.js';
 
 const copy=value=>JSON.parse(JSON.stringify(value));
 const text=value=>typeof value==='string'?value:'';
@@ -21,10 +21,11 @@ export function rememberWordSource(record,source,now=Date.now()){
 export function saveQuizSnapshot(record,questions,answers,at=Date.now()){
  const history=Array.isArray(record.quizHistory)?record.quizHistory:[];
  const previousResult=record.quizResult||record.result,previousAt=record.quizAt||record.gradedAt;
- if(!history.length&&previousResult?.items&&record.submittedAnswers&&previousAt){
-  history.push({id:'legacy-'+previousAt,at:previousAt,questions:copy(questions),answers:copy(record.submittedAnswers),legacy:true});
+ if(!history.length&&previousResult&&(record.submittedAnswers||record.answers)&&previousAt){
+  const previous=objectiveAttempt(questions,record);
+  history.push({id:'legacy-'+previousAt,at:previousAt,questions:previous.questions,answers:previous.answers,result:previous.result,legacy:true,...(previous.incomplete?{incomplete:true,...(Number.isFinite(previous.originalScore)?{originalScore:previous.originalScore}:{})}:{})});
  }
- const snapshot={id:globalThis.crypto?.randomUUID?.()||String(at)+'-'+Math.random().toString(36).slice(2),at,questions:copy(questions),answers:copy(answers)};
+ const snapshot={id:globalThis.crypto?.randomUUID?.()||String(at)+'-'+Math.random().toString(36).slice(2),at,questions:snapshotQuestions(questions),answers:copy(answers),result:gradeQuestions(questions,answers)};
  record.quizHistory=[...history,snapshot].slice(-8);return snapshot;
 }
 function questionText(question,answer){return question.type==='choice'?(question.options?.[answer]??'未作答'):(answer==null||answer===''?'未作答':String(answer));}
@@ -33,24 +34,24 @@ export function collectObjectiveMistakes(data,progress,{scope='latest',source='a
  const rows=[];
  const append=(attempt,origin)=>{
   if(!Array.isArray(attempt.questions)||!attempt.answers||typeof attempt.answers!=='object')return;
-  const result=gradeQuestions(attempt.questions,attempt.answers);
+  const recovered=objectiveAttempt(attempt.questions,attempt),result=recovered.result;
   for(const item of result.items){if(item.correct)continue;const question=attempt.questions.find(q=>q.id===item.id);if(!question)continue;
    const key=JSON.stringify([origin.kind,origin.id,String(attempt.id||attempt.at),question.id]);
    const retry=progress.learningCenter?.retries?.[key];
-   rows.push({key,question,answer:item.answer,unanswered:item.unanswered,at:Number(attempt.at)||0,attemptId:String(attempt.id||attempt.at),origin,level:origin.level||'',retry,reference:questionText(question,question.answer),answerText:questionText(question,item.answer)});
+   rows.push({key,question,answer:item.answer,unanswered:item.unanswered,at:Number(attempt.at)||0,attemptId:String(attempt.id||attempt.at),origin,level:origin.level||'',retry,incomplete:recovered.incomplete===true,...(Number.isFinite(recovered.originalScore)?{originalScore:recovered.originalScore}:{}),reference:questionText(question,question.answer),answerText:questionText(question,item.answer)});
   }
  };
  for(const lesson of data.lessons||[]){const r=progress.lessons?.[lesson.id];if(!r)continue;let attempts=r.quizHistory?.length?r.quizHistory:[];
-  if(!attempts.length&&r.quizResult?.items)attempts=[{id:'legacy-'+r.quizAt,at:r.quizAt,questions:lesson.quiz||[],answers:r.submittedAnswers||Object.fromEntries(r.quizResult.items.map(i=>[i.id,i.answer]))}];
+  if(!attempts.length&&r.quizResult)attempts=[{id:'legacy-'+r.quizAt,at:r.quizAt,...objectiveAttempt(lesson.quiz||[],r)}];
   for(const a of scope==='history'?attempts:attempts.slice(-1))append(a,{kind:'lesson',id:lesson.id,title:lesson.title,level:lesson.level,href:'#lesson/'+encodeURIComponent(lesson.id)});
   for(const [taskId,listening] of Object.entries(r.listenHistory||{}))for(const a of scope==='history'?(listening.quizHistory||[]):(listening.quizHistory||[]).slice(-1))append(a,{kind:'lesson',id:lesson.id+':listen:'+taskId,lessonId:lesson.id,stage:'listen',title:lesson.title+' · 听力理解',level:lesson.level,href:'#lesson/'+encodeURIComponent(lesson.id)});
  }
  for(const book of data.stories||[])for(const chapter of book.chapters||[]){const r=progress.readings?.[chapter.id];if(!r?.result)continue;
-  const attempts=r.quizHistory?.length?r.quizHistory:[{id:'legacy-'+r.gradedAt,at:r.gradedAt,questions:(chapter.questions||[]).map(q=>({...q,type:'choice'})),answers:r.submittedAnswers||{}}];
+  const attempts=r.quizHistory?.length?r.quizHistory:[{id:'legacy-'+r.gradedAt,at:r.gradedAt,...objectiveAttempt((chapter.questions||[]).map(q=>({...q,type:'choice'})),r)}];
   for(const a of scope==='history'?attempts:attempts.slice(-1))append(a,{kind:'story',id:chapter.id,title:book.title+' · '+chapter.title,level:book.level,href:'#story/'+encodeURIComponent(chapter.id)});
  }
  const exams=progress.exams||[];
- for(const [index,exam] of exams.entries())append({id:exam.id||'exam-'+(exam.completedAt||0)+'-'+index,at:exam.completedAt,questions:exam.questions,answers:exam.answers||Object.fromEntries((exam.result?.items||[]).map(i=>[i.id,i.answer]))},{kind:'exam',id:String(exam.id||exam.completedAt||index),title:'限时训练 · '+(exam.level||''),level:exam.level,href:'#exam'});
+ for(const [index,exam] of exams.entries())append({id:exam.id||'exam-'+(exam.completedAt||0)+'-'+index,at:exam.completedAt,questions:exam.questions,result:exam.result,answers:exam.answers||Object.fromEntries((exam.result?.items||[]).map(i=>[i.id,i.answer]))},{kind:'exam',id:String(exam.id||exam.completedAt||index),title:'限时训练 · '+(exam.level||''),level:exam.level,href:'#exam'});
  return rows.filter(row=>(source==='all'||row.origin.kind===source)&&(level==='all'||row.level===level)&&(status==='all'||status==='pending'&&!row.retry?.correct||status==='recalled'&&row.retry?.correct)&&matches([row.question.prompt,row.question.explanation,row.origin.title,row.answerText],q)).sort((a,b)=>b.at-a.at||a.key.localeCompare(b.key));
 }
 export function gradeRetry(progress,row,answer,now=Date.now()){

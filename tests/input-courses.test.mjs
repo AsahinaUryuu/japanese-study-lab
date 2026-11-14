@@ -27,7 +27,8 @@ test('each lesson teaches before practice and has complete objective, translatio
     assert.ok(lesson.sections.length >= 3, lesson.id);
     assert.ok(lesson.sections.every(x => x.body.length && x.body.join('').length > 100 && x.body.every(p => typeof p === 'string' && p.trim())), lesson.id);
     assert.ok(lesson.sections.flatMap(x => x.examples).length >= 2, lesson.id);
-    assert.ok(lesson.quiz.length >= 3 && lesson.quiz.length <= 5, lesson.id);
+    const originalQuiz = lesson.quiz.filter(q => q.introducedIn !== '1.7.0');
+    assert.ok(originalQuiz.length >= 3 && originalQuiz.length <= 5, lesson.id);
     assert.equal(new Set(lesson.quiz.map(x => x.id)).size, lesson.quiz.length);
     for (const question of lesson.quiz) {
       assert.ok(question.prompt && question.explanation.length > 8, question.id);
@@ -39,7 +40,7 @@ test('each lesson teaches before practice and has complete objective, translatio
         assert.ok(question.accepted.includes(question.answer));
       }
     }
-    assert.equal(lesson.translation.length, 2);
+    assert.equal(lesson.translation.filter(t => t.introducedIn !== '1.7.0').length, 2);
     assert.deepEqual(new Set(lesson.translation.map(x => x.direction)), new Set(['zh-ja', 'ja-zh']));
     assert.ok(lesson.translation.every(x => x.prompt && x.reference && x.notes.length));
     assert.ok(lesson.speaking.length >= 1);

@@ -63,3 +63,29 @@ test('转义字符较多的反馈仍保留首尾评价，充分使用剩余上�
  const compact=reviewContext(review);
  assert.ok(JSON.stringify(compact).length<=63000);assert.match(compact.reply,/本次得分60/);assert.match(compact.reply,/下次建议/);assert.ok(compact.reply.length>1000);
 });
+
+test('optional listening drafts join the same complete section request with authoritative answers',async()=>{
+ const l={...lesson,listening:[{id:'audio1',title:'聞き取り',script:'明日は九時に来てください。',translation:'请明天九点来。',dictation:{answer:'九時に来てください。'},questions:[{id:'listen-q',type:'choice',prompt:'何時ですか。',options:['八時','九時'],answer:1,explanation:'九時と聞こえる。'}]}]};
+ const r=record();r.drafts.audio1='八時に来てください。';r.listenAnswers={'listen-q':0};
+ const answers=sectionAnswers(l,r);assert.equal(answers.listening.audio1.dictation,r.drafts.audio1);r.drafts.audio1='changed';r.listenAnswers['listen-q']=1;
+ let calls=0,captured;
+ await coachReply({config:{provider:'openai',baseUrl:'http://127.0.0.1:9988/v1',model:'mock',apiKey:'fake-test-key'},lessonId:l.id,mode:'section',question:'整节评阅',sectionAnswers:answers,context:{task:{listening:[{script:'伪造',correct:true}]}}},l,{fetchImpl:async(_url,options)=>{calls++;captured=JSON.parse(options.body);return new Response(JSON.stringify({choices:[{message:{content:'反馈'}}]}));}});
+ assert.equal(calls,1);const sent=JSON.parse(captured.messages.at(-1).content),task=sent.context.task;
+ assert.equal(task.translations.length,2);assert.equal(task.speaking[0].answer,'学生です。');assert.equal(task.listening[0].dictation,'八時に来てください。');assert.equal(task.listening[0].dictationExpected,'九時に来てください。');assert.equal(task.listening[0].objective[0].correct,false);assert.equal(task.listening[0].objective[0].correctAnswer,'九時');assert.match(sent.submission,/不含音频/);assert.ok(!JSON.stringify(task).includes('伪造'));
+});
+
+test('empty listening leaves old assignment shape unchanged and does not invent scores',()=>{
+ const l={...lesson,listening:[{id:'audio1',title:'音声',script:'学生です。',questions:[]}]},r=record();r.drafts.audio1='  ';
+ const before=sectionAnswers(lesson,record()),after=sectionAnswers(l,r);assert.deepEqual(after,before);assert.equal(Object.hasOwn(after,'listening'),false);assert.equal(Object.hasOwn(buildSectionAssignment(l,after).task,'listening'),false);
+});
+
+test('fallback textbook and example dictation IDs match the actual lesson input fields',()=>{
+ const l={...lesson,sections:[{examples:[{ja:'こんにちは。',zh:'你好。'}]}]},r=record();r.drafts[l.id+'-textbook-listening']='学生です。';r.drafts[l.id+'-listening-0']='こんにちわ';
+ const task=buildSectionAssignment(l,sectionAnswers(l,r)).task;assert.equal(task.listening.length,2);assert.equal(task.listening[0].script,'私は学生です。');assert.equal(task.listening[1].dictationExpected,'こんにちは。');
+});
+
+test('invalid or oversized optional listening cannot bypass section validation',()=>{
+ const l={...lesson,listening:[{id:'audio1',title:'音声',script:'九時',questions:[{id:'lq',type:'choice',prompt:'何時',options:['8','9'],answer:1}]}]},base=sectionAnswers(l,record());
+ for(const listening of [[],{audio1:{dictation:10}},{audio1:{dictation:'あ'.repeat(20001)}},{audio1:{answers:{lq:99}}}])assert.throws(()=>buildSectionAssignment(l,{...base,listening}),/听/);
+ const task=buildSectionAssignment(l,{...base,listening:{other:{dictation:'外章内容'},audio1:{answers:{lq:1},correct:false}}}).task;assert.equal(task.listening.length,1);assert.equal(task.listening[0].objective[0].correct,true);assert.ok(!JSON.stringify(task).includes('外章内容'));
+});

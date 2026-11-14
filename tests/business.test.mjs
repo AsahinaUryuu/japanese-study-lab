@@ -22,7 +22,7 @@ test('商务课程覆盖三个阶段，每课有完整教学和真实任务',()=
 test('客观题答案索引、解析与选项有效，答案位置均衡',()=>{
   const positions=new Set();const ids=new Set();
   for(const l of lessons){
-    assert.equal(l.quiz.length,3,l.id);
+    assert.equal(l.quiz.filter(q=>q.introducedIn!=='1.7.0').length,3,l.id);
     for(const q of l.quiz){
       assert.ok(!ids.has(q.id));ids.add(q.id);assert.equal(q.type,'choice');
       assert.ok(q.prompt.length>10);assert.equal(q.options.length,3);
@@ -38,8 +38,9 @@ test('客观题答案索引、解析与选项有效，答案位置均衡',()=>{
 test('每课包含双向翻译与可独立完成的角色扮演',()=>{
   const examples=new Set(),tasks=new Set();
   for(const l of lessons){
-    assert.equal(l.translation.length,2);
-    assert.deepEqual(l.translation.map(t=>t.direction).sort(),['ja-zh','zh-ja']);
+    const originalTranslations=l.translation.filter(t=>t.introducedIn!=='1.7.0');
+    assert.equal(originalTranslations.length,2);
+    assert.deepEqual(originalTranslations.map(t=>t.direction).sort(),['ja-zh','zh-ja']);
     l.translation.forEach(t=>{assert.ok(t.prompt.length>5,t.id);assert.ok(t.reference.length>5,t.id);assert.ok(t.notes.length>=2);examples.add(t.reference);});
     assert.ok(l.speaking.length>=1);
     for(const s of l.speaking){assert.ok(s.scene.length>15);assert.ok(s.task.length>20);assert.ok(s.modelAnswer.length>30);assert.ok(s.checks.length>=3);tasks.add(s.task);}
