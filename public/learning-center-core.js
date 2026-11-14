@@ -3,7 +3,7 @@ import {gradeQuestions,readingForm,objectiveAttempt,snapshotQuestions} from './l
 const copy=value=>JSON.parse(JSON.stringify(value));
 const text=value=>typeof value==='string'?value:'';
 const matches=(values,query)=>!query||readingForm(values.filter(Boolean).join(' ').toLowerCase()).includes(readingForm(query.toLowerCase()));
-export const sourceLabels={lesson:'课程小节',story:'故事章节',novel:'全文小说',exam:'限时训练',dictionary:'词典',unknown:'原有记录'};
+export const sourceLabels={lesson:'课程小节',reflection:'自检回忆',story:'故事章节',novel:'全文小说',exam:'限时训练',dictionary:'词典',unknown:'原有记录'};
 export function sourceForRoute(data,route){
  const [kind,id,chapterId]=route.split('/');
  if(kind==='lesson'){const lesson=data.lessons.find(l=>l.id===id);if(lesson)return {kind:'lesson',id,title:lesson.title,href:'#lesson/'+encodeURIComponent(id)};}
@@ -66,11 +66,24 @@ export function collectNotes(data,progress,{source='all',q=''}={}){
  const notes=[];const known=new Set();
  for(const lesson of data.lessons||[]){const content=text(progress.notes?.[lesson.id]);known.add(lesson.id);if(content.trim())notes.push({key:'lesson:'+lesson.id,kind:'lesson',id:lesson.id,title:lesson.title,level:lesson.level,content,href:'#lesson/'+encodeURIComponent(lesson.id)});}
  for(const [id,value] of Object.entries(progress.notes||{}))if(!known.has(id)&&text(value).trim())notes.push({key:'unknown:'+id,kind:'unknown',id,title:'暂未载入的课程 · '+id,content:value,href:''});
+ for(const [id,record] of Object.entries(progress.lessons||{})){const content=text(record?.studyCheck?.reflection).slice(0,3000);if(!content.trim())continue;const lesson=(data.lessons||[]).find(l=>l.id===id);notes.push({key:'reflection:'+id,kind:'reflection',id,title:lesson?.title||'暂未载入的课程 · '+id,level:lesson?.level,content,href:lesson?'#lesson/'+encodeURIComponent(id)+'?stage=summary&check=1':''});}
  const readingSources=new Map();
  for(const book of data.stories||[])for(const chapter of book.chapters||[])readingSources.set(chapter.id,{kind:'story',id:chapter.id,title:book.title+' · '+chapter.title,href:'#story/'+encodeURIComponent(chapter.id),level:book.level});
  for(const book of data.importedNovels||[])for(const chapter of book.chapters||[])readingSources.set('novel:'+book.id+':'+chapter.id,{kind:'novel',id:'novel:'+book.id+':'+chapter.id,title:book.title+' · '+chapter.title,href:'#novel/'+encodeURIComponent(book.id)+'/'+encodeURIComponent(chapter.id)});
  for(const [id,record] of Object.entries(progress.readings||{})){const content=text(record?.note);if(!content.trim())continue;const origin=readingSources.get(id)||{kind:'unknown',id,title:'暂未载入的阅读章节 · '+id,href:''};notes.push({...origin,key:'reading:'+id,content});}
- return notes.filter(n=>(source==='all'||n.kind===source)&&matches([n.title,n.content,n.level],q));
+ return notes.filter(n=>(source==='all'||n.kind===source)&&matches([n.title,n.content,n.level,sourceLabels[n.kind]],q));
+}
+/** Write only the selected original source. Class notes and self-checks coexist. */
+export function updateCollectedNote(progress,note,value){
+ if(!note||typeof note.id!=='string'||typeof note.key!=='string')return null;
+ const content=text(value).slice(0,note.kind==='reflection'?3000:10000),id=note.id;
+ if(note.kind==='reflection'&&note.key==='reflection:'+id){
+  const record=progress.lessons?.[id];if(!record||typeof record!=='object'||Array.isArray(record))return null;
+  record.studyCheck={...(record.studyCheck&&typeof record.studyCheck==='object'&&!Array.isArray(record.studyCheck)?record.studyCheck:{}),reflection:content};
+ }else if((note.kind==='lesson'&&note.key==='lesson:'+id||note.kind==='unknown'&&note.key==='unknown:'+id)&&Object.hasOwn(progress.notes||{},id))progress.notes[id]=content;
+ else if(['story','novel','unknown'].includes(note.kind)&&note.key==='reading:'+id&&progress.readings?.[id])progress.readings[id].note=content;
+ else return null;
+ return content;
 }
 export function collectReviewWords(words,records,{q='',source='all',status='all',sort='due',now=Date.now()}={}){
  const list=words.filter(w=>records[w.id]).map(w=>({word:w,record:records[w.id]})).filter(({word,record})=>

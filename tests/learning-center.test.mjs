@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {newProgress,normalizeProgress,gradeQuestions} from '../public/learning-core.js';
-import {saveQuizSnapshot,collectObjectiveMistakes,gradeRetry,collectNotes,notesMarkdown,collectReviewWords,rememberWordSource,sourceForRoute} from '../public/learning-center-core.js';
+import {saveQuizSnapshot,collectObjectiveMistakes,gradeRetry,collectNotes,updateCollectedNote,notesMarkdown,collectReviewWords,rememberWordSource,sourceForRoute} from '../public/learning-center-core.js';
 import {renderLearningCenter,learningCenterEvents} from '../public/views/learning-center.js';
 
 const question=(id='q')=>({id,type:'choice',prompt:'正しい文は？',options:['誤り','正解'],answer:1,explanation:'主語と動作の関係を確認する。'});
@@ -82,4 +82,55 @@ test('listening checks are separate snapshots and return to the listening stage'
 test('central word cards retain the common furigana and click-to-dictionary contracts',()=>{
  const {data,p}=fixture();p.words.w1={due:1};const env=envFor(data,p,'words');env.render();
  assert.match(env.main.innerHTML,/class="annotated-text"/);assert.match(env.main.innerHTML,/data-action="reader-word" data-word-id="w1"/);assert.match(env.main.innerHTML,/data-action="toggle-furigana"/);
+});
+
+
+test('self-check reflections coexist with class notes and have their own search source and route',()=>{
+ const {data,p}=fixture();p.notes.a='课堂笔记：敬语';p.lessons.a={studyCheck:{reflection:'回忆：いただく是自谦',rating:'again',dueAt:12}};
+ const before=structuredClone(p),rows=collectNotes(data,p);assert.equal(rows.length,2);assert.equal(new Set(rows.map(n=>n.key)).size,2);
+ assert.equal(rows.find(n=>n.kind==='reflection').href,'#lesson/a?stage=summary&check=1');
+ assert.equal(collectNotes(data,p,{source:'lesson'})[0].content,p.notes.a);assert.equal(collectNotes(data,p,{source:'reflection',q:'イタダク'}).length,1);
+ assert.equal(collectNotes(data,p,{q:'自检回忆'}).length,1);assert.deepEqual(p,before);
+});
+
+test('editing reflection changes only its source, retaining classroom notes, schedule and result',()=>{
+ const {data,p}=fixture();p.notes.a='课堂原文';p.lessons.a={studyCheck:{reflection:'自检原文',rating:'again',dueAt:22,attempts:2},quizResult:{score:50}};p.lessons.b={studyCheck:{reflection:'另一课'}};
+ const before=structuredClone(p),env=envFor(data,p,'notes');env.render();const markup=env.main.innerHTML;
+ learningCenterEvents(env,{type:'input'},{dataset:{centerNote:'reflection:a'},value:'新回忆'});
+ assert.equal(p.lessons.a.studyCheck.reflection,'新回忆');assert.equal(p.notes.a,'课堂原文');assert.equal(p.lessons.a.studyCheck.dueAt,22);assert.equal(p.lessons.a.studyCheck.rating,'again');assert.deepEqual(p.lessons.a.quizResult,before.lessons.a.quizResult);assert.deepEqual(p.lessons.b,before.lessons.b);
+ assert.equal(env.main.innerHTML,markup);assert.equal(env.store.saves,1);
+ learningCenterEvents(env,{type:'input'},{dataset:{centerNote:'lesson:a'},value:'新课堂笔记'});assert.equal(p.notes.a,'新课堂笔记');assert.equal(p.lessons.a.studyCheck.reflection,'新回忆');assert.equal(env.store.saves,2);
+ const reflection=collectNotes(data,p).find(n=>n.key==='reflection:a');assert.equal(updateCollectedNote(p,reflection,'字'.repeat(3001)).length,3000);
+ assert.equal(updateCollectedNote(p,{...reflection,key:'lesson:a'},'不合法'),null);assert.equal(updateCollectedNote(p,{...reflection,id:'missing',key:'reflection:missing'},'不合法'),null);
+});
+
+test('reflection Markdown and editor escape markup, retain fences, and preserve original note export',()=>{
+ const {data,p}=fixture();p.notes.a='旧课堂';p.lessons.a={studyCheck:{reflection:'</textarea><script>alert(1)</script>\n```js\nconst x = 1;\n```'}};
+ const env=envFor(data,p,'notes');env.render();assert.ok(env.main.innerHTML.includes('&lt;/textarea&gt;&lt;script&gt;'));assert.ok(!env.main.innerHTML.includes('<script>alert(1)</script>'));assert.match(env.main.innerHTML,/data-center-note="reflection:a" maxlength="3000"/);assert.match(env.main.innerHTML,/stage=summary&amp;check=1/);
+ const md=notesMarkdown(collectNotes(data,p));assert.match(md,/来源：课程小节/);assert.match(md,/来源：自检回忆/);assert.match(md,/stage=summary&check=1/);assert.match(md,/````text/);assert.ok(md.includes(p.notes.a));assert.ok(md.includes(p.lessons.a.studyCheck.reflection));
+});
+
+test('temporarily unavailable reflections remain searchable and editable without inventing a route',()=>{
+ const {data,p}=fixture();p.lessons.missing={studyCheck:{reflection:'原有回忆',dueAt:123}};
+ const row=collectNotes(data,p,{source:'reflection'})[0];assert.equal(row.href,'');assert.equal(updateCollectedNote(p,row,'修订回忆'),'修订回忆');assert.equal(p.lessons.missing.studyCheck.dueAt,123);
+ assert.equal(updateCollectedNote(p,row,''),'');assert.equal(collectNotes(data,p,{source:'reflection'}).length,0);
+});
+
+test('source-filtered notes keep pagination and editing does not clear source or query',()=>{
+ const {data,p}=fixture();data.lessons=Array.from({length:18},(_,i)=>({id:'lesson-'+i,title:'课程 '+i,level:'N5',quiz:[]}));
+ for(const lesson of data.lessons){p.notes[lesson.id]='课堂';p.lessons[lesson.id]={studyCheck:{reflection:'回忆 '+lesson.id}};}
+ const env=envFor(data,p,'notes');env.state.params.set('source','reflection');env.state.params.set('q','回忆');env.state.page=2;env.render();
+ assert.equal(env.state.viewData.centerNotes.length,18);assert.equal((env.main.innerHTML.match(/data-center-note="reflection:/g)||[]).length,2);assert.ok(env.main.innerHTML.includes('value="reflection" selected'));
+ const before=env.main.innerHTML;learningCenterEvents(env,{type:'input'},{dataset:{centerNote:'reflection:lesson-16'},value:'更新内容'});
+ assert.equal(env.main.innerHTML,before);assert.equal(env.state.page,2);assert.equal(env.state.params.get('source'),'reflection');assert.equal(env.state.params.get('q'),'回忆');assert.equal(p.notes['lesson-16'],'课堂');
+});
+
+
+test('clearing the final reflection updates status and export availability without rerendering',()=>{
+ const {data,p}=fixture();p.lessons.a={studyCheck:{reflection:'唯一笔记'}};const env=envFor(data,p,'notes');env.render();
+ const status={textContent:''},buttons=[{dataset:{action:'center-export-notes'}},{dataset:{action:'center-export-all-notes'}}];
+ env.main.querySelectorAll=selector=>selector==='[data-center-notes-status]'?[status]:selector.includes('data-action=')?buttons:[];
+ const rendered=env.main.innerHTML;
+ learningCenterEvents(env,{type:'input'},{dataset:{centerNote:'reflection:a'},value:''});assert.match(status.textContent,/笔记 0 篇/);assert.equal(buttons[0].disabled,true);assert.equal(buttons[1].disabled,true);assert.equal(env.main.innerHTML,rendered);
+ learningCenterEvents(env,{type:'input'},{dataset:{centerNote:'reflection:a'},value:'继续写'});assert.equal(buttons[0].disabled,false);assert.equal(buttons[1].disabled,false);
 });

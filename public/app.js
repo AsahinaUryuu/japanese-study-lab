@@ -24,7 +24,7 @@ import {renderLibrary,libraryEvents} from './views/library.js';
 
 const $=s=>document.querySelector(s),main=$('#main');let toastTimer,tutor,reader,novelAnnotator,backupManager,config={provider:'openai',baseUrl:'https://api.openai.com/v1',model:'',apiKey:'',proxyUrl:''},store;
 const deploymentLabel=['localhost','127.0.0.1','::1','[::1]'].includes(location.hostname.toLowerCase())?'本地':'云端';
-$('#deployment-edition').textContent=`独立${deploymentLabel}版 · 1.7.0`;
+$('#deployment-edition').textContent=`独立${deploymentLabel}版 · 1.8.0`;
 const state={route:'home',params:new URLSearchParams(),page:1,selectedContext:null,viewData:{},busy:new Map()};
 export function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),5000);}
 async function json(url,options={}){const r=await fetch(url,options);let value;try{value=await r.json();}catch{throw new Error('服务返回了无法读取的内容');}if(!r.ok)throw new Error(value.error||`请求失败 ${r.status}`);return value;}

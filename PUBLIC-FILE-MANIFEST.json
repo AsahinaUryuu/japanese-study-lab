@@ -21,8 +21,8 @@
   },
   {
     "path": "README.md",
-    "sha256": "ac485e26e46aee84dae23c59d525a61c799ee5d4ea65fe9dcbf33743d5d91050",
-    "bytes": 5071
+    "sha256": "83d7dde988f780f17912d309d7447a0450150c1c29fd9a443aa7ee3fe24c2aa8",
+    "bytes": 5914
   },
   {
     "path": "lib/coach.mjs",
@@ -91,12 +91,12 @@
   },
   {
     "path": "package.json",
-    "sha256": "464391c18090a85587a16ced3dbb59cbeb01e55f8c0622320bd5ad60c99619d9",
+    "sha256": "df3da14a92bc0f94edecd602892daaa495a229e98c8092f6616afd82342b0332",
     "bytes": 313
   },
   {
     "path": "public/app.js",
-    "sha256": "6f0608a20ce6b631b7669b8894e1c278d53d979b0ecd7ebe5cc108546a159d04",
+    "sha256": "0b8f25249c40c381cd1164860384465f702a1d451441481d37684e76de5b34dc",
     "bytes": 22796
   },
   {
@@ -321,13 +321,13 @@
   },
   {
     "path": "public/index.html",
-    "sha256": "4b6413444528bb2b9ed69614afe180a4238c7760016b05e7d2b14ebc16617a7f",
-    "bytes": 5684
+    "sha256": "d1e1de95135cd209e0fcaa49c8a6363d4b3b43de8a008d2ce773562eb815bdf9",
+    "bytes": 5742
   },
   {
     "path": "public/learning-center-core.js",
-    "sha256": "f43306b88ae8f431349322c86145a0598212148de5a2144bcc0a066417b353ef",
-    "bytes": 10022
+    "sha256": "78daeaef60ec5ecab7d0ea8f3f5d07e60f5a7c3c284d2da5a80d67181e799861",
+    "bytes": 11578
   },
   {
     "path": "public/learning-center.css",
@@ -338,6 +338,11 @@
     "path": "public/learning-core.js",
     "sha256": "46712301720a1a6885ac278840dce6b8bfb03acdc8e356e7a87799b4de55dc59",
     "bytes": 15133
+  },
+  {
+    "path": "public/lesson-recall.css",
+    "sha256": "e3bd792445c4a3b726db6084ffed8261f063aca08774ded38cae4ad32c893248",
+    "bytes": 2065
   },
   {
     "path": "public/listening-tasks.js",
@@ -393,6 +398,11 @@
     "path": "public/releases/1.7.0.md",
     "sha256": "1a9e063ca408637d9b435de5bbdb9e3fdf1c1aa4ac6acc24ec509713d6c55ce9",
     "bytes": 2725
+  },
+  {
+    "path": "public/releases/1.8.0.md",
+    "sha256": "21d580a6b0705cc86b774842c5ec40c75ba5373f51c798bc4c55c706515714d7",
+    "bytes": 2468
   },
   {
     "path": "public/resources/bunka-keigo-guidelines.pdf",
@@ -616,13 +626,18 @@
   },
   {
     "path": "public/views/learning-center.js",
-    "sha256": "1d2eed54a44422ea4f6bbfe03467ca39b30a52774ed363858bc777462075c0b6",
-    "bytes": 13664
+    "sha256": "493a2476225bdec67c71dcbdbc86bb188c1b5fd43a0a2bfa77e21579b7ff5dd2",
+    "bytes": 14359
+  },
+  {
+    "path": "public/views/lesson-recall.js",
+    "sha256": "64c6efb0afc9493c84397b148a75ba85a742bb26b543b6936096a7947c52dbb8",
+    "bytes": 3870
   },
   {
     "path": "public/views/lessons.js",
-    "sha256": "64fbcb5056b499616b61e54b6e093f512fd87904c85f9742e00a632fe666431b",
-    "bytes": 23931
+    "sha256": "1b27f2c233a295df558a9ad341d9b9ad690ec612a4bf2feabf177fdede895b52",
+    "bytes": 24107
   },
   {
     "path": "public/views/library.js",
@@ -931,8 +946,8 @@
   },
   {
     "path": "server.mjs",
-    "sha256": "170e943ea4ca161a969f81552e30e0b70c07a5ede2cc53c6dc16f85eccde3f1b",
-    "bytes": 13166
+    "sha256": "0219f57ec999546660e20e5daafff283af1882d1be6047c4bd84bcc0c6c7c34d",
+    "bytes": 13326
   },
   {
     "path": "start-learning.ps1",
@@ -986,13 +1001,18 @@
   },
   {
     "path": "tests/learning-center.test.mjs",
-    "sha256": "a0c55f4fd04c7ae27c7f70401721f1970ddbdd1e3fe9e1372b4eddb330ac2a46",
-    "bytes": 9788
+    "sha256": "9b6fb9bc377dcdf9652d60b2f35051ccd4d538e96de47eb5b46f6ae96e7ecb53",
+    "bytes": 15656
   },
   {
     "path": "tests/learning-core.test.mjs",
     "sha256": "5d492e60c39d5f67e21762b3d8191a9552e51e26575772336a1295ff9f5fdb38",
     "bytes": 2770
+  },
+  {
+    "path": "tests/lesson-recall.test.mjs",
+    "sha256": "da0c884fba96079771c1e1d3273205ce97e5f1a082a0d3c580034b51c0379299",
+    "bytes": 10614
   },
   {
     "path": "tests/media.test.mjs",

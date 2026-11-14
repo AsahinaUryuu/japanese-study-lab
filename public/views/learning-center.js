@@ -1,5 +1,5 @@
 import {studyQueueMarkup} from '../study-check.js';
-import {collectObjectiveMistakes,collectNotes,collectReviewWords,gradeRetry,notesMarkdown,wordsMarkdown,sourceLabels} from '../learning-center-core.js';
+import {collectObjectiveMistakes,collectNotes,updateCollectedNote,collectReviewWords,gradeRetry,notesMarkdown,wordsMarkdown,sourceLabels} from '../learning-center-core.js';
 import {e,heading,button,empty,pagination,download,time,questionHTML,levelOptions} from '../ui.js';
 import {annotatedText,furiganaButton} from '../reader-text.js';
 
@@ -26,7 +26,7 @@ function wordList(env){
 }
 function notebook(env){
  const p=params(env),list=notes(env),page=Math.min(env.state.page,Math.max(1,Math.ceil(list.length/16)));env.state.viewData.centerNotes=list;
- return filterForm(env,'notes',sourceSelect(p.source,['lesson','story','novel','unknown']),'搜索笔记正文、课程或书名')+`<div class="row center-actions"><span role="status">找到 ${list.length} 篇笔记</span>${button('导出筛选笔记 Markdown','center-export-notes',list.length?'':'disabled')}${button('导出全部笔记 Markdown','center-export-all-notes')}</div><p class="hint">课程、故事与全文小说的笔记保存在原位置；这里的编辑会同步回原小节。导出只包含笔记及来源，不包含对话和模型设置。</p>${list.slice((page-1)*16,page*16).map(n=>`<article class="task-card"><div class="row between"><span class="pill">${e(sourceLabels[n.kind])}</span>${n.href?`<a class="button small subtle" href="${e(n.href)}">回到原小节 →</a>`:''}</div><h2>${e(n.title)}</h2><p class="center-preserve" data-center-note-preview="${e(n.key)}">${e(n.content)}</p><details><summary>编辑这篇笔记</summary><label>笔记正文<textarea data-center-note="${e(n.key)}" maxlength="10000">${e(n.content)}</textarea></label><p class="hint">自动保存到这篇笔记的原始位置</p></details></article>`).join('')}${list.length?pagination(page,list.length,16):empty('还没有匹配的笔记。在小节或阅读正文底部的“我的学习笔记”写下内容后，即可在这里检索。')}`;
+ return filterForm(env,'notes',sourceSelect(p.source,['lesson','reflection','story','novel','unknown']),'搜索笔记正文、课程或书名')+`<div class="row center-actions"><span role="status" data-center-notes-status>找到 ${list.length} 篇笔记</span>${button('导出筛选笔记 Markdown','center-export-notes',list.length?'':'disabled')}${button('导出全部笔记 Markdown','center-export-all-notes',collectNotes(env.data,env.store.data).length?'':'disabled')}</div><p class="hint">课堂笔记、自检回忆、故事与全文小说笔记分别保存在原位置；这里的编辑会同步回对应小节，两类课程笔记互不覆盖。导出只包含笔记及来源，不包含对话和模型设置。</p>${list.slice((page-1)*16,page*16).map(n=>`<article class="task-card"><div class="row between"><span class="pill">${e(sourceLabels[n.kind])}</span>${n.href?`<a class="button small subtle" href="${e(n.href)}">${n.kind==='reflection'?'回到自检回忆':'回到原小节'} →</a>`:''}</div><h2>${e(n.title)}</h2><p class="center-preserve" data-center-note-preview="${e(n.key)}">${e(n.content)}</p><details><summary>编辑这篇笔记</summary><label>笔记正文<textarea data-center-note="${e(n.key)}" maxlength="${n.kind==='reflection'?3000:10000}">${e(n.content)}</textarea></label><p class="hint">自动保存到这篇笔记的原始位置</p></details></article>`).join('')}${list.length?pagination(page,list.length,16):empty('还没有匹配的笔记。在课堂笔记、自检回忆或阅读笔记中写下内容后，即可在这里检索。')}`;
 }
 export function renderLearningCenter(env){
  const tab=tabFor(env);env.state.viewData.centerTab=tab;
@@ -35,7 +35,11 @@ export function renderLearningCenter(env){
 export function learningCenterEvents(env,event,target){
  if(!['learning-center','mistakes'].includes(env.state.route))return false;
  if(['input','change'].includes(event.type)){
-  if(target.dataset.centerNote){const note=env.state.viewData.centerNotes?.find(n=>n.key===target.dataset.centerNote);if(!note)return true;if(note.kind==='lesson'||note.key.startsWith('unknown:'))env.store.data.notes[note.id]=target.value;else if(env.store.data.readings?.[note.id])env.store.data.readings[note.id].note=target.value;note.content=target.value;env.store.save();const preview=[...env.main.querySelectorAll('[data-center-note-preview]')].find(el=>el.dataset.centerNotePreview===note.key);if(preview)preview.textContent=target.value;return true;}
+  if(target.dataset.centerNote){const note=env.state.viewData.centerNotes?.find(n=>n.key===target.dataset.centerNote);if(!note)return true;const content=updateCollectedNote(env.store.data,note,target.value);if(content===null)return true;note.content=content;if(target.value!==content)target.value=content;env.store.save();const preview=[...env.main.querySelectorAll('[data-center-note-preview]')].find(el=>el.dataset.centerNotePreview===note.key);if(preview)preview.textContent=content;
+   const matching=notes(env).length,total=collectNotes(env.data,env.store.data).length;
+   for(const node of env.main.querySelectorAll('[data-center-notes-status]'))node.textContent=`符合当前筛选的笔记 ${matching} 篇 · 正在编辑的卡片保留，切换筛选后刷新列表。`;
+   for(const node of env.main.querySelectorAll('[data-action="center-export-notes"], [data-action="center-export-all-notes"]'))node.disabled=(node.dataset.action==='center-export-notes'?matching:total)===0;
+   return true;}
   if(target.dataset.question&&target.closest('.center-retry')){const key=target.closest('[data-center-key]').dataset.centerKey;env.state.viewData.centerDrafts||={};env.state.viewData.centerDrafts[key]=target.type==='radio'?Number(target.value):target.value;return true;}
   return false;
  }
