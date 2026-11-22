@@ -1,6 +1,6 @@
 import {normalizeStudyCheck} from './study-check.js';
 export const LEVELS=['N5','N4','N3','N2','N1'];
-export const STAGES=[['learn','课文与讲解'],['words','课内词汇'],['quiz','客观练习'],['feedback','答题反馈'],['translate','双向翻译'],['listen','听力听写'],['speak','口语输出'],['summary','小节统一评阅']];
+export const STAGES=[['learn','课文与讲解'],['words','课内词汇'],['quiz','客观练习'],['feedback','答题反馈'],['translate','双向翻译'],['listen','听力听写'],['speak','口语输出'],['summary','本课总结与评阅']];
 export const TRACKS={foundation:'发音与基础',grammar:'语法精讲',business:'商务与敬语',reading:'分级阅读',listening:'听力理解',it:'IT 日语'};
 export const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function normalizeAnswer(value){return String(value??'').normalize('NFKC').trim().replace(/\s+/g,'').replace(/[。．.!！?？]+$/g,'');}

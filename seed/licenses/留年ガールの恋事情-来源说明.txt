@@ -1,0 +1,16 @@
+《留年ガールの恋事情》 — 蒼生
+
+完整日文轻小说，来源：星空文庫（https://slib.net/），作者显式以 Creative Commons Attribution 4.0 International (CC BY 4.0) 许可公开发布。
+作品主页：https://slib.net/48889
+官方 EPUB 下载：https://slib.net/48889.epub
+许可协议：https://creativecommons.org/licenses/by/4.0/deed.ja
+网站利用条款：https://slib.net/info/terms/（第三条允许在信息发布者许可范围内复制与再分发）
+
+转换说明：直接解析官方无 DRM EPUB 正文并按软件阅读小节切分，保留原著章节顺序与 ruby 注音，不改动故事正文，未混入外链脚本或图片。
+阅读界面的假名注音与查词由本软件内置离线分词词典生成，仅供参考。
+使用或再分发本作品时，请保留原作者署名、来源链接与 CC BY 4.0 许可声明；顶层代码 MIT 许可不改变本作品的 CC BY 4.0 许可。
+
+原 EPUB SHA256：86498a6f67289a0bcde60957f03a568918d254d17a219ccd89a386e8d93c3dde
+正文哈希（textHash）：0df9b17a829cc133492e04fcae15c934560f6af6df2f3b099776c2a32faa83fb
+阅读小节数：31 节 · 正文字数：79733 字
+核验日期：2026-11-23

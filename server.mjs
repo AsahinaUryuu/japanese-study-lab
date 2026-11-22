@@ -81,7 +81,7 @@ export function createApp({publicDir=path.join(directory,'public'),libraryRoot=p
       if(!access.accept(req,res))return;
       const requested=decodeURIComponent((req.url||'/').split('?')[0]);
       if(requested.includes('\0')||requested.includes('\\')||requested.split('/').some(part=>part==='..'||part.startsWith('.')))throw new GradeError('不可访问此路径。',403);
-      if(requested==='/api/health'&&req.method==='GET')return json(res,200,{ok:true,service:'japanese-academy',version:'1.8.0'});
+      if(requested==='/api/health'&&req.method==='GET')return json(res,200,{ok:true,service:'japanese-academy',version:'1.9.0'});
       if(await handleProgressHistory(req,res,{requested,store:progressStore,readBody,json}))return;
       if(requested==='/api/catalog'&&req.method==='GET')return json(res,200,await catalog());
       if(requested==='/api/library'&&req.method==='GET')return json(res,200,{resources:await library()});

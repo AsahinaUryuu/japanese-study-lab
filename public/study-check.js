@@ -20,15 +20,15 @@ export function studyCheckMarkup(value,{goals=[],kind='frontend'}={}){
  const s=normalizeStudyCheck(value),prompts=(Array.isArray(goals)?goals:[]).filter(x=>typeof x==='string'&&x.trim()).slice(0,3);
  return `<section class="study-check" aria-label="学习自检与复习安排"><h3>合上教材，做一次自检</h3><p>先尝试回忆，再展开本课参考内容对照。这里是你的自评，不改变测验分数或完成标记。</p>${prompts.length?`<ul>${prompts.map(x=>`<li>${escape(x)}</li>`).join('')}</ul>`:''}<ol><li>用自己的话说明核心概念、用法与适用条件。</li><li>${kind==='japanese'?'换一个人物关系或工作场景，独立写一句日语。':'换一个输入或使用场景，预测代码结果并验证。'}</li><li>说明一道错题为什么错，或记录仍不确定的地方。</li></ol><label>我的回忆与例子<textarea data-study-reflection maxlength="3000" rows="4" placeholder="核心意思：\n我自己的例子：\n仍有疑问：">${escape(s.reflection)}</textarea></label><div class="study-ratings" role="group" aria-label="当前理解程度">${Object.entries(ratings).map(([key,title])=>`<button type="button" data-study-rating="${key}" aria-pressed="${s.rating===key}">${title}</button>`).join('')}</div><h4>安排下一次回顾</h4><p>按自己的需要选择时间；到期课程会显示在学习回顾中心，不发送系统通知。</p><div class="study-schedule">${[1,3,7,14].map(days=>`<button type="button" data-study-days="${days}">${days===1?'明天':days+' 天后'}再看</button>`).join('')}<button type="button" data-study-action="reviewed">今天已完成回顾</button>${s.dueAt?'<button type="button" data-study-action="cancel">取消这次安排</button>':''}</div><p class="study-check-status" role="status" aria-live="polite">${s.dueAt?'下次回顾：'+escape(when(s.dueAt)):s.reviewedAt?'上次回顾：'+escape(when(s.reviewedAt))+'；可重新安排下一次。':'尚未安排回顾。'}${s.rating?' · 自评：'+ratings[s.rating]:''}</p><small>回忆文字、自评与安排随学习记录保存；不会自动发送给模型。</small></section>`;
 }
-export function bindStudyCheck(host,{record,save,goals=[],kind='frontend'}={}){
+export function bindStudyCheck(host,{record,save,goals=[],kind='frontend',onChange=null}={}){
  if(!host)return;
  const render=()=>host.innerHTML=studyCheckMarkup(record.studyCheck,{goals,kind});render();
- host.addEventListener('input',event=>{if(!event.target.matches('[data-study-reflection]'))return;record.studyCheck=updateStudyCheck(record.studyCheck,'reflection',event.target.value);save();});
+ host.addEventListener('input',event=>{if(!event.target.matches('[data-study-reflection]'))return;record.studyCheck=updateStudyCheck(record.studyCheck,'reflection',event.target.value);save();onChange?.('reflection',record.studyCheck);});
  host.addEventListener('click',event=>{const button=event.target.closest('button');if(!button)return;let action,payload,selector;
   if(button.dataset.studyRating){action='rating';payload=button.dataset.studyRating;selector=`[data-study-rating="${payload}"]`;}
   else if(button.dataset.studyDays){action='schedule';payload=Number(button.dataset.studyDays);selector=`[data-study-days="${payload}"]`;}
   else if(button.dataset.studyAction){action=button.dataset.studyAction;selector='[data-study-action="reviewed"]';}else return;
-  record.studyCheck=updateStudyCheck(record.studyCheck,action,payload);save();render();host.querySelector(selector)?.focus();
+  record.studyCheck=updateStudyCheck(record.studyCheck,action,payload);save();render();onChange?.(action,record.studyCheck);host.querySelector(selector)?.focus();
  });
 }
 export function scheduledReviews(lessons,records,now=Date.now()){

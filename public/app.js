@@ -24,7 +24,7 @@ import {renderLibrary,libraryEvents} from './views/library.js';
 
 const $=s=>document.querySelector(s),main=$('#main');let toastTimer,tutor,reader,novelAnnotator,backupManager,config={provider:'openai',baseUrl:'https://api.openai.com/v1',model:'',apiKey:'',proxyUrl:''},store;
 const deploymentLabel=['localhost','127.0.0.1','::1','[::1]'].includes(location.hostname.toLowerCase())?'本地':'云端';
-$('#deployment-edition').textContent=`独立${deploymentLabel}版 · 1.8.0`;
+$('#deployment-edition').textContent=`独立${deploymentLabel}版 · 1.9.0`;
 const state={route:'home',params:new URLSearchParams(),page:1,selectedContext:null,viewData:{},busy:new Map()};
 export function toast(message){$('#toast').textContent=message;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),5000);}
 async function json(url,options={}){const r=await fetch(url,options);let value;try{value=await r.json();}catch{throw new Error('服务返回了无法读取的内容');}if(!r.ok)throw new Error(value.error||`请求失败 ${r.status}`);return value;}
@@ -38,7 +38,7 @@ function navigate(path,params={}){const query=new URLSearchParams(Object.entries
 function filter(values){navigate(state.route,{...Object.fromEntries(state.params),...values,page:1});}
 function context(){
  const lesson=data.lessons.find(x=>state.route==='lesson/'+x.id);const record=lesson?store.lesson(lesson.id):null;
- const stage=record?.stage||state.route;const review=state.selectedContext?(record?.reviews||(state.route==='workbench'?store.data.workReviews:[])||[]).find(x=>x.id===state.selectedContext):stage==='summary'?record?.reviews?.filter(r=>r.mode==='section').at(-1):null;
+ const stage=record?.stage||state.route;const review=state.selectedContext?(record?.reviews||(state.route==='workbench'?store.data.workReviews:[])||[]).find(x=>x.id===state.selectedContext):stage==='summary'?record?.reviews?.filter(r=>r.mode==='section'||r.mode==='recall').at(-1):null;
  const currentKey=lesson?`${lesson.id}:${stage}${stage==='feedback'&&record.quizAt?':'+record.quizAt:''}`:`general:${state.route}:${state.viewData.contextId||'main'}`;
  const key=review?(lesson?lesson.id:`general:${state.route}:${state.viewData.contextId||'main'}`)+':review:'+review.id:currentKey;
  const description=review?'当前课程、本次评阅时的原始作答、任务要求和模型反馈。之后的修改不会覆盖这份评阅快照。':lesson?'当前课程正文、所处学习环节、当前任务、已提交的客观题结果和这一环节的草稿。':'当前页面的学习任务、选中词条或练习内容。';

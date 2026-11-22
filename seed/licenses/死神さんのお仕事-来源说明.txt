@@ -1,0 +1,16 @@
+《死神さんのお仕事》 — ヤカ
+
+完整日文轻小说，来源：星空文庫（https://slib.net/），作者显式以 Creative Commons Attribution 4.0 International (CC BY 4.0) 许可公开发布。
+作品主页：https://slib.net/36100
+官方 EPUB 下载：https://slib.net/36100.epub
+许可协议：https://creativecommons.org/licenses/by/4.0/deed.ja
+网站利用条款：https://slib.net/info/terms/（第三条允许在信息发布者许可范围内复制与再分发）
+
+转换说明：直接解析官方无 DRM EPUB 正文并按软件阅读小节切分，保留原著章节顺序与 ruby 注音，不改动故事正文，未混入外链脚本或图片。
+阅读界面的假名注音与查词由本软件内置离线分词词典生成，仅供参考。
+使用或再分发本作品时，请保留原作者署名、来源链接与 CC BY 4.0 许可声明；顶层代码 MIT 许可不改变本作品的 CC BY 4.0 许可。
+
+原 EPUB SHA256：20e987b9f0ce8cec026aa8f354a3814ca6d7af997220aea5cebc6f00a6a897aa
+正文哈希（textHash）：2842d445c825ae27c30d44d00d2379fa55e09997df3b9fb2284e4ca2a42ab113
+阅读小节数：36 节 · 正文字数：49314 字
+核验日期：2026-11-23

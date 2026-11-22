@@ -11,8 +11,8 @@
   },
   {
     "path": "NOTICE.md",
-    "sha256": "e6186d9e20fa6ded22baa799d17332b0850e017615e7587d1c35e51d84d0df59",
-    "bytes": 2612
+    "sha256": "be1918357c37e1132505426939be8698e697b5ef7cc26076eca9ed429876b650",
+    "bytes": 3301
   },
   {
     "path": "PUBLIC-RELEASE.json",
@@ -21,13 +21,13 @@
   },
   {
     "path": "README.md",
-    "sha256": "83d7dde988f780f17912d309d7447a0450150c1c29fd9a443aa7ee3fe24c2aa8",
-    "bytes": 5914
+    "sha256": "686421123cb8711beca8ba73934ad6a18c73d6621a76fd44085d17f2314ecfd4",
+    "bytes": 6398
   },
   {
     "path": "lib/coach.mjs",
-    "sha256": "daaa85f0a733ce9a9571cda5b6d0454bd1bb27640f59c6aed1b8118ef3ea6a03",
-    "bytes": 7627
+    "sha256": "ee31f7d12e9201078a606302f03300e97c36289bcef12c72484f3d9ac270ae34",
+    "bytes": 9473
   },
   {
     "path": "lib/config.mjs",
@@ -91,13 +91,13 @@
   },
   {
     "path": "package.json",
-    "sha256": "df3da14a92bc0f94edecd602892daaa495a229e98c8092f6616afd82342b0332",
+    "sha256": "24c82f05225b26d99c6b53e802b0e0ec84b6f0903e58193739436116c11205b4",
     "bytes": 313
   },
   {
     "path": "public/app.js",
-    "sha256": "0b8f25249c40c381cd1164860384465f702a1d451441481d37684e76de5b34dc",
-    "bytes": 22796
+    "sha256": "a31eba6ffde7e7c57633daf55120b263501371b5375e395ac17486952f789255",
+    "bytes": 22815
   },
   {
     "path": "public/backup-manager.css",
@@ -336,8 +336,8 @@
   },
   {
     "path": "public/learning-core.js",
-    "sha256": "46712301720a1a6885ac278840dce6b8bfb03acdc8e356e7a87799b4de55dc59",
-    "bytes": 15133
+    "sha256": "816572be403984c6cfb8420af82b208b93acc477b249f520131476b1f322f178",
+    "bytes": 15136
   },
   {
     "path": "public/lesson-recall.css",
@@ -405,6 +405,11 @@
     "bytes": 2468
   },
   {
+    "path": "public/releases/1.9.0.md",
+    "sha256": "dbaf94df8e1814b2a0f15e10f727ac2596b51ae6c5f2aea8d0c07c9bef968ddb",
+    "bytes": 2117
+  },
+  {
     "path": "public/resources/bunka-keigo-guidelines.pdf",
     "sha256": "3a567c6d85e990e0f90f0698c1403ba5826c7c6f9e7e50c93ea5d4da9336882d",
     "bytes": 613704
@@ -416,8 +421,8 @@
   },
   {
     "path": "public/section-assignment.js",
-    "sha256": "f9932614bafe8057cb2d9e02e47f94007485296a00ce0990f5e517369572f933",
-    "bytes": 6143
+    "sha256": "49af85ee3d4a8dbc8bf79c443744876a6dde410907222173aea693eb08a774d1",
+    "bytes": 7306
   },
   {
     "path": "public/store.js",
@@ -436,8 +441,8 @@
   },
   {
     "path": "public/study-check.js",
-    "sha256": "d5defbc564c46e142b37452dd06ddd3d3b49e63153e24055fc5ce6d8e46653c0",
-    "bytes": 6119
+    "sha256": "576073eb4971b182a13ea82e0bc3757062bbc27bce3a54ad0dd39604e909e75a",
+    "bytes": 6213
   },
   {
     "path": "public/style.css",
@@ -636,8 +641,8 @@
   },
   {
     "path": "public/views/lessons.js",
-    "sha256": "1b27f2c233a295df558a9ad341d9b9ad690ec612a4bf2feabf177fdede895b52",
-    "bytes": 24107
+    "sha256": "90179d9d784712499426a2cfcd9338b3c59bfabc67fb9b23ad8735a6be6f8c80",
+    "bytes": 29445
   },
   {
     "path": "public/views/library.js",
@@ -850,9 +855,19 @@
     "bytes": 5000
   },
   {
+    "path": "seed/licenses/MANA_and_DREAM_白狐の願い-来源说明.txt",
+    "sha256": "4e5d92a502dd2e32c554e4b670f662872022c20e45231d2ad8aad425cd978958",
+    "bytes": 1207
+  },
+  {
     "path": "seed/licenses/copyright-verification.json",
     "sha256": "d570234c74dfdea08f723f7bf234aa3f76d21a2dec43608ff9999b8a7d8408b3",
     "bytes": 3264
+  },
+  {
+    "path": "seed/licenses/hoshizora-light-novels-verification.json",
+    "sha256": "786eb05212afff5a984121397157856aaf6b92a6e867e4500dddae81cb48f08a",
+    "bytes": 4265
   },
   {
     "path": "seed/licenses/グスコーブドリの伝記-来源说明.txt",
@@ -875,14 +890,49 @@
     "bytes": 1723
   },
   {
+    "path": "seed/licenses/梓にだって華が咲く-来源说明.txt",
+    "sha256": "ca1c804b359c3441bc15161fae802e2bc85173426fb3ddae5aa4929675262648",
+    "bytes": 1203
+  },
+  {
+    "path": "seed/licenses/死神さんのお仕事-来源说明.txt",
+    "sha256": "fede48a88387943bbb506397534c6cf8e05683cf35ec68514dc4fbe306ba0f4e",
+    "bytes": 1193
+  },
+  {
+    "path": "seed/licenses/留年ガールの恋事情-来源说明.txt",
+    "sha256": "bfe66be6d04de158d6ff70f61d3035e816fe248836eda423c91096b6c358c28f",
+    "bytes": 1196
+  },
+  {
     "path": "seed/licenses/赤いろうそくと人魚-来源说明.txt",
     "sha256": "3cdfcd9f50409e48d0a7f837321b6fb855d523a76333db1733a9d97437ef31f3",
     "bytes": 1793
   },
   {
+    "path": "seed/licenses/重なり合うプシュケーの塔-来源说明.txt",
+    "sha256": "2942219ce88d84b4243ae52928097729e574045b3da826ad8462418ad94911e2",
+    "bytes": 1208
+  },
+  {
     "path": "seed/licenses/風の又三郎-来源说明.txt",
     "sha256": "dc5f6bb3bee2706343c2767fa2e335e0172c5b131ba937285efc2f99fd585639",
     "bytes": 1527
+  },
+  {
+    "path": "seed/licenses/魔法の科学的根拠-来源说明.txt",
+    "sha256": "f511de69393a1708f4113c2a72c8cce7666e39a487b20f4842596ab0a5cfaa31",
+    "bytes": 1202
+  },
+  {
+    "path": "seed/novels/novel-41ae9f209a2e969762c123d7.json",
+    "sha256": "dc321faa04ff541d42ba07b6a45cd81a41568fcc988f0a4fd904ebed01510b90",
+    "bytes": 474027
+  },
+  {
+    "path": "seed/novels/novel-41ae9f209a2e969762c123d7.meta.json",
+    "sha256": "4e62e30e0c1eac9c8bc31482a98584a3ee20e7a24eb4a804b7fbca8643f24831",
+    "bytes": 9512
   },
   {
     "path": "seed/novels/novel-617e26f13f2ae06656a7e771.json",
@@ -893,6 +943,26 @@
     "path": "seed/novels/novel-617e26f13f2ae06656a7e771.meta.json",
     "sha256": "6ba068fcf0bc4f3b415a583d37bcd4acd22a0f97e6a00d0bc4222f4255ae7949",
     "bytes": 1453
+  },
+  {
+    "path": "seed/novels/novel-87e79b51b8d4310f19a736e5.json",
+    "sha256": "1babe3579972893890d9f88ca9297dfbbd4316b04b4703cfe533eb67c4e200f5",
+    "bytes": 218014
+  },
+  {
+    "path": "seed/novels/novel-87e79b51b8d4310f19a736e5.meta.json",
+    "sha256": "9b87a3cdb34b7367e1b4b3e0c1f0355b690899680bf30e2cc3f6c79a04f5274d",
+    "bytes": 4895
+  },
+  {
+    "path": "seed/novels/novel-8f961bb620a97cdeb9c3e270.json",
+    "sha256": "8294172bbbb1958a860cd9ad2fda1f914670fb16f0b6941031b1b7299b83bb42",
+    "bytes": 300610
+  },
+  {
+    "path": "seed/novels/novel-8f961bb620a97cdeb9c3e270.meta.json",
+    "sha256": "1535815aed42f82199e16290f2a8d8e38bfeb2a4cf3b21df835f93f9c5a6f032",
+    "bytes": 4576
   },
   {
     "path": "seed/novels/novel-9811b71973b4ffc056f70048.json",
@@ -915,6 +985,16 @@
     "bytes": 3737
   },
   {
+    "path": "seed/novels/novel-c5edd7ca1bd80054f7ba102a.json",
+    "sha256": "902e16df784c6fbb5eb7f75c306ed1b766005cd996fb301bff8f250156389ca1",
+    "bytes": 248307
+  },
+  {
+    "path": "seed/novels/novel-c5edd7ca1bd80054f7ba102a.meta.json",
+    "sha256": "b5ca20409226211d2d20e3e945e0178646dc491ade90de49db9038c98bd8f845",
+    "bytes": 4378
+  },
+  {
     "path": "seed/novels/novel-da6f80f106ed21a140d5a20f.json",
     "sha256": "0b73b0676469b057bdc8df57888c8e358a4bfff34ae666130cb13529661606ce",
     "bytes": 402038
@@ -935,6 +1015,16 @@
     "bytes": 1795
   },
   {
+    "path": "seed/novels/novel-e5c5139a2ebdfc293752f1c4.json",
+    "sha256": "a3c052b3625904cf2bf80e1a2f85af1c6b44c927d7a6494cf18ebe522901c7d9",
+    "bytes": 523567
+  },
+  {
+    "path": "seed/novels/novel-e5c5139a2ebdfc293752f1c4.meta.json",
+    "sha256": "d5b01e55eb211d6023a8761d4cda3ec17e5041506933677b5a9a3739f51dece2",
+    "bytes": 5047
+  },
+  {
     "path": "seed/novels/novel-ee16ff48b97c2bfcf5a8f395.json",
     "sha256": "33393fe671b1d319667abc1322fb6949c752bc254368e5e9c296f6f859c1c914",
     "bytes": 49814
@@ -945,8 +1035,18 @@
     "bytes": 1153
   },
   {
+    "path": "seed/novels/novel-f404d7dc1c4c96397701c2a5.json",
+    "sha256": "8ea149f51f91f8980be3df89899259fd31108c6e955b667223bb5f979cc8a4c4",
+    "bytes": 243076
+  },
+  {
+    "path": "seed/novels/novel-f404d7dc1c4c96397701c2a5.meta.json",
+    "sha256": "0157b6fef18c3cce197c5f769135a42a63721a55251470fcfef55f67d56d9037",
+    "bytes": 7669
+  },
+  {
     "path": "server.mjs",
-    "sha256": "0219f57ec999546660e20e5daafff283af1882d1be6047c4bd84bcc0c6c7c34d",
+    "sha256": "161bace96c0f014d88775cb1e2e47f40a56f36a87907c80364d77440cc381139",
     "bytes": 13326
   },
   {
@@ -1073,6 +1173,11 @@
     "path": "tests/reader-supplement.test.mjs",
     "sha256": "61f7e20f7b9f458b5f3bf03e8cf333514de7dd964d0cbbe228e8a39932331ff5",
     "bytes": 4471
+  },
+  {
+    "path": "tests/recall-review.test.mjs",
+    "sha256": "d29bf4f65af50b7c0601e7ec3a1296b06e9b2bb6ca2ca01e3038ba4dec1df919",
+    "bytes": 5488
   },
   {
     "path": "tests/remote-access.test.mjs",
